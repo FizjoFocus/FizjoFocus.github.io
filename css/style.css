@@ -435,7 +435,6 @@ body .header_hero-text-btns .header_hero-text-btns-contact {
   text-decoration: none;
 }
 body .header_hero-text-btns .header_hero-text-btns-contact:hover {
-  background: rgb(30.4746835443, 158.9240506329, 232.0253164557);
   transform: translateY(-3px);
 }
 body main .about-me {
