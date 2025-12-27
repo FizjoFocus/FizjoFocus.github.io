@@ -1,0 +1,32 @@
+# Fonty
+/roboto_woff2/*.woff2
+  Cache-Control: public, max-age=31536000
+
+# CSS
+/css/*.css
+  Cache-Control: public, max-age=31536000
+
+# JavaScript
+/js/*.js
+  Cache-Control: public, max-age=31536000
+
+# Obrazki
+/img/*.webp
+  Cache-Control: public, max-age=31536000
+
+/img/*.jpg
+  Cache-Control: public, max-age=31536000
+
+/img/*.png
+  Cache-Control: public, max-age=31536000
+
+/img/*.svg
+  Cache-Control: public, max-age=31536000
+
+# Ikony
+/icons/*.svg
+  Cache-Control: public, max-age=31536000
+
+# Kursy
+/Kursy_w_W*/*.webp
+  Cache-Control: public, max-age=31536000
