@@ -130,11 +130,11 @@ body {
 		position: fixed;
 		top: 0;
 		height: 60px;
-		width: 100%;
+		left: 0;
+		right: 0;
 		margin: 0 auto;
 		padding: 0 16px;
 		background: linear-gradient(to right, rgba(22, 145, 215, 0.95), rgba(0, 97, 161, 0.95));
-
 		backdrop-filter: blur(6px);
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 		z-index: 1000;
@@ -2099,7 +2099,7 @@ body {
 			position: absolute;
 			top: 0;
 			bottom: 0;
-			width: 20%;
+			width: 25%;
 			z-index: 2;
 			pointer-events: none;
 			overflow: hidden;
@@ -2107,14 +2107,19 @@ body {
 
 		.header_side--left {
 			left: 0;
-			background: linear-gradient(to right, rgba(12, 63, 95, 0.85), rgba(12, 63, 95, 0)),
-				url('../img/hero-left.jpg') center / cover no-repeat;
-			background-position: 0%;
+			-webkit-mask-image: linear-gradient(to left, transparent 0%, black 100%);
+			mask-image: linear-gradient(to left, transparent 0%, black 100%);
+			background-image: url('../img/hero-left.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: 100%;
 		}
 
 		.header_side--right {
 			right: 0;
-			background: linear-gradient(to left, rgba(12, 63, 95, 0.85), rgba(12, 63, 95, 0)),rgba(0, 0, 0, 0.95) url('../img/hero-right.jpg');
+			-webkit-mask-image: linear-gradient(to right, transparent 0%, black 100%);
+			mask-image: linear-gradient(to right, transparent 0%, black 100%);
+			background-image: url('../img/hero-right.jpg');
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: 100%;
