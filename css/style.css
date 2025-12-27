@@ -136,7 +136,7 @@ body .navbar_small-nav-home a {
   align-items: center;
 }
 body .navbar_small-nav-home a img {
-  height: 36px;
+  height: 40px;
   width: 105px;
 }
 body .navbar_small-nav-media {
@@ -318,7 +318,7 @@ body .back-to-top.show {
 }
 body .header {
   height: auto;
-  max-height: 720px;
+  max-height: 820px;
   margin-top: 60px;
   position: relative;
   overflow: hidden;
@@ -1020,6 +1020,11 @@ body .prices-box_gabinet .adres, body .prices-box_drive .adres {
   opacity: 0.85;
   padding: 8px 12px;
 }
+body .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 body .contact-box {
   display: flex;
   flex-direction: column;
@@ -1702,32 +1707,29 @@ body .footer-container-copyright {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 25%;
+    width: 328px;
     z-index: 2;
     pointer-events: none;
     overflow: hidden;
+    opacity: 0.22;
+    filter: grayscale(100%);
   }
   body .header_side--left {
     left: 0;
     -webkit-mask-image: linear-gradient(to left, transparent 0%, black 100%);
     mask-image: linear-gradient(to left, transparent 0%, black 100%);
-    background-image: url("../img/hero-left.jpg");
+    background-image: url("../img/hero-left.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 100%;
   }
   body .header_side--right {
     right: 0;
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 100%);
     mask-image: linear-gradient(to right, transparent 0%, black 100%);
-    background-image: url("../img/hero-right.jpg");
+    background-image: url("../img/hero-right.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 100%;
-  }
-  body .header_side {
-    opacity: 0.22;
-    filter: grayscale(100%);
   }
   body main .reviews .carousel-container {
     max-width: 1040px;

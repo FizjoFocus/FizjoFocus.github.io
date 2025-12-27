@@ -16,7 +16,7 @@ document.querySelectorAll('#nav-link, #home-img').forEach(el => {
 	el.addEventListener('click', closeMenu)
 })
 
-// JavaScript
+//BACK TO TOP
 const backToTop = document.querySelector('.back-to-top')
 const header = document.querySelector('.header')
 
@@ -32,7 +32,6 @@ window.addEventListener('scroll', () => {
 })
 
 //O MNIE
-
 const aboutMeCard = document.getElementById('aboutMeCard')
 const closeBtn = aboutMeCard.querySelector('.about-close')
 const overlayContent = aboutMeCard.querySelector('.about-me_overlay-content')
@@ -52,6 +51,7 @@ const currentYear = new Date().getFullYear()
 const yearsOfExperience = currentYear - startYear
 document.getElementById('experience-years').textContent = yearsOfExperience
 
+// METODY
 const serviceItems = document.querySelectorAll('.services-item')
 
 serviceItems.forEach(item => {
@@ -126,17 +126,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //OPINIE
 const track = document.querySelector('.carousel-track')
+const nextBtn = document.querySelector('.next')
+const prevBtn = document.querySelector('.prev')
+const originalSlides = Array.from(track.children)
+const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true)
+track.insertBefore(lastClone, originalSlides[0])
 
-// najpierw klon
-const firstClone = track.children[0].cloneNode(true)
+const firstClone = originalSlides[0].cloneNode(true)
 track.appendChild(firstClone)
 
-// dopiero teraz pobieramy aktualną listę
 const slides = Array.from(track.children)
-
-let index = 0
-let auto
 const totalSlides = slides.length
+
+let index = 1
+let auto
+let isAnimating = false
 
 function updateCarousel(animate = true) {
 	track.style.transition = animate ? 'transform 0.6s ease' : 'none'
@@ -144,28 +148,42 @@ function updateCarousel(animate = true) {
 }
 
 function nextSlide() {
+	if (isAnimating) return
+	isAnimating = true
 	index++
-	updateCarousel()
-
-	// reset gdy jesteś na klonie (ostatni element)
-	if (index === totalSlides - 1) {
-		setTimeout(() => {
-			index = 0
-			updateCarousel(false)
-		}, 600)
-	}
+	updateCarousel(true)
 }
 
+function prevSlide() {
+	if (isAnimating) return
+	isAnimating = true
+	index--
+	updateCarousel(true)
+}
+
+track.addEventListener('transitionend', () => {
+	if (index === totalSlides - 1) {
+		index = 1
+		updateCarousel(false)
+	}
+
+	if (index === 0) {
+		index = totalSlides - 2
+		updateCarousel(false)
+	}
+
+	track.offsetHeight
+	isAnimating = false
+})
+
 function startAuto() {
+	clearInterval(auto)
 	auto = setInterval(nextSlide, 10000)
 }
 
 function stopAuto() {
 	clearInterval(auto)
 }
-
-const nextBtn = document.querySelector('.next')
-const prevBtn = document.querySelector('.prev')
 
 nextBtn.addEventListener('click', () => {
 	stopAuto()
@@ -175,18 +193,17 @@ nextBtn.addEventListener('click', () => {
 
 prevBtn.addEventListener('click', () => {
 	stopAuto()
-	index = (index - 1 + totalSlides) % totalSlides
-	updateCarousel()
+	prevSlide()
 	startAuto()
 })
 
-auto = startAuto()
+updateCarousel(false)
+startAuto()
 
 //FOOTER
 document.getElementById('year').textContent = new Date().getFullYear()
 
 //GALERIA
-
 function GALLERY() {
 	const gallery = document.getElementById('gallery')
 	if (!gallery) return

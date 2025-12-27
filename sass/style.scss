@@ -155,7 +155,7 @@ body {
 					align-items: center;
 
 					img {
-						height: 36px;
+						height: 40px;
 						width: 105px;
 					}
 				}
@@ -389,7 +389,7 @@ body {
 
 	.header {
 		height: auto;
-		max-height: 720px;
+		max-height: 820px;
 		margin-top: 60px;
 		position: relative;
 		overflow: hidden;
@@ -1200,6 +1200,10 @@ body {
 	// KONTAKT
 
 	.contact {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
 		&-box {
 			display: flex;
 			flex-direction: column;
@@ -2093,41 +2097,37 @@ body {
 	body {
 		.header {
 			position: relative;
-		}
 
-		.header_side {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			width: 25%;
-			z-index: 2;
-			pointer-events: none;
-			overflow: hidden;
-		}
+			&_side {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: 328px;
+				z-index: 2;
+				pointer-events: none;
+				overflow: hidden;
+				opacity: 0.22;
+				filter: grayscale(100%);
 
-		.header_side--left {
-			left: 0;
-			-webkit-mask-image: linear-gradient(to left, transparent 0%, black 100%);
-			mask-image: linear-gradient(to left, transparent 0%, black 100%);
-			background-image: url('../img/hero-left.jpg');
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: 100%;
-		}
+				&--left {
+					left: 0;
+					-webkit-mask-image: linear-gradient(to left, transparent 0%, black 100%);
+					mask-image: linear-gradient(to left, transparent 0%, black 100%);
+					background-image: url('../img/hero-left.webp');
+					background-repeat: no-repeat;
+					background-size: cover;
+				}
 
-		.header_side--right {
-			right: 0;
-			-webkit-mask-image: linear-gradient(to right, transparent 0%, black 100%);
-			mask-image: linear-gradient(to right, transparent 0%, black 100%);
-			background-image: url('../img/hero-right.jpg');
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: 100%;
-		}
-
-		.header_side {
-			opacity: 0.22;
-			filter: grayscale(100%);
+				&--right {
+					right: 0;
+					-webkit-mask-image: linear-gradient(to right, transparent 0%, black 100%);
+					mask-image: linear-gradient(to right, transparent 0%, black 100%);
+					background-image: url('../img/hero-right.webp');
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: 100%;
+				}
+			}
 		}
 
 		main {
