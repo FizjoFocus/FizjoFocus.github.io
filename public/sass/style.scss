@@ -796,15 +796,6 @@ body {
 			padding-top: 10px;
 		}
 
-		.services-text::after {
-			content: '';
-			display: block;
-			height: 1px;
-			width: 80%;
-			margin: 20px auto 0;
-			background: rgba(22, 145, 215, 0.3);
-		}
-
 		.rotate-arrow {
 			transform: rotate(180deg);
 		}
@@ -821,15 +812,6 @@ body {
 			flex: 1 1 100%;
 			min-height: fit-content;
 			align-self: stretch;
-		}
-
-		.table::after {
-			content: '← przesuń tabelę →';
-			display: block;
-			text-align: center;
-			font-size: 0.7rem;
-			opacity: 0.6;
-			margin-top: 6px;
 		}
 
 		table {
@@ -853,9 +835,6 @@ body {
 
 		.pnf-table {
 			border-bottom: none;
-		}
-		.other-text {
-			border-bottom: 1px solid #1691d7;
 		}
 	}
 
@@ -1088,6 +1067,27 @@ body {
 		button.prev img:hover,
 		button.next img:hover {
 			transform: scale(1.1);
+		}
+
+		.carousel-dots {
+			display: flex;
+			justify-content: center;
+			gap: 8px;
+			padding: 12px 0 16px;
+		}
+
+		.carousel-dot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: rgba(22, 145, 215, 0.3);
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+
+		.carousel-dot.active {
+			background: rgba(22, 145, 215, 1);
+			transform: scale(1.3);
 		}
 	}
 
@@ -1886,7 +1886,7 @@ body {
 
 		.header {
 			margin-top: 96px;
-			min-height: 90vh;
+			height: 90vh;
 
 			&_hero-text {
 				max-width: 830px;

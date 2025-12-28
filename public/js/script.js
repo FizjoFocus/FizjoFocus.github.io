@@ -125,16 +125,33 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 //OPINIE
+
 const track = document.querySelector('.carousel-track')
 const nextBtn = document.querySelector('.next')
 const prevBtn = document.querySelector('.prev')
+const dotsContainer = document.querySelector('.carousel-dots')
+
 const originalSlides = Array.from(track.children)
+
+originalSlides.forEach((_, i) => {
+	const dot = document.createElement('span')
+	dot.classList.add('carousel-dot')
+	if (i === 0) dot.classList.add('active')
+
+	dot.addEventListener('click', () => {
+		index = i + 1 // +1 bo pierwszy prawdziwy slajd
+		updateCarousel()
+	})
+
+	dotsContainer.appendChild(dot)
+})
+
+const dots = document.querySelectorAll('.carousel-dot')
+
 const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true)
 track.insertBefore(lastClone, originalSlides[0])
-
 const firstClone = originalSlides[0].cloneNode(true)
 track.appendChild(firstClone)
-
 const slides = Array.from(track.children)
 const totalSlides = slides.length
 
@@ -145,6 +162,9 @@ let isAnimating = false
 function updateCarousel(animate = true) {
 	track.style.transition = animate ? 'transform 0.6s ease' : 'none'
 	track.style.transform = `translateX(-${index * 100}%)`
+
+	dots.forEach(dot => dot.classList.remove('active'))
+	dots[index - 1]?.classList.add('active')
 }
 
 function nextSlide() {
