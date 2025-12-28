@@ -1063,46 +1063,31 @@ body {
 
 		button.prev,
 		button.next {
-			display: flex;
-			align-items: center; /* pionowe wyśrodkowanie */
-			justify-content: center; /* poziome wyśrodkowanie */
 			position: absolute;
 			bottom: 0;
 			transform: translateY(-50%);
 			width: 40px;
 			height: 40px;
-			border-radius: 50%;
-			background: rgba(22, 145, 215, 0.75);
-			color: white;
-			font-size: 1.5rem;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			border: none;
+			background: none;
 			cursor: pointer;
-			transition: transform 0.2s ease, background 0.2s ease;
+
+			img {
+				transition: transform 0.2s ease;
+			}
 		}
 
 		button.prev {
 			left: 10px;
 		}
 
-		button.prev::before {
-			content: '';
-			display: inline-block;
-			border-top: 6px solid transparent;
-			border-bottom: 6px solid transparent;
-			border-right: 8px solid white;
-		}
-
 		button.next {
 			right: 10px;
 		}
 
-		button.prev:hover,
-		button.next:hover {
+		button.prev img:hover,
+		button.next img:hover {
 			transform: scale(1.1);
-			transform: translateY(-50%);
-			background: rgba(22, 145, 215, 0.95);
 		}
 	}
 

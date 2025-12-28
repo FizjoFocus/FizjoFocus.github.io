@@ -909,42 +909,28 @@ body .reviews .carousel-container .carousel-slide::before {
 }
 body .reviews button.prev,
 body .reviews button.next {
-  display: flex;
-  align-items: center; /* pionowe wyśrodkowanie */
-  justify-content: center; /* poziome wyśrodkowanie */
   position: absolute;
   bottom: 0;
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background: rgba(22, 145, 215, 0.75);
-  color: white;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: none;
+  background: none;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
+}
+body .reviews button.prev img,
+body .reviews button.next img {
+  transition: transform 0.2s ease;
 }
 body .reviews button.prev {
   left: 10px;
 }
-body .reviews button.prev::before {
-  content: "";
-  display: inline-block;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-right: 8px solid white;
-}
 body .reviews button.next {
   right: 10px;
 }
-body .reviews button.prev:hover,
-body .reviews button.next:hover {
+body .reviews button.prev img:hover,
+body .reviews button.next img:hover {
   transform: scale(1.1);
-  transform: translateY(-50%);
-  background: rgba(22, 145, 215, 0.95);
 }
 body .prices {
   display: flex;
