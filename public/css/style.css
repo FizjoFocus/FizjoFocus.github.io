@@ -846,9 +846,10 @@ body .reviews {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding: 40px 16px;
 }
 body .reviews .carousel-container {
-  background: #fff;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(245, 249, 252, 0.9));
   width: 100%;
   max-width: 880px;
   position: relative;
@@ -862,10 +863,10 @@ body .reviews .carousel-container .carousel-track {
   transition: transform 0.5s ease;
 }
 body .reviews .carousel-container .carousel-slide {
+  position: relative;
   min-height: 260px;
   min-width: 100%;
   padding: 16px 20px 24px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
   line-height: 1.5;
   flex-direction: column;
   justify-content: center;
@@ -876,12 +877,14 @@ body .reviews .carousel-container .carousel-slide p {
   font-size: 0.95rem;
   line-height: 1.6;
   max-width: 42ch;
+  margin-top: 4px;
   margin: 0 auto;
 }
 body .reviews .carousel-container .carousel-slide .review-name {
-  margin-top: 16px;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
   font-weight: 600;
-  font-size: 1rem;
   align-items: center;
   opacity: 0.85;
 }
@@ -889,31 +892,59 @@ body .reviews .carousel-container .carousel-slide .review-name::before {
   content: "— ";
 }
 body .reviews .carousel-container .carousel-slide .review-stars {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-size: 1.8rem;
   letter-spacing: 2px;
   color: #d4af37;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
+body .reviews .carousel-container .carousel-slide::before {
+  content: "“";
+  font-size: 4rem;
+  color: rgba(22, 145, 215, 0.15);
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: serif;
+}
 body .reviews button.prev,
 body .reviews button.next {
+  display: flex;
+  align-items: center; /* pionowe wyśrodkowanie */
+  justify-content: center; /* poziome wyśrodkowanie */
   position: absolute;
   bottom: 0;
   transform: translateY(-50%);
-  background: rgba(22, 145, 215, 0.85);
-  color: white;
-  border: rgb(22, 145, 215);
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 2rem;
   width: 40px;
   height: 40px;
+  border-radius: 50%;
+  background: rgba(22, 145, 215, 0.75);
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 body .reviews button.prev {
   left: 10px;
 }
+body .reviews button.prev::before {
+  content: "";
+  display: inline-block;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 8px solid white;
+}
 body .reviews button.next {
   right: 10px;
+}
+body .reviews button.prev:hover,
+body .reviews button.next:hover {
+  transform: scale(1.1);
+  transform: translateY(-50%);
+  background: rgba(22, 145, 215, 0.95);
 }
 body .prices {
   display: flex;
