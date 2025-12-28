@@ -447,7 +447,7 @@ body {
 			z-index: 3;
 
 			&-title {
-				padding: 32px 0;
+				padding: 24px 0 32px;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -487,7 +487,7 @@ body {
 				max-width: 350px;
 				color: #fff;
 				text-align: center;
-				padding: 32px 0;
+				padding: 24px 0;
 				font-size: 1.2rem;
 				font-weight: 500;
 				letter-spacing: 0.3px;
@@ -548,6 +548,139 @@ body {
 	main {
 		max-width: 1400px;
 		margin: 0 auto;
+
+		//WHY ME?
+
+		.why {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: auto;
+
+			&_container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				position: relative;
+				padding: 0 15px;
+				width: 100%;
+				max-height: 90vh;
+
+				&-item,
+				&-text {
+					box-sizing: border-box;
+				}
+
+				&-item {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					padding: 0 20px;
+					width: 100%;
+					min-height: 64px;
+					background-color: #fff;
+					border-bottom: 1px solid rgba(22, 145, 215, 0.4);
+					cursor: pointer;
+
+					h3 {
+						font-size: 1.1rem;
+						font-weight: 500;
+						letter-spacing: 0.3px;
+						padding: 10px;
+					}
+
+					&-btn {
+						min-width: 36px;
+						height: 36px;
+						border-radius: 50%;
+						border: 1px solid #1691d7;
+						background: transparent;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						transition: transform 0.3s ease, background-color 0.3s;
+						cursor: pointer;
+
+						img {
+							width: 20px;
+							height: 20px;
+						}
+					}
+
+					&-btn:hover {
+						background-color: rgba(22, 145, 215, 0.1);
+					}
+
+					&-text {
+						display: flex;
+						overflow: hidden;
+						flex-direction: column;
+						position: relative;
+						height: 0;
+						width: 100%;
+						background: linear-gradient(to bottom, rgba(22, 145, 215, 0), rgba(22, 145, 215, 0.05));
+						border-left: 1px solid #1691d7;
+						border-right: 1px solid #1691d7;
+						transition: height 0.6s ease, padding 0.3s ease;
+						overflow-y: auto;
+
+						p,
+						a {
+							text-align: justify;
+							line-height: 1.5;
+							font-size: 0.95rem;
+							padding: 10px 20px;
+						}
+
+						a {
+							width: 100%;
+							text-align: center;
+							text-transform: none;
+							text-decoration: none;
+							color: #1691d7;
+							transition: transform 0.3s;
+						}
+
+						a:hover {
+							transform: translateY(-4px);
+						}
+
+						.small-header {
+							padding-bottom: 0;
+							padding-top: 15px;
+						}
+
+						ul,
+						ol {
+							display: block;
+							padding: 10px 36px;
+						}
+
+						ul:last-child {
+							padding-bottom: 10px;
+						}
+
+						li {
+							font-size: 1rem;
+							margin-bottom: 6px;
+							line-height: 1.4;
+						}
+
+						li::marker {
+							color: #1691d7;
+						}
+					}
+
+					&-text.active {
+						padding-top: 10px;
+					}
+				}
+			}
+		}
+
+		.rotate-arrow {
+			transform: rotate(180deg);
+		}
 
 		// ABOUT-ME
 
@@ -693,111 +826,112 @@ body {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-		}
 
-		.services-container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			padding: 0 15px;
-			width: 100%;
-		}
-		.pdtr-nowrap {
-			white-space: nowrap;
-		}
-
-		.services-item,
-		.services-text {
-			box-sizing: border-box;
-		}
-
-		.services-item {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 0 20px;
-			width: 100%;
-			min-height: 64px;
-			background-color: #fff;
-			border-bottom: 1px solid rgba(22, 145, 215, 0.4);
-			cursor: pointer;
-
-			h3 {
-				font-weight: 600;
-				letter-spacing: 0.5px;
-			}
-			.services-btn {
-				width: 36px;
-				height: 36px;
-				border-radius: 50%;
-				border: 1px solid #1691d7;
-				background: transparent;
+			&-container {
 				display: flex;
+				flex-direction: column;
 				align-items: center;
-				justify-content: center;
-				transition: transform 0.3s ease, background-color 0.3s;
+				padding: 0 15px;
+				width: 100%;
+			}
+
+			.pdtr-nowrap {
+				white-space: nowrap;
+			}
+
+			&-item,
+			&-text {
+				box-sizing: border-box;
+			}
+
+			&-item {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 20px;
+				width: 100%;
+				min-height: 64px;
+				background-color: #fff;
+				border-bottom: 1px solid rgba(22, 145, 215, 0.4);
 				cursor: pointer;
 
-				img {
-					width: 20px;
-					height: 20px;
+				h3 {
+					font-weight: 600;
+					letter-spacing: 0.5px;
+				}
+				.services-btn {
+					width: 36px;
+					height: 36px;
+					border-radius: 50%;
+					border: 1px solid #1691d7;
+					background: transparent;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					transition: transform 0.3s ease, background-color 0.3s;
+					cursor: pointer;
+
+					img {
+						width: 20px;
+						height: 20px;
+					}
+				}
+
+				.services-btn:hover {
+					background-color: rgba(22, 145, 215, 0.1);
 				}
 			}
 
-			.services-btn:hover {
-				background-color: rgba(22, 145, 215, 0.1);
+			&-text {
+				display: flex;
+				overflow: hidden;
+				flex-direction: column;
+				height: 0;
+				width: 100%;
+				background-color: #fff;
+				border-left: 1px solid #1691d7;
+				border-right: 1px solid #1691d7;
+				transition: height 0.6s ease, padding 0.3s ease;
+
+				p {
+					text-align: justify;
+					line-height: 1.5;
+					font-size: 0.95rem;
+					padding: 10px 20px;
+				}
+
+				.small-header {
+					padding-bottom: 0;
+					padding-top: 15px;
+				}
+
+				ul {
+					display: block;
+					padding: 10px 36px;
+				}
+
+				ul:last-child {
+					padding-bottom: 10px;
+				}
+
+				li {
+					font-size: 1rem;
+					margin-bottom: 6px;
+					line-height: 1.4;
+				}
+
+				li::marker {
+					color: #1691d7;
+				}
 			}
-		}
 
-		.services-text {
-			display: flex;
-			overflow: hidden;
-			flex-direction: column;
-			height: 0;
-			width: 100%;
-			background-color: #fff;
-			border-left: 1px solid #1691d7;
-			border-right: 1px solid #1691d7;
-			transition: height 0.6s ease, padding 0.3s ease;
-
-			p {
-				text-align: justify;
-				line-height: 1.5;
-				font-size: 0.95rem;
-				padding: 10px 20px;
+			&-text.active {
+				padding-top: 10px;
 			}
 
-			.small-header {
-				padding-bottom: 0;
-				padding-top: 15px;
+			.rotate-arrow {
+				transform: rotate(180deg);
 			}
-
-			ul {
-				display: block;
-				padding: 10px 36px;
-			}
-
-			ul:last-child {
-				padding-bottom: 10px;
-			}
-
-			li {
-				font-size: 1rem;
-				margin-bottom: 6px;
-				line-height: 1.4;
-			}
-
-			li::marker {
-				color: #1691d7;
-			}
-		}
-
-		.services-text.active {
-			padding-top: 10px;
-		}
-
-		.rotate-arrow {
-			transform: rotate(180deg);
 		}
 
 		.table {
@@ -972,7 +1106,7 @@ body {
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
-		padding: 40px 16px;
+		padding: 0 16px;
 
 		.carousel-container {
 			background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(245, 249, 252, 0.9));
@@ -1004,8 +1138,7 @@ body {
 					font-size: 0.95rem;
 					line-height: 1.6;
 					max-width: 42ch;
-					margin-top: 4px;
-					margin: 0 auto;
+					margin: 0 auto 4px;
 				}
 
 				.review-name {
@@ -1190,26 +1323,54 @@ body {
 					font-weight: 700;
 					letter-spacing: -0.5px;
 					color: #1691d7;
+					min-height: 116px;
 					margin-top: 8px;
 					padding: 10px 0;
 
 					span {
+						margin-top: 14px;
 						font-size: 0.9rem;
 						opacity: 0.8;
 						display: block;
 					}
+				}
 
-					&-alert {
-						font-size: 0.85rem;
-						opacity: 0.7;
+				.note {
+					font-size: 0.85rem;
+					color: #212121;
+					text-align: left;
+					margin: 12px 0 24px;
+					padding: 10px 12px;
+					background-color: #f0f8ff;
+					border-radius: 10px;
+					box-shadow: 0 2px 6px rgba(22, 145, 215, 0.1);
+
+					p {
+						font-weight: 600;
+						margin-bottom: 8px;
+						color: #1691d7;
+					}
+
+					ul {
+						list-style: none;
+						padding-left: 0;
+						margin: 0;
+
+						li {
+							display: flex;
+							align-items: center;
+							margin-bottom: 6px;
+							line-height: 1.4;
+						}
 					}
 				}
 
-				.adres {
-					font-size: 0.9rem;
-					line-height: 1.4;
-					opacity: 0.85;
-					padding: 8px 12px;
+				.note .check {
+					display: inline-block;
+					width: 20px;
+					margin-right: 8px;
+					color: #1691d7;
+					font-weight: bold;
 				}
 			}
 		}
@@ -1249,11 +1410,32 @@ body {
 					border-radius: 16px;
 					background: #f7f9fb;
 					transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+					&.phone {
+						border: 1px solid rgba(22, 145, 215, 0.25);
+						background: linear-gradient(to right, rgba(22, 145, 215, 0.06), #f7f9fb);
+					}
 				}
 
 				&_item:hover {
 					transform: translateY(-2px);
 					box-shadow: 0 6px 16px rgba(22, 145, 215, 0.2);
+				}
+
+				.phone {
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: start;
+					gap: 0;
+
+					&-text {
+						display: flex;
+						width: 100%;
+						flex-direction: row;
+						justify-content: flex-start;
+						gap: 12px;
+						align-items: center;
+					}
 				}
 
 				img {
@@ -1277,6 +1459,15 @@ body {
 
 				a:hover {
 					color: #1691d7;
+				}
+
+				.contact-note {
+					font-size: 0.85rem;
+					margin-top: 4px;
+					color: #1691d7;
+					opacity: 0.85;
+					letter-spacing: 0.2px;
+					margin-left: 44px;
 				}
 			}
 
@@ -1552,7 +1743,6 @@ body {
 		.navbar {
 			top: 36px;
 			justify-content: space-between;
-			z-index: 999;
 
 			&_small-nav {
 				width: auto;
@@ -1585,7 +1775,7 @@ body {
 				flex-direction: row;
 				width: auto;
 				padding: 0;
-				gap: 24px;
+				gap: 16px;
 
 				li {
 					width: auto;
@@ -1686,6 +1876,11 @@ body {
 		main {
 			section {
 				scroll-margin-top: 96px;
+			}
+
+			.why {
+				width: 80%;
+				max-width: 1200px;
 			}
 
 			.about-me {
@@ -1882,16 +2077,18 @@ body {
 	body {
 		.navbar {
 			justify-content: space-around;
+
+			&_nav {
+				gap: 24px;
+			}
 		}
 
 		.header {
 			margin-top: 96px;
-			height: 90vh;
 
 			&_hero-text {
 				max-width: 830px;
 				padding: 0 96px 64px;
-				min-height: 90vh;
 
 				&-title {
 					padding: 64px 0 40px;
@@ -2213,6 +2410,18 @@ body {
 					grid-column: 1 / -1;
 					justify-self: center;
 					max-width: 30%;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1400px) {
+	body {
+		main {
+			.contact {
+				&-box {
+					border-radius: 14px;
 				}
 			}
 		}

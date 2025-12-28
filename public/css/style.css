@@ -369,7 +369,7 @@ body .header_hero-text {
   z-index: 3;
 }
 body .header_hero-text-title {
-  padding: 32px 0;
+  padding: 24px 0 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -405,7 +405,7 @@ body .header_hero-text-motto {
   max-width: 350px;
   color: #fff;
   text-align: center;
-  padding: 32px 0;
+  padding: 24px 0;
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -457,6 +457,117 @@ body .header_hero-text-btns .header_hero-text-btns-contact:hover {
 body main {
   max-width: 1400px;
   margin: 0 auto;
+}
+body main .why {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+body main .why_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 0 15px;
+  width: 100%;
+  max-height: 90vh;
+}
+body main .why_container-item, body main .why_container-text {
+  box-sizing: border-box;
+}
+body main .why_container-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  min-height: 64px;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(22, 145, 215, 0.4);
+  cursor: pointer;
+}
+body main .why_container-item h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 10px;
+}
+body main .why_container-item-btn {
+  min-width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #1691d7;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s;
+  cursor: pointer;
+}
+body main .why_container-item-btn img {
+  width: 20px;
+  height: 20px;
+}
+body main .why_container-item-btn:hover {
+  background-color: rgba(22, 145, 215, 0.1);
+}
+body main .why_container-item-text {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  position: relative;
+  height: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(22, 145, 215, 0), rgba(22, 145, 215, 0.05));
+  border-left: 1px solid #1691d7;
+  border-right: 1px solid #1691d7;
+  transition: height 0.6s ease, padding 0.3s ease;
+  overflow-y: auto;
+}
+body main .why_container-item-text p,
+body main .why_container-item-text a {
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  padding: 10px 20px;
+}
+body main .why_container-item-text a {
+  width: 100%;
+  text-align: center;
+  text-transform: none;
+  text-decoration: none;
+  color: #1691d7;
+  transition: transform 0.3s;
+}
+body main .why_container-item-text a:hover {
+  transform: translateY(-4px);
+}
+body main .why_container-item-text .small-header {
+  padding-bottom: 0;
+  padding-top: 15px;
+}
+body main .why_container-item-text ul,
+body main .why_container-item-text ol {
+  display: block;
+  padding: 10px 36px;
+}
+body main .why_container-item-text ul:last-child {
+  padding-bottom: 10px;
+}
+body main .why_container-item-text li {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+body main .why_container-item-text li::marker {
+  color: #1691d7;
+}
+body main .why_container-item-text.active {
+  padding-top: 10px;
+}
+body main .rotate-arrow {
+  transform: rotate(180deg);
 }
 body main .about-me {
   display: flex;
@@ -589,11 +700,10 @@ body main .services-container {
   padding: 0 15px;
   width: 100%;
 }
-body main .pdtr-nowrap {
+body main .services .pdtr-nowrap {
   white-space: nowrap;
 }
-body main .services-item,
-body main .services-text {
+body main .services-item, body main .services-text {
   box-sizing: border-box;
 }
 body main .services-item {
@@ -669,7 +779,7 @@ body main .services-text li::marker {
 body main .services-text.active {
   padding-top: 10px;
 }
-body main .rotate-arrow {
+body main .services .rotate-arrow {
   transform: rotate(180deg);
 }
 body main .table {
@@ -827,7 +937,7 @@ body .reviews {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 40px 16px;
+  padding: 0 16px;
 }
 body .reviews .carousel-container {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(245, 249, 252, 0.9));
@@ -858,8 +968,7 @@ body .reviews .carousel-container .carousel-slide p {
   font-size: 0.95rem;
   line-height: 1.6;
   max-width: 42ch;
-  margin-top: 4px;
-  margin: 0 auto;
+  margin: 0 auto 4px;
 }
 body .reviews .carousel-container .carousel-slide .review-name {
   margin-top: 20px;
@@ -1018,23 +1127,48 @@ body .prices-box_gabinet .price, body .prices-box_drive .price {
   font-weight: 700;
   letter-spacing: -0.5px;
   color: #1691d7;
+  min-height: 116px;
   margin-top: 8px;
   padding: 10px 0;
 }
 body .prices-box_gabinet .price span, body .prices-box_drive .price span {
+  margin-top: 14px;
   font-size: 0.9rem;
   opacity: 0.8;
   display: block;
 }
-body .prices-box_gabinet .price-alert, body .prices-box_drive .price-alert {
+body .prices-box_gabinet .note, body .prices-box_drive .note {
   font-size: 0.85rem;
-  opacity: 0.7;
+  color: #212121;
+  text-align: left;
+  margin: 12px 0 24px;
+  padding: 10px 12px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(22, 145, 215, 0.1);
 }
-body .prices-box_gabinet .adres, body .prices-box_drive .adres {
-  font-size: 0.9rem;
+body .prices-box_gabinet .note p, body .prices-box_drive .note p {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1691d7;
+}
+body .prices-box_gabinet .note ul, body .prices-box_drive .note ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+body .prices-box_gabinet .note ul li, body .prices-box_drive .note ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
   line-height: 1.4;
-  opacity: 0.85;
-  padding: 8px 12px;
+}
+body .prices-box_gabinet .note .check, body .prices-box_drive .note .check {
+  display: inline-block;
+  width: 20px;
+  margin-right: 8px;
+  color: #1691d7;
+  font-weight: bold;
 }
 body .contact {
   display: flex;
@@ -1069,9 +1203,27 @@ body .contact-box_contact-links_item {
   background: #f7f9fb;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+body .contact-box_contact-links_item.phone {
+  border: 1px solid rgba(22, 145, 215, 0.25);
+  background: linear-gradient(to right, rgba(22, 145, 215, 0.06), #f7f9fb);
+}
 body .contact-box_contact-links_item:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(22, 145, 215, 0.2);
+}
+body .contact-box_contact-links .phone {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 0;
+}
+body .contact-box_contact-links .phone-text {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 12px;
+  align-items: center;
 }
 body .contact-box_contact-links img {
   width: 32px;
@@ -1092,6 +1244,14 @@ body .contact-box_contact-links a {
 }
 body .contact-box_contact-links a:hover {
   color: #1691d7;
+}
+body .contact-box_contact-links .contact-note {
+  font-size: 0.85rem;
+  margin-top: 4px;
+  color: #1691d7;
+  opacity: 0.85;
+  letter-spacing: 0.2px;
+  margin-left: 44px;
 }
 body .contact-box_places {
   display: flex;
@@ -1288,7 +1448,6 @@ body .footer-container-copyright {
   body .navbar {
     top: 36px;
     justify-content: space-between;
-    z-index: 999;
   }
   body .navbar_small-nav {
     width: auto;
@@ -1318,7 +1477,7 @@ body .footer-container-copyright {
     flex-direction: row;
     width: auto;
     padding: 0;
-    gap: 24px;
+    gap: 16px;
   }
   body .navbar_nav li {
     width: auto;
@@ -1399,6 +1558,10 @@ body .footer-container-copyright {
   }
   body main section {
     scroll-margin-top: 96px;
+  }
+  body main .why {
+    width: 80%;
+    max-width: 1200px;
   }
   body main .about-me_container {
     padding: 32px 0;
@@ -1551,14 +1714,15 @@ body .footer-container-copyright {
   body .navbar {
     justify-content: space-around;
   }
+  body .navbar_nav {
+    gap: 24px;
+  }
   body .header {
     margin-top: 96px;
-    height: 90vh;
   }
   body .header_hero-text {
     max-width: 830px;
     padding: 0 96px 64px;
-    min-height: 90vh;
   }
   body .header_hero-text-title {
     padding: 64px 0 40px;
@@ -1801,5 +1965,10 @@ body .footer-container-copyright {
     grid-column: 1/-1;
     justify-self: center;
     max-width: 30%;
+  }
+}
+@media (min-width: 1400px) {
+  body main .contact-box {
+    border-radius: 14px;
   }
 }/*# sourceMappingURL=style.css.map */

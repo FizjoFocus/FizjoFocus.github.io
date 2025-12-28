@@ -31,6 +31,73 @@ window.addEventListener('scroll', () => {
 	}
 })
 
+// DLACZEGO JA?
+const whyItems = document.querySelectorAll('.why_container-item')
+
+whyItems.forEach(item => {
+	item.addEventListener('click', e => {
+		if (!e.target.closest('.why_container-item-btn')) {
+			item.querySelector('.why_container-item-btn').click()
+		}
+	})
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+	const whyItems = document.querySelectorAll('.why_container-item')
+	let offsetMobile = 60
+	let offsetDesktop = 96
+
+	const getOffset = () => (window.innerWidth >= 768 ? offsetDesktop : offsetMobile)
+
+	const scrollToWhyContainer = () => {
+		const container = document.getElementById('whyContainer')
+		if (container) {
+			const offset = getOffset()
+			const top = container.getBoundingClientRect().top + window.scrollY - offset
+			window.scrollTo({
+				top: top,
+				behavior: 'smooth',
+			})
+		}
+	}
+
+	whyItems.forEach(item => {
+		const btn = item.querySelector('.why_container-item-btn')
+		const text = item.nextElementSibling
+
+		btn.addEventListener('click', () => {
+			const isOpen = text.classList.contains('open')
+			const currentlyOpen = document.querySelector('.why_container-item-text.open')
+
+			if (isOpen) {
+				text.classList.remove('open')
+				text.style.height = '0'
+				btn.classList.remove('rotate-arrow')
+			} else {
+				if (currentlyOpen) {
+					const currentlyItem = currentlyOpen.previousElementSibling
+					const currentlyBtn = currentlyItem.querySelector('.why_container-item-btn')
+					currentlyOpen.classList.remove('open')
+					currentlyOpen.style.height = '0'
+					if (currentlyBtn) currentlyBtn.classList.remove('rotate-arrow')
+				}
+				text.classList.add('open')
+				text.style.height = text.scrollHeight + 'px'
+				btn.classList.add('rotate-arrow')
+			}
+
+			// scroll do whyContainer po kliknięciu
+			scrollToWhyContainer()
+		})
+
+		window.addEventListener('resize', () => {
+			if (text.classList.contains('open')) {
+				text.style.height = text.scrollHeight + 'px'
+			}
+		})
+	})
+})
+
 //O MNIE
 const aboutMeCard = document.getElementById('aboutMeCard')
 const closeBtn = aboutMeCard.querySelector('.about-close')
