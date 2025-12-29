@@ -8,7 +8,7 @@
    version="1.1"
    id="svg8"
    sodipodi:docname="LOGO_header.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    inkscape:export-filename="LOGO - FizjoFocus - fizjoterapia Paweł Kozyra big.png"
    inkscape:export-xdpi="50.799999"
    inkscape:export-ydpi="50.799999"
@@ -26,6 +26,17 @@
        id="path-effect3409-0-6-1-7-3-1-6"
        is_visible="true"
        lpeversion="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:1.05298;stroke-linecap:square;paint-order:markers fill stroke"
+         id="rect5"
+         width="409.21548"
+         height="344.44031"
+         x="182.07733"
+         y="-902.9635" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -35,10 +46,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.51"
-     inkscape:cx="164.70588"
-     inkscape:cy="212.7451"
+     inkscape:cx="438.23529"
+     inkscape:cy="369.60784"
      inkscape:document-units="mm"
-     inkscape:current-layer="g1114"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:pagecheckerboard="false"
      inkscape:window-width="1920"
@@ -128,7 +139,11 @@
      transform="translate(574.5217,1012.9344)">
     <g
        id="g1114"
-       transform="matrix(0.65446365,0,0,0.65446365,-642.74645,-424.75512)">
+       transform="matrix(0.4725369,0,0,0.4725369,-757.24467,-667.63125)"
+       clip-path="url(#clipPath4)"
+       inkscape:export-filename="og-imge.png"
+       inkscape:export-xdpi="50.799999"
+       inkscape:export-ydpi="50.799999">
       <g
          id="g1"
          inkscape:export-filename="LOGO_header.png"
@@ -200,6 +215,20 @@
            x="104.24527"
            y="-898.71954" />
       </g>
+      <rect
+         style="fill:none;stroke-width:0.547012;stroke-linecap:square;paint-order:markers fill stroke"
+         id="rect2"
+         width="709.46307"
+         height="333.7251"
+         x="-37.647324"
+         y="-897.13416" />
     </g>
+    <rect
+       style="fill:none;stroke:none;stroke-width:0.357415;stroke-linecap:square;paint-order:markers fill stroke"
+       id="rect3"
+       width="317.14258"
+       height="166.33008"
+       x="-733.09302"
+       y="-1096.0995" />
   </g>
 </svg>
