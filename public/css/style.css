@@ -796,6 +796,21 @@ body main .table {
   min-height: fit-content;
   align-self: stretch;
 }
+body main .table::after {
+  content: "← przesuń tabelę →";
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  padding: 6px 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  color: #1691d7;
+  opacity: 0.8;
+  text-align: center;
+  pointer-events: none;
+}
 body main table {
   display: table;
   border-collapse: collapse;

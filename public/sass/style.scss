@@ -946,6 +946,22 @@ body {
 			flex: 1 1 100%;
 			min-height: fit-content;
 			align-self: stretch;
+
+			&::after {
+				content: '← przesuń tabelę →';
+				position: sticky;
+				left: 0;
+				bottom: 0;
+				display: block;
+				width: 100%;
+				padding: 6px 0;
+				font-size: 0.7rem;
+				letter-spacing: 0.5px;
+				color: #1691d7;
+				opacity: 0.8;
+				text-align: center;
+				pointer-events: none;
+			}
 		}
 
 		table {
