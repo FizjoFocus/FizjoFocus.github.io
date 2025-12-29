@@ -277,12 +277,10 @@
             <p class="subheader"> Każdą metodę dobieram indywidualnie do Twojego problemu, aby przywrócić pełną
                 sprawność.</p>
             <div class="services-container">
-                <div class="services-item" id="PDTR">
+                <div class="services-item" data-service="PDTR">
                     <h3 class="pdtr-header"><span class="pdtr-nowrap">P-DTR</span></h3>
-                    <button class="services-btn pdtr-btn" aria-label="Przeczytaj o P-DTR"><img
-                            src="./icons/circle-down-solid-full.svg" alt="Ikona strzałki"></button>
                 </div>
-                <div class="services-text pdtr-text" id="pdtr-text">
+                <div class="services-text" id="PDTR">
                     <p>Metoda terapeutyczna opracowana przez dr José Palomara, która łączy neurofizjologię
                         z&nbsp;terapią manualną. Jest to system pracy z&nbsp;ciałem i&nbsp;układem nerwowym, który
                         skupia się na wykrywaniu i&nbsp;usuwaniu blokad nerwowych i&nbsp;napięć mięśniowych, które
@@ -311,12 +309,10 @@
                     </ul>
 
                 </div>
-                <div class="services-item" id="NeuroSeminars">
+                <div class="services-item" data-service="NeuroSeminars">
                     <h3 class="neuroseminars-header">NeuroSeminars</h3>
-                    <button class="services-btn neuroseminars-btn" aria-label="Przeczytaj o NeuroSeminars"><img
-                            src="./icons/circle-down-solid-full.svg" alt="Ikona strzałki"></button>
                 </div>
-                <div class="services-text neuroseminars-text" id="neuroseminars-text">
+                <div class="services-text" id="NeuroSeminars">
                     <p>Neurologia funkcjonalna to podejście do diagnozy i&nbsp;terapii, które koncentruje się na
                         funkcjonowaniu układu nerwowego, szczególnie w&nbsp;kontekście interakcji między mózgiem
                         i&nbsp;innymi układami ciała. Zamiast skupiać się jedynie na strukturalnych uszkodzeniach,
@@ -403,12 +399,10 @@
                         </table>
                     </div>
                 </div>
-                <div class="services-item" id="DNS">
+                <div class="services-item" data-service="DNS">
                     <h3 class="dns-header">DNS</h3>
-                    <button class="services-btn dns-btn" aria-label="Przeczytaj o DNS"><img
-                            src="./icons/circle-down-solid-full.svg" alt="Ikona strzałki"></button>
                 </div>
-                <div class="services-text dns-text" id="dns-text">
+                <div class="services-text" id="DNS">
                     <p>DNS (Dynamic Neuromuscular Stabilization) – to innowacyjna metoda fizjoterapeutyczna, która
                         skupia się na przywracaniu prawidłowej
                         stabilizacji i&nbsp;kontroli nerwowo-mięśniowej ciała. Jej podstawą jest zrozumienie, jak
@@ -444,12 +438,10 @@
                         <li> poprawa stabilności, mobilności i&nbsp;jakości codziennych ruchów</li>
                     </ul>
                 </div>
-                <div class="services-item" id="PNF">
+                <div class="services-item" data-service="PNF">
                     <h3 class="pnf-header">PNF</h3>
-                    <button class="services-btn pnf-btn" aria-label="Przeczytaj o PNF"><img
-                            src="./icons/circle-down-solid-full.svg" alt="Ikona strzałki"></button>
                 </div>
-                <div class="services-text pnf-text" id="pnf-text">
+                <div class="services-text" id="PNF">
                     <p>PNF (Proprioceptive Neuromuscular Facilitation), czyli Proprioceptywna Nerwowo-mięśniowa
                         Facilitacja/ torowanie ruchu to metoda, której celem jest poprawa zakresu ruchu, siły
                         mięśniowej, koordynacji ruchowej, zaburzonych wzorców ruchowych oraz powrót do samodzielnego
@@ -492,12 +484,10 @@
                     </ul>
 
                 </div>
-                <div class="services-item" id="MTG">
+                <div class="services-item" data-service="MTG">
                     <h3 class="mtg-header">MTG</h3>
-                    <button class="services-btn mtg-btn" aria-label="Przeczytaj o MTG"><img
-                            src="./icons/circle-down-solid-full.svg" alt="Ikona strzałki"></button>
                 </div>
-                <div class="services-text mtg-text" id="mtg-text">
+                <div class="services-text" id="MTG">
                     <p>MTG, czyli Masaż Tkanek Głębokich, to specjalistyczna metoda masażu, która skupia się na
                         pracy
                         z&nbsp;głębszymi warstwami mięśni, powięzi oraz tkanek łącznych. Jest szczególnie skuteczna
@@ -537,13 +527,10 @@
                         <li>Praca z bliznami i&nbsp;zrostami</li>
                     </ul>
                 </div>
-                <div class="services-item" id="Other">
+                <div class="services-item" data-service="Other">
                     <h3 class="other-header">Inne</h3>
-                    <button class="services-btn other-btn" aria-label="Przeczytaj o innych metodach"><i
-                            class="fa-solid fa-circle-arrow-down"></i><img src="./icons/circle-down-solid-full.svg"
-                            alt="Ikona strzałki"></button>
                 </div>
-                <div class="services-text other-text" id="other-text">
+                <div class="services-text" id="Other">
                     <ul>
                         <li>Ćwiczenia</li>
                         <li>Masaż</li>
@@ -805,9 +792,24 @@
         </div>
         <button class="lightbox__nav lightbox__nav--next" aria-label="Następne">▶</button>
     </div>
-    <!-- JS -->
-    <script src="./js/script.js"></script>
+
+    <div class="services-modal" id="services-modal" aria-hidden="true">
+        <div class="services-modal__overlay"></div>
+
+        <div class="services-modal__content" role="dialog" aria-modal="true">
+            <button class="services-modal__close" aria-label="Zamknij okno">
+                &times;
+            </button>
+
+            <h3 class="services-modal__title"></h3>
+
+            <div class="services-modal__body"></div>
+        </div>
+    </div>
+
 
 </body>
+<!-- JS -->
+<script src="./js/script.js"></script>
 
 </html>

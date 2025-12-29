@@ -118,74 +118,65 @@ const yearsOfExperience = currentYear - startYear
 document.getElementById('experience-years').textContent = yearsOfExperience
 
 // METODY
-const serviceItems = document.querySelectorAll('.services-item')
-
-serviceItems.forEach(item => {
-	item.addEventListener('click', e => {
-		if (!e.target.closest('.services-btn')) {
-			item.querySelector('.services-btn').click()
-		}
-	})
-})
-
 document.addEventListener('DOMContentLoaded', () => {
-	const serviceItems = document.querySelectorAll('.services-item')
-	let offsetMobile = 60
-	let offsetDesktop = 96
+	const servicesItems = document.querySelectorAll('.services-item')
 
-	const getOffset = () => (window.innerWidth >= 768 ? offsetDesktop : offsetMobile)
+	// Stwórz modal w DOM
+	const modalOverlay = document.createElement('div')
+	modalOverlay.className = 'modal-overlay'
 
-	serviceItems.forEach(item => {
-		const btn = item.querySelector('.services-btn')
-		const text = item.nextElementSibling
+	const modal = document.createElement('div')
+	modal.className = 'modal'
 
-		btn.addEventListener('click', () => {
-			const isOpen = text.classList.contains('open')
-			const currentlyOpen = document.querySelector('.services-text.open')
+	const modalHeader = document.createElement('h3')
+	modalHeader.className = 'modal-header'
 
-			if (isOpen) {
-				text.classList.remove('open')
-				text.style.height = '0'
-				btn.classList.remove('rotate-arrow')
-				return
-			}
+	const closeBtn = document.createElement('button')
+	closeBtn.className = 'modal-close'
+	closeBtn.innerHTML = '&times;'
 
-			if (currentlyOpen) {
-				const currentlyItem = currentlyOpen.previousElementSibling
-				const y = currentlyItem.getBoundingClientRect().top + window.pageYOffset - getOffset()
-				window.scrollTo({ top: y, behavior: 'smooth' })
+	modal.appendChild(closeBtn)
+	modalOverlay.appendChild(modal)
+	document.body.appendChild(modalOverlay)
 
-				const currentlyBtn = currentlyItem.querySelector('.services-btn')
-				currentlyOpen.classList.remove('open')
-				currentlyOpen.style.height = '0'
-				if (currentlyBtn) currentlyBtn.classList.remove('rotate-arrow')
+	// Funkcja otwierająca modal
+	const openModal = (content, title) => {
+		modal.innerHTML = '' // wyczyść zawartość
 
-				setTimeout(() => {
-					const newY = item.getBoundingClientRect().top + window.pageYOffset - getOffset()
-					window.scrollTo({ top: newY, behavior: 'smooth' })
+		const header = document.createElement('div')
+		header.className = 'modal-header'
+		header.textContent = title
 
-					setTimeout(() => {
-						text.classList.add('open')
-						text.style.height = text.scrollHeight + 'px'
-						btn.classList.add('rotate-arrow')
-					}, 350)
-				}, 600)
-			} else {
-				const newY = item.getBoundingClientRect().top + window.pageYOffset - getOffset()
-				window.scrollTo({ top: newY, behavior: 'smooth' })
+		header.appendChild(closeBtn) // przycisk w tym samym wierszu co tytuł
+		modal.appendChild(header)
 
-				setTimeout(() => {
-					text.classList.add('open')
-					text.style.height = text.scrollHeight + 'px'
-					btn.classList.add('rotate-arrow')
-				}, 350)
-			}
-		})
+		const contentWrapper = document.createElement('div')
+		contentWrapper.className = 'modal-content'
+		contentWrapper.appendChild(content.cloneNode(true))
+		modal.appendChild(contentWrapper)
 
-		window.addEventListener('resize', () => {
-			if (text.classList.contains('open')) {
-				text.style.height = text.scrollHeight + 'px'
-			}
+		modalOverlay.style.display = 'flex'
+		document.body.style.overflow = 'hidden' // blokada scrolla strony
+	}
+
+	// Funkcja zamykająca modal
+	const closeModal = () => {
+		modalOverlay.style.display = 'none'
+		document.body.style.overflow = '' // odblokuj scroll
+	}
+
+	closeBtn.addEventListener('click', closeModal)
+	modalOverlay.addEventListener('click', e => {
+		if (e.target === modalOverlay) closeModal()
+	})
+
+	// Obsługa kliknięcia nagłówków
+	servicesItems.forEach(item => {
+		const serviceId = item.getAttribute('data-service')
+		const content = document.getElementById(serviceId)
+
+		item.addEventListener('click', () => {
+			if (content) openModal(content, item.textContent.trim())
 		})
 	})
 })
