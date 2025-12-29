@@ -1397,45 +1397,48 @@ body {
 				display: flex;
 				flex-direction: column;
 				gap: 12px;
-				min-width: 400px;
+				min-width: 320px;
 				width: 50%;
 				max-width: 500px;
 				padding: 20px;
 
-				&_item {
+				.contact-item {
 					display: flex;
 					align-items: center;
 					gap: 14px;
 					padding: 14px 18px;
 					border-radius: 16px;
 					background: #f7f9fb;
-					transition: transform 0.3s ease, box-shadow 0.3s ease;
+					text-decoration: none;
+					color: #212121;
+					cursor: pointer;
+
+					transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+					&:hover {
+						transform: translateY(-2px);
+						box-shadow: 0 6px 16px rgba(22, 145, 215, 0.2);
+						color: #1691d7;
+					}
 
 					&.phone {
 						border: 1px solid rgba(22, 145, 215, 0.25);
 						background: linear-gradient(to right, rgba(22, 145, 215, 0.06), #f7f9fb);
+
+						flex-direction: column;
+						align-items: flex-start;
+						gap: 0;
 					}
 				}
 
-				&_item:hover {
-					transform: translateY(-2px);
-					box-shadow: 0 6px 16px rgba(22, 145, 215, 0.2);
-				}
-
-				.phone {
-					flex-direction: column;
+				// phone text row
+				.phone-text {
+					display: flex;
+					width: 100%;
+					flex-direction: row;
 					justify-content: flex-start;
-					align-items: start;
-					gap: 0;
-
-					&-text {
-						display: flex;
-						width: 100%;
-						flex-direction: row;
-						justify-content: flex-start;
-						gap: 12px;
-						align-items: center;
-					}
+					gap: 12px;
+					align-items: center;
 				}
 
 				img {
@@ -1447,18 +1450,9 @@ body {
 					filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25));
 				}
 
-				a {
+				span {
 					font-size: 1.1rem;
 					font-weight: 500;
-					text-decoration: none;
-					transition: color 0.3s;
-					color: #212121;
-					text-decoration: none;
-					cursor: pointer;
-				}
-
-				a:hover {
-					color: #1691d7;
 				}
 
 				.contact-note {

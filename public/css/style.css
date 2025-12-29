@@ -1189,32 +1189,33 @@ body .contact-box_contact-links {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-width: 400px;
+  min-width: 320px;
   width: 50%;
   max-width: 500px;
   padding: 20px;
 }
-body .contact-box_contact-links_item {
+body .contact-box_contact-links .contact-item {
   display: flex;
   align-items: center;
   gap: 14px;
   padding: 14px 18px;
   border-radius: 16px;
   background: #f7f9fb;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: #212121;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
-body .contact-box_contact-links_item.phone {
-  border: 1px solid rgba(22, 145, 215, 0.25);
-  background: linear-gradient(to right, rgba(22, 145, 215, 0.06), #f7f9fb);
-}
-body .contact-box_contact-links_item:hover {
+body .contact-box_contact-links .contact-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(22, 145, 215, 0.2);
+  color: #1691d7;
 }
-body .contact-box_contact-links .phone {
+body .contact-box_contact-links .contact-item.phone {
+  border: 1px solid rgba(22, 145, 215, 0.25);
+  background: linear-gradient(to right, rgba(22, 145, 215, 0.06), #f7f9fb);
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: start;
+  align-items: flex-start;
   gap: 0;
 }
 body .contact-box_contact-links .phone-text {
@@ -1233,17 +1234,9 @@ body .contact-box_contact-links img {
   transition: filter 0.3s;
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25));
 }
-body .contact-box_contact-links a {
+body .contact-box_contact-links span {
   font-size: 1.1rem;
   font-weight: 500;
-  text-decoration: none;
-  transition: color 0.3s;
-  color: #212121;
-  text-decoration: none;
-  cursor: pointer;
-}
-body .contact-box_contact-links a:hover {
-  color: #1691d7;
 }
 body .contact-box_contact-links .contact-note {
   font-size: 0.85rem;

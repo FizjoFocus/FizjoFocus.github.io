@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			const isOpen = text.classList.contains('open')
 			const currentlyOpen = document.querySelector('.why_container-item-text.open')
 
+			scrollToWhyContainer()
+
 			if (isOpen) {
 				text.classList.remove('open')
 				text.style.height = '0'
@@ -85,9 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				text.style.height = text.scrollHeight + 'px'
 				btn.classList.add('rotate-arrow')
 			}
-
-			// scroll do whyContainer po kliknięciu
-			scrollToWhyContainer()
 		})
 
 		window.addEventListener('resize', () => {
