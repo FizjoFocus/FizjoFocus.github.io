@@ -868,6 +868,10 @@ body {
 		}
 	}
 
+	.services-modal_content {
+		display: none;
+	}
+
 	.modal-overlay {
 		display: none;
 		position: fixed;
@@ -884,7 +888,7 @@ body {
 
 	.modal {
 		background: #fff;
-		max-width: 800px;
+		max-width: 1000px;
 		width: 90%;
 		max-height: 90vh;
 		border-radius: 10px;
@@ -1967,29 +1971,6 @@ body {
 				&-container {
 					width: 80%;
 					max-width: 1200px;
-
-					&-text p {
-						padding: 15px 30px;
-					}
-
-					&-text ul {
-						padding: 10px 46px;
-					}
-
-					.table {
-						max-width: 950px;
-						margin: 0 auto;
-
-						table {
-							font-size: 1rem;
-							min-width: 100%;
-
-							th,
-							td {
-								padding: 10px;
-							}
-						}
-					}
 				}
 			}
 
@@ -2080,6 +2061,36 @@ body {
 					&_map {
 						iframe {
 							height: 400px;
+						}
+					}
+				}
+			}
+		}
+
+		.modal-overlay {
+			.modal {
+				&-content {
+					.services {
+						&-text p {
+							padding: 15px 30px;
+						}
+
+						&-text ul {
+							padding: 10px 46px;
+						}
+					}
+					.table {
+						max-width: 950px;
+						margin: 0 auto;
+
+						table {
+							font-size: 0.90rem;
+							min-width: 100%;
+
+							th,
+							td {
+								padding: 8px;
+							}
 						}
 					}
 				}

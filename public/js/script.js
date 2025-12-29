@@ -142,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Funkcja otwierająca modal
 	const openModal = (content, title) => {
 		modal.innerHTML = '' // wyczyść zawartość
+		closeBtn.style.display = 'block'
 
 		const header = document.createElement('div')
 		header.className = 'modal-header'
@@ -162,6 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Funkcja zamykająca modal
 	const closeModal = () => {
 		modalOverlay.style.display = 'none'
+		closeBtn.style.display = 'none'
 		document.body.style.overflow = '' // odblokuj scroll
 	}
 
