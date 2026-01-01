@@ -453,9 +453,9 @@ body {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+				text-align: center;
 
 				h1 {
-					align-items: center;
 					font-weight: 700;
 					color: #fff;
 					font-size: clamp(2.4rem, 5vw, 3.5rem);
