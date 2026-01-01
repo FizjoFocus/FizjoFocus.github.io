@@ -29,6 +29,63 @@
     <!-- Android / Chrome PWA -->
     <link rel="icon" type="image/png" sizes="192x192" href="./img/android-chrome-192x192.png">
 
+    <meta name="theme-color" content="#1691d7">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Fizjo Focus Fizjoterapia – Paweł Kozyra",
+  "url": "https://fizjofocus.github.io/",
+  "logo": "https://fizjofocus.github.io/img/LOGO_header.svg",
+  "image": "https://fizjofocus.github.io/img/LOGO_header.svg",
+  "telephone": "+48661228200",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=100085838256435"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ul. Wróblewskiego 25, Dom Studencki T-22",
+    "addressLocality": "Wrocław",
+    "postalCode": "51-657",
+    "addressCountry": "PL"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Wrocław"
+  },
+  "medicalSpecialty": [
+    "Physiotherapy",
+    "Neurology",
+    "ManualTherapy"
+  ],
+  "availableService": [
+    { "@type": "MedicalTherapy", "name": "Fizjoterapia" },
+    { "@type": "MedicalTherapy", "name": "P-DTR" },
+    { "@type": "MedicalTherapy", "name": "Neurologia funkcjonalna" },
+    { "@type": "MedicalTherapy", "name": "Terapia manualna" },
+    { "@type": "MedicalTherapy", "name": "Ból kręgosłupa" },
+    { "@type": "MedicalTherapy", "name": "Zaburzenia czucia" }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "07:00",
+    "closes": "21:00"
+  }
+}
+</script>
+
+
     <!-- FONTS -->
     <link rel="preload" as="image" type="image/webp" href="./img/LOGO_header.svg" fetchpriority="high">
     <link rel="preload" href="./fonts/roboto_woff2/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -93,8 +150,7 @@
         <div class="header_shadow"></div>
         <div class="header_hero-text">
             <div class="header_hero-text-title">
-                <h1>Fizjo&nbsp;Focus
-                <span class="span">Fizjoterapia - Paweł Kozyra</span></h1>
+                <h1>Fizjo&nbsp;Focus <span>Fizjoterapia - Paweł Kozyra</span></h1>
             </div>
             <div class="header_hero-text-logo">
                 <img src="img/LOGO_header.svg" width="320" height="180" fetchpriority="high" alt="Logo strony">
@@ -118,7 +174,7 @@
 
     <main class="wrapper">
         <section id="why" class="why">
-            <div class="why-header h2">
+            <div class="section-title">
                 <h2>Jak mogę Ci pomóc</h2>
             </div>
             <p class="subheader">
@@ -220,7 +276,7 @@
         </section>
 
         <section id="about-me" class="about-me">
-            <div class="about-me-header h2">
+            <div class="section-title">
                 <h2>Poznaj mnie</h2>
             </div>
             <p class="about-me-name subheader">
@@ -273,7 +329,7 @@
         </section>
 
         <section id="services" class="services">
-            <div class="h2">
+            <div class="section-title">
                 <h2>metody</h2>
             </div>
             <p class="subheader"> Każdą metodę dobieram indywidualnie do Twojego problemu, aby przywrócić pełną
@@ -543,7 +599,7 @@
         </section>
 
         <section class="courses" id="courses">
-            <div class="h2">
+            <div class="section-title">
                 <h2>kursy</h2>
             </div>
             <p class="courses subheader">
@@ -605,7 +661,7 @@
         </section>
 
         <section id="reviews" class="reviews">
-            <div class="h2">
+            <div class="section-title">
                 <h2>opinie</h2>
             </div>
             <p class="subheader">Pomogłem wielu pacjentom — przeczytaj ich opinie i&nbsp;przekonaj się sam. </p>
@@ -654,7 +710,7 @@
         </section>
 
         <section id="prices" class="prices">
-            <div class="h2">
+            <div class="section-title">
                 <h2>cennik</h2>
                 <p class="subheader">
                     Jedna jakość terapii — wybierz wygodną formę wizyty.
@@ -666,7 +722,7 @@
                         <h3>W gabinecie</h3>
                     </div>
                     <img src="./icons/medical-clinic-care-svgrepo-com.svg" alt="Ikona szpitala">
-                    <hr>
+                    <div class="line"></div>
                     <div class="prices-box_gabinet-text">
                         <p class="price">200zł <span>Dom Studencki T-22 ul.&nbsp;Wróblewskiego&nbsp;25,
                                 51-657
@@ -691,7 +747,7 @@
                           <h3>W miejscu wezwania</h3>
                       </div>
                     <img src="./icons/medical-transportation-vehicle-svgrepo-com.svg" alt="Ikona ambulansu">
-                    <hr>
+                    <div class="line"></div>
                     <div class="prices-box_drive-text">
                         <p class="price">200zł
                             <span>+ koszt dojazdu (ustalany indywidualnie)</span>
@@ -713,7 +769,7 @@
         </section>
 
         <section id="contact" class="contact">
-            <div class="h2">
+            <div class="section-title">
                 <h2>kontakt</h2>
             </div>
             <p class="subheader">Masz pytania? Napisz lub zadzwoń</p>

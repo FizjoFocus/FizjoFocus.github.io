@@ -4,11 +4,11 @@ const nav = document.querySelector('.navbar_nav')
 
 burger.addEventListener('click', () => {
 	burger.classList.toggle('open')
-	nav.classList.toggle('show')
+	nav.classList.toggle('show-menu')
 })
 
 const closeMenu = () => {
-	nav.classList.remove('show')
+	nav.classList.remove('show-menu')
 	burger.classList.remove('open')
 }
 
@@ -25,9 +25,9 @@ window.addEventListener('scroll', () => {
 	const headerHeight = header.offsetHeight
 
 	if (scrollY > headerHeight) {
-		backToTop.classList.add('show')
+		backToTop.classList.add('is-visible')
 	} else {
-		backToTop.classList.remove('show')
+		backToTop.classList.remove('is-visible')
 	}
 })
 
