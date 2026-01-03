@@ -1041,7 +1041,7 @@ main {
 		gap: $gap;
 		grid-template-columns: repeat(2, auto);
 		justify-content: center;
-		align-items: baseline;
+		align-items: start;
 		padding: $gap;
 	}
 

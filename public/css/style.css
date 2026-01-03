@@ -888,7 +888,7 @@ main .services .services-container .services-text {
   gap: 12px;
   grid-template-columns: repeat(2, auto);
   justify-content: center;
-  align-items: baseline;
+  align-items: start;
   padding: 12px;
 }
 .courses_gallery > .thumb:last-child {
