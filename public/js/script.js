@@ -284,27 +284,6 @@ document.getElementById('year').textContent = new Date().getFullYear()
 
 //GALERIA
 
-document.addEventListener('DOMContentLoaded', () => {
-	const thumbs = document.querySelectorAll('.thumb')
-
-	if ('IntersectionObserver' in window) {
-		const observer = new IntersectionObserver(
-			(entries, obs) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						const img = entry.target
-						img.src = img.dataset.full // podmiana miniatury na pełny obraz
-						obs.unobserve(img)
-					}
-				})
-			},
-			{ rootMargin: '100px' }
-		) // ładowanie lekko przed wejściem do viewport
-
-		thumbs.forEach(img => observer.observe(img))
-	}
-})
-
 function GALLERY() {
 	const gallery = document.getElementById('gallery')
 	if (!gallery) return
