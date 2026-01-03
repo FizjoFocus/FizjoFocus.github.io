@@ -1428,30 +1428,12 @@ main .services .services-container .services-text {
   text-align: center;
 }
 
-@media (min-width: 370px) {
-  body main .courses_gallery {
-    height: 1290px;
-  }
-}
-@media (min-width: 410px) {
-  body main .courses_gallery {
-    height: 1485px;
-  }
-}
-@media (min-width: 470px) {
-  body main .courses_gallery {
-    height: 1585px;
-  }
-}
 @media (min-width: 500px) {
   body main .about-me_image-container {
     max-height: 600px;
   }
   body main .about-me-text {
     max-height: 600px;
-  }
-  body main .courses_gallery {
-    height: 1920px;
   }
 }
 @media (min-width: 601px) {
@@ -1505,9 +1487,6 @@ main .services .services-container .services-text {
   }
   body .header_hero-text-btns a {
     margin: 0;
-  }
-  body main .courses_gallery {
-    height: 2475px;
   }
 }
 @media (min-width: 681px) {
@@ -1669,7 +1648,6 @@ main .services .services-container .services-text {
     max-width: 1200px;
   }
   body main .courses_gallery {
-    height: 630px;
     grid-template-columns: repeat(12, 1fr);
     justify-content: center;
     align-items: center;
@@ -1736,9 +1714,6 @@ main .services .services-container .services-text {
     justify-content: space-between;
     width: 90%;
     max-width: 700px;
-  }
-  body main .contact-box_map iframe {
-    height: 400px;
   }
   body .modal-overlay .modal-content .services-text p {
     padding: 15px 30px;
@@ -1865,9 +1840,6 @@ main .services .services-container .services-text {
   body main .about-me .about-close {
     display: none;
   }
-  body main .courses_gallery {
-    height: 675px;
-  }
   body main .reviews .carousel-container {
     max-width: 960px;
   }
@@ -1938,16 +1910,6 @@ main .services .services-container .services-text {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-  }
-}
-@media (min-width: 960px) {
-  body main .courses_gallery {
-    height: 735px;
-  }
-}
-@media (min-width: 1050px) {
-  body main .courses_gallery {
-    height: 845px;
   }
 }
 @media (min-width: 1200px) {

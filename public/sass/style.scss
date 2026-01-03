@@ -1659,41 +1659,11 @@ main {
 
 //MEDIA
 
-@media (min-width: 370px) {
-	body {
-		main {
-			.courses {
-				&_gallery {
-					height: 1290px;
-				}
-			}
-		}
-	}
-}
 
-@media (min-width: 410px) {
-	body {
-		main {
-			.courses {
-				&_gallery {
-					height: 1485px;
-				}
-			}
-		}
-	}
-}
 
-@media (min-width: 470px) {
-	body {
-		main {
-			.courses {
-				&_gallery {
-					height: 1585px;
-				}
-			}
-		}
-	}
-}
+
+
+
 
 @media (min-width: 500px) {
 	body {
@@ -1707,11 +1677,7 @@ main {
 				}
 			}
 
-			.courses {
-				&_gallery {
-					height: 1920px;
-				}
-			}
+			
 		}
 	}
 }
@@ -1783,13 +1749,7 @@ main {
 			}
 		}
 
-		main {
-			.courses {
-				&_gallery {
-					height: 2475px;
-				}
-			}
-		}
+		
 	}
 }
 
@@ -1995,7 +1955,7 @@ main {
 
 			.courses {
 				&_gallery {
-					height: 630px;
+				
 					grid-template-columns: repeat(12, 1fr);
 					justify-content: center;
 					align-items: center;
@@ -2075,15 +2035,7 @@ main {
 				}
 			}
 
-			.contact {
-				&-box {
-					&_map {
-						iframe {
-							height: 400px;
-						}
-					}
-				}
-			}
+		
 		}
 
 		.modal-overlay {
@@ -2257,13 +2209,7 @@ main {
 				}
 			}
 
-			.courses {
-				&_gallery {
-					height: 675px;
-				}
-			}
-
-			.reviews {
+				.reviews {
 				.carousel-container {
 					max-width: 960px;
 				}
@@ -2356,29 +2302,9 @@ main {
 	}
 }
 
-@media (min-width: 960px) {
-	body {
-		main {
-			.courses {
-				&_gallery {
-					height: 735px;
-				}
-			}
-		}
-	}
-}
 
-@media (min-width: 1050px) {
-	body {
-		main {
-			.courses {
-				&_gallery {
-					height: 845px;
-				}
-			}
-		}
-	}
-}
+
+
 
 @media (min-width: 1200px) {
 	body {
