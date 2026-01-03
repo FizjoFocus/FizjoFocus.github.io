@@ -426,13 +426,12 @@ p {
 		margin-right: 10px;
 	}
 
-	
 	&:hover {
 		background-color: #2a4f82; /* jaśniejszy granat */
 		transform: translateY(-3px);
 		box-shadow: 0 10px 26px rgba(31, 58, 95, 0.45);
 	}
-	
+
 	&:active {
 		transform: translateY(-1px);
 		box-shadow: 0 4px 12px rgba(31, 58, 95, 0.35);
@@ -822,6 +821,15 @@ main {
 				overflow-y: auto;
 				opacity: 0;
 				animation: fadeIn 0.4s ease both;
+			}
+
+			.about-lead {
+				text-align: center;
+				margin-bottom: 20px;
+				line-height: 1.45;
+				font-size: 1.05rem;
+				font-weight: 500;
+				display: none;
 			}
 
 			.about-list {
@@ -2173,6 +2181,9 @@ main {
 
 		main {
 			.about-me {
+				&-description {
+					display: none;
+				}
 				.hint {
 					display: none;
 				}
@@ -2222,6 +2233,10 @@ main {
 
 				.about-me_card.active .about-me_overlay {
 					opacity: 1;
+				}
+
+				.about-lead {
+					display: block;
 				}
 
 				.about-close {

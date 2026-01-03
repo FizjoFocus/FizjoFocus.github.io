@@ -691,6 +691,14 @@ main .about-me_container .about-me_overlay-content {
   opacity: 0;
   animation: fadeIn 0.4s ease both;
 }
+main .about-me_container .about-lead {
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.45;
+  font-size: 1.05rem;
+  font-weight: 500;
+  display: none;
+}
 main .about-me_container .about-list {
   text-align: left;
   padding-left: 22px;
@@ -1826,6 +1834,9 @@ main .services .services-container .services-text {
     min-width: 260px;
     font-size: 1.25rem;
   }
+  body main .about-me-description {
+    display: none;
+  }
   body main .about-me .hint {
     display: none;
   }
@@ -1866,6 +1877,9 @@ main .services .services-container .services-text {
   }
   body main .about-me .about-me_card.active .about-me_overlay {
     opacity: 1;
+  }
+  body main .about-me .about-lead {
+    display: block;
   }
   body main .about-me .about-close {
     display: none;
