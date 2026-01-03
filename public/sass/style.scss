@@ -1038,7 +1038,7 @@ main {
 
 	&_gallery {
 		display: grid;
-		gap: $gap;
+		gap: 0px;
 		grid-template-columns: repeat(2, auto);
 		justify-content: center;
 		align-items: baseline;
