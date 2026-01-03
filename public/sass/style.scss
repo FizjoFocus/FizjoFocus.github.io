@@ -511,7 +511,7 @@ p {
 			h1 {
 				font-weight: 700;
 				color: #fff;
-				font-size: clamp(2rem, 5vw, 3.5rem);
+				font-size: clamp(2rem, 5vw, 3.6rem);
 				letter-spacing: 0.04em;
 			}
 
@@ -1750,10 +1750,6 @@ main {
 				&-title {
 					padding: 32px 0 32px;
 
-					h1 {
-						font-size: clamp(3rem, 5vw, 4rem);
-					}
-
 					span {
 						font-size: 1.2rem;
 					}
@@ -1894,10 +1890,6 @@ main {
 
 				&-title {
 					padding: 36px 0 36px;
-
-					h1 {
-						font-size: clamp(3.2rem, 4.5vw, 4.2rem);
-					}
 
 					span {
 						font-size: 1.25rem;
@@ -2146,7 +2138,7 @@ main {
 					padding: 40px 0 40px;
 
 					h1 {
-						font-size: clamp(3.6rem, 4vw, 4.6rem);
+						font-size: 3.6rem;
 					}
 
 					span {
