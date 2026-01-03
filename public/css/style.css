@@ -885,8 +885,8 @@ main .services .services-container .services-text {
 }
 .courses_gallery {
   display: grid;
-  gap: 0px;
-  grid-template-columns: repeat(2, auto);
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   justify-content: center;
   align-items: baseline;
   padding: 12px;
