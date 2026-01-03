@@ -341,11 +341,14 @@ function GALLERY() {
 	}
 
 	function showNext() {
+		console.log('y')
+
 		if (thumbs.length === 0) return
 		const next = (currentIndex + 1) % thumbs.length
 		openAt(next)
 	}
 	function showPrev() {
+		console.log('X')
 		if (thumbs.length === 0) return
 		const prev = (currentIndex - 1 + thumbs.length) % thumbs.length
 		openAt(prev)
@@ -413,16 +416,6 @@ function GALLERY() {
 		},
 		{ passive: true }
 	)
-
-	lightbox.addEventListener('touchend', () => {
-		const dx = touchEndX - touchStartX
-		if (Math.abs(dx) > threshold) {
-			if (dx < 0) showNext()
-			else showPrev()
-		}
-		touchStartX = 0
-		touchEndX = 0
-	})
 
 	// Optional: prefetch the next image after opening to make transitions instant
 	function prefetchNext() {
