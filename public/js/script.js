@@ -31,6 +31,21 @@ window.addEventListener('scroll', () => {
 	}
 })
 
+//FLOATING BUTTON 
+
+const floatingBtn = document.querySelector('.float-contact')
+
+window.addEventListener('scroll', () => {
+	const scrollY = window.scrollY || window.pageYOffset
+	const headerHeight = header.offsetHeight
+
+	if (scrollY > 60) {
+		floatingBtn.classList.add('is-visible')
+	} else {
+		floatingBtn.classList.remove('is-visible')
+	}
+})
+
 // DLACZEGO JA?
 const whyItems = document.querySelectorAll('.why_container-item')
 
@@ -104,6 +119,7 @@ const overlayContent = aboutMeCard.querySelector('.about-me_overlay-content')
 
 aboutMeCard.addEventListener('click', () => {
 	aboutMeCard.classList.add('active')
+	overlayContent.scrollTop = 0
 })
 
 closeBtn.addEventListener('click', e => {

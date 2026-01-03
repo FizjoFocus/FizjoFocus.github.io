@@ -287,10 +287,10 @@ p {
 
 .back-to-top {
   position: fixed;
-  right: 20px;
+  left: 20px;
   bottom: 20px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: #fff;
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -305,11 +305,12 @@ p {
   align-items: center;
   transform: rotate(180deg);
   transition: transform 0.3s ease, background-color 0.3s ease;
+  opacity: 0.9;
   z-index: 1000;
 }
 .back-to-top img {
-  max-width: 70%;
-  max-height: 70%;
+  max-width: 80%;
+  max-height: 80%;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -321,6 +322,44 @@ p {
   transform: scale(0.95) rotate(180deg);
 }
 .back-to-top.is-visible {
+  display: flex;
+}
+
+.float-contact {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 16px;
+  background-color: #1882c0;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(31, 58, 95, 0.35);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 1000;
+}
+.float-contact img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+.float-contact:hover {
+  background-color: #2a4f82; /* jaśniejszy granat */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(31, 58, 95, 0.45);
+}
+.float-contact:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(31, 58, 95, 0.35);
+}
+.float-contact.is-visible {
   display: flex;
 }
 
@@ -371,33 +410,30 @@ p {
   align-items: center;
   position: relative;
   max-width: 480px;
-  min-height: 607px;
+  min-height: 0;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 16px;
   z-index: 3;
 }
 .header_hero-text-title {
-  padding: 24px 0 32px;
+  padding: 24px 0 24px;
   text-align: center;
 }
 .header_hero-text-title h1 {
   font-weight: 700;
   color: #fff;
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   letter-spacing: 0.04em;
 }
 .header_hero-text-title span {
   display: block;
   white-space: nowrap;
-  font-size: 1.1rem;
+  font-size: 1rem;
   opacity: 0.9;
   color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding-top: 16px;
-}
-.header_hero-text-logo {
-  transform: translateY(-10px);
 }
 .header_hero-text-logo img {
   width: 100%;
@@ -416,7 +452,7 @@ p {
   letter-spacing: 0.3px;
   font-weight: 500;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   opacity: 0.9;
 }
 .header_hero-text-btns {
@@ -584,6 +620,13 @@ main .about-me {
   flex-direction: column;
   align-items: center;
 }
+main .about-me-description {
+  width: 90%;
+  padding: 16px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 500;
+}
 main .about-me_container {
   padding: 10px 0;
 }
@@ -647,13 +690,6 @@ main .about-me_container .about-me_overlay-content {
   overflow-y: auto;
   opacity: 0;
   animation: fadeIn 0.4s ease both;
-}
-main .about-me_container .about-lead {
-  text-align: center;
-  margin-bottom: 20px;
-  line-height: 1.45;
-  font-size: 1.05rem;
-  font-weight: 500;
 }
 main .about-me_container .about-list {
   text-align: left;
@@ -1304,7 +1340,7 @@ main .services .services-container .services-text {
   opacity: 0.85;
   padding: 10px 5px;
   transition: filter 0.3s;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 1px 3px rgba(255, 255, 255, 0.25));
 }
 .contact-box_contact-links span {
   font-size: 1.1rem;
@@ -1461,10 +1497,10 @@ main .services .services-container .services-text {
   }
   body .header_hero-text {
     height: auto;
-    padding: 0 40px 48px;
+    padding: 0 36px;
   }
   body .header_hero-text-title {
-    padding: 48px 0 32px;
+    padding: 32px 0 32px;
   }
   body .header_hero-text-title h1 {
     font-size: clamp(3rem, 5vw, 4rem);
@@ -1580,7 +1616,7 @@ main .services .services-container .services-text {
     padding: 0 56px 56px;
   }
   body .header_hero-text-title {
-    padding: 56px 0 36px;
+    padding: 36px 0 36px;
   }
   body .header_hero-text-title h1 {
     font-size: clamp(3.2rem, 4.5vw, 4.2rem);
@@ -1771,7 +1807,7 @@ main .services .services-container .services-text {
     padding: 0 96px 64px;
   }
   body .header_hero-text-title {
-    padding: 64px 0 40px;
+    padding: 40px 0 40px;
   }
   body .header_hero-text-title h1 {
     font-size: clamp(3.6rem, 4vw, 4.6rem);

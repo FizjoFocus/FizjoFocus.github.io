@@ -357,10 +357,10 @@ p {
 
 .back-to-top {
 	position: fixed;
-	right: 20px;
+	left: 20px;
 	bottom: 20px;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	background-color: #fff;
 	border-radius: 50%;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -370,18 +370,17 @@ p {
 	text-align: center;
 	cursor: pointer;
 	text-decoration: none;
-
 	display: none;
 	justify-content: center;
 	align-items: center;
-	transform: rotate(180deg); // poprawione
+	transform: rotate(180deg);
 	transition: transform 0.3s ease, background-color 0.3s ease;
-
+	opacity: 0.9;
 	z-index: 1000;
 
 	img {
-		max-width: 70%;
-		max-height: 70%;
+		max-width: 80%;
+		max-height: 80%;
 		object-fit: contain;
 	}
 
@@ -392,6 +391,51 @@ p {
 
 	&:active {
 		transform: scale(0.95) rotate(180deg);
+	}
+
+	&.is-visible {
+		display: flex;
+	}
+}
+
+//FLOAT CONTACT
+
+.float-contact {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 20px;
+	border-radius: 16px;
+	background-color: #1882c0;
+	color: #ffffff;
+	font-size: 0.9rem;
+	font-weight: 500;
+	letter-spacing: 0.25px;
+	text-decoration: none;
+	cursor: pointer;
+	box-shadow: 0 6px 18px rgba(31, 58, 95, 0.35);
+	transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+	z-index: 1000;
+
+	img {
+		width: 16px;
+		height: 16px;
+		margin-right: 10px;
+	}
+
+	
+	&:hover {
+		background-color: #2a4f82; /* jaśniejszy granat */
+		transform: translateY(-3px);
+		box-shadow: 0 10px 26px rgba(31, 58, 95, 0.45);
+	}
+	
+	&:active {
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px rgba(31, 58, 95, 0.35);
 	}
 
 	&.is-visible {
@@ -455,26 +499,26 @@ p {
 		align-items: center;
 		position: relative;
 		max-width: 480px;
-		min-height: 607px;
+		min-height: 0;
 		margin: 0 auto;
-		padding: 0 32px;
+		padding: 0 16px;
 		z-index: 3;
 
 		&-title {
-			padding: 24px 0 32px;
+			padding: 24px 0 24px;
 			text-align: center;
 
 			h1 {
 				font-weight: 700;
 				color: #fff;
-				font-size: clamp(2.4rem, 5vw, 3.5rem);
+				font-size: clamp(2rem, 5vw, 3.5rem);
 				letter-spacing: 0.04em;
 			}
 
 			span {
 				display: block;
 				white-space: nowrap;
-				font-size: 1.1rem;
+				font-size: 1rem;
 				opacity: 0.9;
 				color: rgba(255, 255, 255, 0.85);
 				letter-spacing: 0.08em;
@@ -484,8 +528,6 @@ p {
 		}
 
 		&-logo {
-			transform: translateY(-10px);
-
 			img {
 				width: 100%;
 				max-width: 360px;
@@ -504,7 +546,7 @@ p {
 				letter-spacing: 0.3px;
 				font-weight: 500;
 				color: #fff;
-				font-size: 1.2rem;
+				font-size: 1.1rem;
 				opacity: 0.9;
 			}
 		}
@@ -705,6 +747,13 @@ main {
 		flex-direction: column;
 		align-items: center;
 
+		&-description {
+			width: 90%;
+			padding: 16px;
+			margin: 0 auto;
+			text-align: center;
+			font-weight: 500;
+		}
 		&_container {
 			padding: 10px 0;
 
@@ -773,14 +822,6 @@ main {
 				overflow-y: auto;
 				opacity: 0;
 				animation: fadeIn 0.4s ease both;
-			}
-
-			.about-lead {
-				text-align: center;
-				margin-bottom: 20px;
-				line-height: 1.45;
-				font-size: 1.05rem;
-				font-weight: 500;
 			}
 
 			.about-list {
@@ -1509,7 +1550,7 @@ main {
 				opacity: 0.85;
 				padding: 10px 5px;
 				transition: filter 0.3s;
-				filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25));
+				filter: drop-shadow(0 1px 3px rgba(255, 255, 255, 0.25));
 			}
 
 			span {
@@ -1659,12 +1700,6 @@ main {
 
 //MEDIA
 
-
-
-
-
-
-
 @media (min-width: 500px) {
 	body {
 		main {
@@ -1676,8 +1711,6 @@ main {
 					max-height: 600px;
 				}
 			}
-
-			
 		}
 	}
 }
@@ -1712,10 +1745,10 @@ main {
 
 			&_hero-text {
 				height: auto;
-				padding: 0 40px 48px;
+				padding: 0 36px;
 
 				&-title {
-					padding: 48px 0 32px;
+					padding: 32px 0 32px;
 
 					h1 {
 						font-size: clamp(3rem, 5vw, 4rem);
@@ -1748,8 +1781,6 @@ main {
 				}
 			}
 		}
-
-		
 	}
 }
 
@@ -1862,7 +1893,7 @@ main {
 				padding: 0 56px 56px;
 
 				&-title {
-					padding: 56px 0 36px;
+					padding: 36px 0 36px;
 
 					h1 {
 						font-size: clamp(3.2rem, 4.5vw, 4.2rem);
@@ -1955,7 +1986,6 @@ main {
 
 			.courses {
 				&_gallery {
-				
 					grid-template-columns: repeat(12, 1fr);
 					justify-content: center;
 					align-items: center;
@@ -2034,8 +2064,6 @@ main {
 					max-width: 700px;
 				}
 			}
-
-		
 		}
 
 		.modal-overlay {
@@ -2115,7 +2143,7 @@ main {
 				padding: 0 96px 64px;
 
 				&-title {
-					padding: 64px 0 40px;
+					padding: 40px 0 40px;
 
 					h1 {
 						font-size: clamp(3.6rem, 4vw, 4.6rem);
@@ -2209,7 +2237,7 @@ main {
 				}
 			}
 
-				.reviews {
+			.reviews {
 				.carousel-container {
 					max-width: 960px;
 				}
@@ -2301,10 +2329,6 @@ main {
 		}
 	}
 }
-
-
-
-
 
 @media (min-width: 1200px) {
 	body {
