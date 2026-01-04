@@ -1279,8 +1279,10 @@ main .services .services-container .services-text {
   padding: 10px 0;
 }
 .prices-box_gabinet .price span, .prices-box_drive .price span {
+  color: #137CB9;
   margin-top: 14px;
   font-size: 0.9rem;
+  letter-spacing: 0.1px;
   display: block;
 }
 .prices-box_gabinet .note, .prices-box_drive .note {
