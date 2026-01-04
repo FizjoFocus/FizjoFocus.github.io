@@ -106,7 +106,7 @@ section:last-child {
 h3 {
   font-size: clamp(1.6rem, 3.2vw, 2.2rem);
   text-align: center;
-  color: #212121;
+  color: #000000;
   padding: 0.5rem 0.75rem;
   cursor: pointer;
 }
@@ -248,7 +248,7 @@ p {
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
-  background-color: #212121;
+  background-color: #000000;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
   transform: translateX(100%);
   opacity: 0;
@@ -655,7 +655,7 @@ main .about-me_container .about-me_overlay {
   position: absolute;
   inset: 0;
   background: #fff;
-  color: #212121;
+  color: #000000;
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -791,7 +791,7 @@ main .services .services-container .services-item-title h3 {
   margin: 0;
   font-size: 1.4rem;
   letter-spacing: 0.2px;
-  color: #212121;
+  color: #000000;
 }
 main .services .services-container .services-item-description {
   font-size: 0.95rem;
@@ -953,7 +953,7 @@ main .services .services-container .services-text {
   font-size: 2rem;
   line-height: 1;
   cursor: pointer;
-  color: #212121;
+  color: #000000;
 }
 
 .courses {
@@ -1207,7 +1207,7 @@ main .services .services-container .services-text {
   margin: 10px 0;
   text-align: center;
   background-color: #fff;
-  color: #212121;
+  color: #000000;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
@@ -1281,12 +1281,11 @@ main .services .services-container .services-text {
 .prices-box_gabinet .price span, .prices-box_drive .price span {
   margin-top: 14px;
   font-size: 0.9rem;
-  opacity: 0.8;
   display: block;
 }
 .prices-box_gabinet .note, .prices-box_drive .note {
   font-size: 0.85rem;
-  color: #212121;
+  color: #000000;
   text-align: left;
   margin: 12px 0 24px;
   padding: 10px 12px;
@@ -1297,7 +1296,7 @@ main .services .services-container .services-text {
 .prices-box_gabinet .note p, .prices-box_drive .note p {
   font-weight: 600;
   margin-bottom: 8px;
-  color: rgb(22, 145, 215);
+  color: #000000;
 }
 .prices-box_gabinet .note ul, .prices-box_drive .note ul {
   list-style: none;
@@ -1350,7 +1349,7 @@ main .services .services-container .services-text {
   border-radius: 16px;
   background: #f7f9fb;
   text-decoration: none;
-  color: #212121;
+  color: #000000;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
@@ -1427,7 +1426,7 @@ main .services .services-container .services-text {
 }
 .contact-box_places p {
   font-size: 1rem;
-  color: #212121;
+  color: #000000;
 }
 .contact-box_map {
   width: 80%;
@@ -1617,10 +1616,10 @@ main .services .services-container .services-text {
   }
   body .navbar_nav li a:hover {
     background: none;
-    color: #212121;
+    color: #000000;
   }
   body .navbar_nav li a.active {
-    color: #212121;
+    color: #000000;
   }
   body .navbar .navbar_nav-big-media {
     position: fixed;
