@@ -1,4 +1,5 @@
 //NAWIGACJA
+
 const burger = document.getElementById('nav-icon2')
 const nav = document.querySelector('.navbar_nav')
 
@@ -17,6 +18,7 @@ document.querySelectorAll('#nav-link, #home-img').forEach(el => {
 })
 
 //BACK TO TOP
+
 const backToTop = document.querySelector('.back-to-top')
 const header = document.querySelector('.header')
 
@@ -31,7 +33,7 @@ window.addEventListener('scroll', () => {
 	}
 })
 
-//FLOATING BUTTON 
+//FLOATING BUTTON
 
 const floatingBtn = document.querySelector('.float-contact')
 
@@ -46,25 +48,19 @@ window.addEventListener('scroll', () => {
 	}
 })
 
-// DLACZEGO JA?
-const whyItems = document.querySelectorAll('.why_container-item')
-
-whyItems.forEach(item => {
-	item.addEventListener('click', e => {
-		if (!e.target.closest('.why_container-item-btn')) {
-			item.querySelector('.why_container-item-btn').click()
-		}
-	})
-})
+// WHY ME?
 
 document.addEventListener('DOMContentLoaded', () => {
 	const whyItems = document.querySelectorAll('.why_container-item')
-	let offsetMobile = 60
-	let offsetDesktop = 96
+
+	const offsetMobile = 60
+	const offsetDesktop = 96
 
 	const getOffset = () => (window.innerWidth >= 768 ? offsetDesktop : offsetMobile)
 
 	const scrollToWhyContainer = () => {
+		if (window.innerWidth >= 768) return
+
 		const container = document.getElementById('whyContainer')
 		if (container) {
 			const offset = getOffset()
@@ -77,6 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	whyItems.forEach(item => {
+		item.addEventListener('click', e => {
+			if (!e.target.closest('.why_container-item-btn')) {
+				item.querySelector('.why_container-item-btn').click()
+			}
+		})
+
 		const btn = item.querySelector('.why_container-item-btn')
 		const text = item.nextElementSibling
 
@@ -98,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					currentlyOpen.style.height = '0'
 					if (currentlyBtn) currentlyBtn.classList.remove('rotate-arrow')
 				}
+
 				text.classList.add('open')
 				text.style.height = text.scrollHeight + 'px'
 				btn.classList.add('rotate-arrow')
@@ -113,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 //O MNIE
+
 const aboutMeCard = document.getElementById('aboutMeCard')
 const closeBtn = aboutMeCard.querySelector('.about-close')
 const overlayContent = aboutMeCard.querySelector('.about-me_overlay-content')
@@ -131,13 +135,14 @@ closeBtn.addEventListener('click', e => {
 const startYear = 2018
 const currentYear = new Date().getFullYear()
 const yearsOfExperience = currentYear - startYear
-document.getElementById('experience-years').textContent = yearsOfExperience
+document.getElementById('experience-years-mobile').textContent = yearsOfExperience
+document.getElementById('experience-years-tablet').textContent = yearsOfExperience
 
 // METODY
+
 document.addEventListener('DOMContentLoaded', () => {
 	const servicesItems = document.querySelectorAll('.services-item')
 
-	// Stwórz modal w DOM
 	const modalOverlay = document.createElement('div')
 	modalOverlay.className = 'modal-overlay'
 
@@ -155,16 +160,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	modalOverlay.appendChild(modal)
 	document.body.appendChild(modalOverlay)
 
-	// Funkcja otwierająca modal
 	const openModal = (content, title) => {
-		modal.innerHTML = '' // wyczyść zawartość
+		modal.innerHTML = ''
 		closeBtn.style.display = 'block'
 
 		const header = document.createElement('div')
 		header.className = 'modal-header'
 		header.textContent = title
 
-		header.appendChild(closeBtn) // przycisk w tym samym wierszu co tytuł
+		header.appendChild(closeBtn)
 		modal.appendChild(header)
 
 		const contentWrapper = document.createElement('div')
@@ -173,14 +177,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		modal.appendChild(contentWrapper)
 
 		modalOverlay.style.display = 'flex'
-		document.body.style.overflow = 'hidden' // blokada scrolla strony
+		document.body.style.overflow = 'hidden'
 	}
 
-	// Funkcja zamykająca modal
 	const closeModal = () => {
 		modalOverlay.style.display = 'none'
 		closeBtn.style.display = 'none'
-		document.body.style.overflow = '' // odblokuj scroll
+		document.body.style.overflow = ''
 	}
 
 	closeBtn.addEventListener('click', closeModal)
@@ -188,13 +191,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (e.target === modalOverlay) closeModal()
 	})
 
-	// Obsługa kliknięcia nagłówków
 	servicesItems.forEach(item => {
 		const serviceId = item.getAttribute('data-service')
 		const content = document.getElementById(serviceId)
 
 		item.addEventListener('click', () => {
-			if (content) openModal(content, item.textContent.trim())
+			const h3 = item.querySelector('h3')
+			const title = h3 ? h3.textContent.trim() : ''
+			if (content) openModal(content, title)
 		})
 	})
 })
@@ -214,7 +218,7 @@ originalSlides.forEach((_, i) => {
 	if (i === 0) dot.classList.add('active')
 
 	dot.addEventListener('click', () => {
-		index = i + 1 // +1 bo pierwszy prawdziwy slajd
+		index = i + 1
 		updateCarousel()
 	})
 
@@ -296,6 +300,7 @@ updateCarousel(false)
 startAuto()
 
 //FOOTER
+
 document.getElementById('year').textContent = new Date().getFullYear()
 
 //GALERIA
@@ -314,35 +319,31 @@ function GALLERY() {
 	let currentIndex = -1
 	let isOpen = false
 
-	// helper to open lightbox for index
 	function openAt(index) {
 		if (index < 0 || index >= thumbs.length) return
 		currentIndex = index
 		const thumb = thumbs[index]
 		const full = thumb.dataset.full || thumb.src
 		const alt = thumb.getAttribute('alt') || ''
-		// Show intermediate low-res quickly (optional)
+
 		lbImg.src = thumb.src
 		lbImg.alt = alt
 		showLightbox()
-		// preload full size
+
 		const pre = new Image()
 		pre.onload = () => {
-			// only set if still the same index (avoid race)
 			if (currentIndex === index) {
 				lbImg.src = pre.src
 			}
 		}
 		pre.src = full
-		// update aria
 		lightbox.setAttribute('aria-hidden', 'false')
 	}
 
 	function showLightbox() {
 		lightbox.classList.add('is-open')
-		document.body.style.overflow = 'hidden' // prevent scroll
+		document.body.style.overflow = 'hidden'
 		isOpen = true
-		// focus for keyboard
 		closeBtn.focus()
 	}
 
@@ -351,7 +352,7 @@ function GALLERY() {
 		document.body.style.overflow = ''
 		isOpen = false
 		lightbox.setAttribute('aria-hidden', 'true')
-		// return focus to current thumbnail
+
 		if (thumbs[currentIndex]) thumbs[currentIndex].focus()
 		currentIndex = -1
 	}
@@ -370,9 +371,8 @@ function GALLERY() {
 		openAt(prev)
 	}
 
-	// attach click on thumbnails
 	thumbs.forEach((t, i) => {
-		t.setAttribute('tabindex', '0') // make focusable
+		t.setAttribute('tabindex', '0') 
 		t.addEventListener('click', () => openAt(i))
 		t.addEventListener('keydown', e => {
 			if (e.key === 'Enter' || e.key === ' ') {
@@ -382,10 +382,8 @@ function GALLERY() {
 		})
 	})
 
-	// close handlers
 	closeBtn.addEventListener('click', closeLightbox)
 	lightbox.addEventListener('click', e => {
-		// close only if clicking outside image (on overlay)
 		if (e.target === lightbox || e.target === lightbox.querySelector('.lightbox__stage')) {
 			closeLightbox()
 		}
@@ -400,7 +398,6 @@ function GALLERY() {
 		showNext()
 	})
 
-	// keyboard navigation
 	window.addEventListener('keydown', e => {
 		if (!isOpen) return
 		if (e.key === 'Escape') closeLightbox()
@@ -408,10 +405,9 @@ function GALLERY() {
 		if (e.key === 'ArrowLeft') showPrev()
 	})
 
-	// simple touch support for swipe
 	let touchStartX = 0
 	let touchEndX = 0
-	const threshold = 40 // px
+	const threshold = 40 
 
 	lightbox.addEventListener(
 		'touchstart',
@@ -433,7 +429,6 @@ function GALLERY() {
 		{ passive: true }
 	)
 
-	// Optional: prefetch the next image after opening to make transitions instant
 	function prefetchNext() {
 		if (currentIndex < 0) return
 		const nextIdx = (currentIndex + 1) % thumbs.length
@@ -444,15 +439,12 @@ function GALLERY() {
 		}
 	}
 
-	// call prefetch after each open
 	const origOpenAt = openAt
 	openAt = function (index) {
 		origOpenAt(index)
-		// slight delay so current has chance to load
 		setTimeout(prefetchNext, 250)
 	}
 
-	// expose (optional) in case developer wants to open programmatically
 	window.simpleGallery = {
 		openAt,
 		closeLightbox,

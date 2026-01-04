@@ -109,13 +109,13 @@
                 </a>
             </div>
             <div class="navbar_small-nav-media">
-                <a href="mailto:fizjo.focus@gmail.com"><img class="icon" src="./icons/square-envelope-solid-full.svg"
-                        alt="Ikona koperty"></a>
-                <a href="https://www.facebook.com/profile.php?id=100085838256435" target="_blank"><img class="icon"
-                        src="./icons/square-facebook-brands-solid-full.svg" alt="Ikona Faceboook"></a>
                 <a href="tel:+48661228200">
                     <img class="icon" src="./icons/square-phone-solid-full.svg" alt="Ikona telefonu">
                 </a>
+                <a href="https://www.facebook.com/profile.php?id=100085838256435" target="_blank"><img class="icon"
+                        src="./icons/square-facebook-brands-solid-full.svg" alt="Ikona Faceboook"></a>
+                <a href="mailto:fizjo.focus@gmail.com"><img class="icon" src="./icons/square-envelope-solid-full.svg"
+                        alt="Ikona e-mail"></a>
             </div>
             <button class="navbar_small-nav-button navbar_small-nav-burger" id="nav-icon2" aria-label="Otwórz menu">
                 <span></span>
@@ -285,7 +285,7 @@
             <p class="subheader">
                 mgr Paweł Kozyra 🌟&nbsp;Fizjoterapeuta&nbsp;🌟
             </p>
-            <p class="about-me-description"> Jestem fizjoterapeutą z <span id="experience-years"></span> letnim
+            <p class="about-me-description"> Jestem fizjoterapeutą z <span id="experience-years-mobile"></span> letnim
                 doświadczeniem.
                 Pomagam skutecznie wrócić do sprawności, pracując nad przyczyną problemu, nie tylko
                 objawami.</p>
@@ -306,11 +306,12 @@
                     <div class="about-me_overlay">
                         <div class="about-me_overlay-content">
                             <p class="about-lead">
-                                Jestem fizjoterapeutą z <span id="experience-years"></span> letnim
+                                Jestem fizjoterapeutą z <span id="experience-years-tablet"></span> letnim
                                 doświadczeniem.
                                 Pomagam skutecznie wrócić do sprawności, pracując nad przyczyną problemu, nie tylko
                                 objawami.
                             </p>
+                            <p class="about-list-title">Metody, którymi pracuję:</p>
                             <ul class="about-list">
                                 <li>neurologia funkcjonalna (P-DTR, NeuroSeminars, DNS)</li>
                                 <li>terapia powięziowa, MTG, PNF</li>
@@ -342,9 +343,15 @@
             </div>
             <p class="subheader"> Każdą metodę dobieram indywidualnie do Twojego problemu, aby przywrócić pełną
                 sprawność.</p>
+            <p class="hint">
+                Kliknij nazwę, aby dowiedzieć się więcej →</p>
             <div class="services-container">
                 <div class="services-item" data-service="PDTR">
-                    <h3 class="pdtr-header"><span class="pdtr-nowrap">P-DTR</span></h3>
+                    <div class="services-item-title">
+                        <img src="./icons/pattern-key-svgrepo-com.svg" alt="" aria-hidden="true">
+                        <h3 class="pdtr-header">P-DTR</h3>
+                    </div>
+                    <p class="services-item-description">Odblokuj układ nerwowy</p>
                 </div>
                 <div class="services-text" id="PDTR">
                     <p>Metoda terapeutyczna opracowana przez dr José Palomara, która łączy neurofizjologię
@@ -376,7 +383,11 @@
 
                 </div>
                 <div class="services-item" data-service="NeuroSeminars">
-                    <h3 class="neuroseminars-header">NeuroSeminars</h3>
+                    <div class="services-item-title">
+                        <img src="./icons/brain-engine-svgrepo-com.svg" alt="" aria-hidden="true">
+                        <h3 class="neuroseminars-header">NeuroSeminars</h3>
+                    </div>
+                    <p class="services-item-description">Popraw funkcje mózgu</p>
                 </div>
                 <div class="services-text" id="NeuroSeminars">
                     <p>Neurologia funkcjonalna to podejście do diagnozy i&nbsp;terapii, które koncentruje się na
@@ -466,7 +477,11 @@
                     </div>
                 </div>
                 <div class="services-item" data-service="DNS">
-                    <h3 class="dns-header">DNS</h3>
+                    <div class="services-item-title">
+                        <img src="./icons/DNS-picture.svg" alt="" aria-hidden="true">
+                        <h3 class="dns-header">DNS</h3>
+                    </div>
+                    <p class="services-item-description">Odzyskaj kontrolę ruchu</p>
                 </div>
                 <div class="services-text" id="DNS">
                     <p>DNS (Dynamic Neuromuscular Stabilization) – to innowacyjna metoda fizjoterapeutyczna, która
@@ -505,7 +520,11 @@
                     </ul>
                 </div>
                 <div class="services-item" data-service="PNF">
-                    <h3 class="pnf-header">PNF</h3>
+                    <div class="services-item-title">
+                        <img src="./icons/i-physical-therapy-svgrepo-com.svg" alt="" aria-hidden="true">
+                        <h3 class="pnf-header">PNF</h3>
+                    </div>
+                    <p class="services-item-description">Toruj prawidłowe wzorce</p>
                 </div>
                 <div class="services-text" id="PNF">
                     <p>PNF (Proprioceptive Neuromuscular Facilitation), czyli Proprioceptywna Nerwowo-mięśniowa
@@ -548,10 +567,13 @@
                         <li>redukcja bólu i&nbsp;napięcia mięśniowego</li>
                         <li>wzmacnianie propriocepcji</li>
                     </ul>
-
                 </div>
                 <div class="services-item" data-service="MTG">
-                    <h3 class="mtg-header">MTG</h3>
+                    <div class="services-item-title">
+                        <img src="./icons/hand-holding-heart-solid-full.svg" alt="" aria-hidden="true">
+                        <h3 class="mtg-header">MTG</h3>
+                    </div>
+                    <p class="services-item-description">Uwolnij głębokie napięcia</p>
                 </div>
                 <div class="services-text" id="MTG">
                     <p>MTG, czyli Masaż Tkanek Głębokich, to specjalistyczna metoda masażu, która skupia się na
@@ -594,7 +616,11 @@
                     </ul>
                 </div>
                 <div class="services-item" data-service="Other">
-                    <h3 class="other-header">Inne</h3>
+                    <div class="services-item-title">
+                        <img src="./icons/anatomy-svgrepo-com.svg" alt="" aria-hidden="true">
+                        <h3 class="other-header">Inne</h3>
+                    </div>
+                    <p class="services-item-description">Wsparcie dla ciała</p>
                 </div>
                 <div class="services-text" id="Other">
                     <ul>
@@ -791,7 +817,7 @@
                     </a>
 
                     <a href="mailto:fizjo.focus@gmail.com" class="contact-item e-mail">
-                        <img class="icon" src="./icons/square-envelope-solid-full-blue.svg" alt="Ikona koperty">
+                        <img class="icon" src="./icons/square-envelope-solid-full-blue.svg" alt="Ikona e-mail">
                         <span>fizjo.focus@gmail.com</span>
                     </a>
 
@@ -799,13 +825,13 @@
 
                 <div class="contact-box_places">
                     <div class="contact-box_places_drive">
-                        <img src="./icons/car-solid-full.svg" alt="Ikona samochodu">
+                        <img src="./icons/car-solid-full.svg" alt="" aria-hidden="true">
                         <p>Dojeżdżam do&nbsp;domu&nbsp;pacjenta</p>
                     </div>
                     <hr>
                     <div class="contact-box_places_gabinet">
                         <div class="contact-box_places_gabinet">
-                            <img src="./icons/location-dot-solid-full.svg" alt="Ikona lokalizacji">
+                            <img src="./icons/location-dot-solid-full.svg" alt="" aria-hidden="true">
                             <p>Przyjmuję w&nbsp;gabinecie</p>
                         </div>
                         <p class="contact-box_places_gabinet-adress">Dom Studencki T-22
@@ -830,13 +856,13 @@
         </div>
         <div class="footer-container">
             <div class="footer-container_icons">
-                <a href="mailto:fizjo.focus@gmail.com" aria-label="Wyślij e-mail do Fizjo Focus"><img class="icon"
-                        src="./icons/square-envelope-solid-full.svg" alt="Ikona koperty"></a>
+                <a href="tel:+48661228200" aria-label="Zadzwoń do Fizjo Focus"> <img class="icon"
+                        src="./icons/square-phone-solid-full.svg" alt="Ikona telefonu"></a>
                 <a href="https://www.facebook.com/profile.php?id=100085838256435" target="_blank"
                     aria-label="Odwiedź profil Fizjo Focus na Facebooku"><img class="icon"
                         src="./icons/square-facebook-brands-solid-full.svg" alt="Ikona Faceboook"></a>
-                <a href="tel:+48661228200" aria-label="Zadzwoń do Fizjo Focus"> <img class="icon"
-                        src="./icons/square-phone-solid-full.svg" alt="Ikona telefonu"></a>
+                <a href="mailto:fizjo.focus@gmail.com" aria-label="Wyślij e-mail do Fizjo Focus"><img class="icon"
+                        src="./icons/square-envelope-solid-full.svg" alt="Ikona e-mail"></a>
             </div>
             <div class="footer-container-copyright">
                 <p>© <span id="year"></span> Fizjo Focus</p>

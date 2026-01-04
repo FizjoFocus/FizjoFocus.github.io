@@ -1,16 +1,9 @@
-$gap: 12px;
-$thumb-radius: 8px;
-$bg-overlay: rgba(0, 0, 0, 0.85);
-$max-lightbox-width: 1600px;
-$transition-fast: 180ms;
-$thumb-min: 140px;
-$thumb-aspect-portrait: 0.707; // A4 width/height = 210/297 ≈ 0.707
-$thumb-aspect-landscape: 1.414; // inverse ~ 297/210 ≈ 1.414
-
 $font-main: 'Roboto', sans-serif;
 
-$color-primary: #1691d7;
+$color-primary: rgb(22, 145, 215);
 $color-dark: #212121;
+$color-light: #fff;
+$color-bluelight: #1fb6ff;
 
 $section-offset-mobile: 60px;
 $section-offset-desktop: 96px;
@@ -193,7 +186,7 @@ p {
 			}
 
 			a:hover {
-				filter: drop-shadow(0 0px 3px #fff);
+				filter: drop-shadow(0 0px 3px $color-light);
 			}
 		}
 
@@ -216,7 +209,7 @@ p {
 			position: absolute;
 			height: 3px;
 			width: 50%;
-			background: #fff;
+			background: $color-light;
 			opacity: 1;
 			-webkit-transform: rotate(0deg);
 			-moz-transform: rotate(0deg);
@@ -331,17 +324,17 @@ p {
 				letter-spacing: 1px;
 				text-transform: uppercase;
 				text-decoration: none;
-				color: #e4e4e4;
+				color: $color-light;
 				transition: background-color 0.25s, color 0.25s;
 			}
 
 			a:hover {
-				background-color: #1691d7;
-				color: #fff;
+				background-color: $color-primary;
+				color: $color-light;
 			}
 
 			a.active {
-				color: #1691d7;
+				color: $color-primary;
 			}
 		}
 	}
@@ -361,7 +354,7 @@ p {
 	bottom: 20px;
 	width: 40px;
 	height: 40px;
-	background-color: #fff;
+	background-color: $color-light;
 	border-radius: 50%;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 	font-size: 2rem;
@@ -410,7 +403,7 @@ p {
 	padding: 12px 20px;
 	border-radius: 16px;
 	background-color: #1882c0;
-	color: #ffffff;
+	color: $color-light;
 	font-size: 0.9rem;
 	font-weight: 500;
 	letter-spacing: 0.25px;
@@ -454,8 +447,8 @@ p {
 	&_bg {
 		position: absolute;
 		inset: 0;
-		background: radial-gradient(circle at top right, rgba(22, 145, 215, 0.35), transparent 60%),
-			linear-gradient(180deg, #0c3f5f, #1691d7);
+		background: radial-gradient(circle at top right, rgba($color-primary, 0.35), transparent 60%),
+			linear-gradient(180deg, #0c3f5f, $color-primary);
 		z-index: 1;
 	}
 
@@ -481,7 +474,7 @@ p {
 		left: 0;
 		border-bottom: 16vw solid transparent;
 		border-top: 0;
-		border-left: 32vw solid #fff;
+		border-left: 32vw solid $color-light;
 	}
 
 	&_triangle-bottom-right {
@@ -489,7 +482,7 @@ p {
 		right: 0;
 		border-top: 16vw solid transparent;
 		border-bottom: 0;
-		border-right: 32vw solid #fff;
+		border-right: 32vw solid $color-light;
 	}
 
 	&_hero-text {
@@ -509,7 +502,7 @@ p {
 
 			h1 {
 				font-weight: 700;
-				color: #fff;
+				color: $color-light;
 				font-size: clamp(2rem, 5vw, 3.6rem);
 				letter-spacing: 0.04em;
 			}
@@ -544,7 +537,7 @@ p {
 			p {
 				letter-spacing: 0.3px;
 				font-weight: 500;
-				color: #fff;
+				color: $color-light;
 				font-size: 1.1rem;
 				opacity: 0.9;
 			}
@@ -563,8 +556,8 @@ p {
 				justify-content: center;
 				align-items: center;
 				min-height: 48px;
-				background-color: #fff;
-				color: #1691d7;
+				background-color: $color-light;
+				color: $color-primary;
 				border: none;
 				border-radius: 14px;
 				font-size: 1.1rem;
@@ -577,19 +570,19 @@ p {
 			}
 
 			a:hover {
-				color: #fff;
-				background-color: #1691d7;
+				color: $color-light;
+				background-color: $color-primary;
 			}
 
 			.header_hero-text-btns-services {
 				background: transparent;
 				border: 2px solid rgba(255, 255, 255, 0.8);
-				color: #fff;
+				color: $color-light;
 			}
 
 			.header_hero-text-btns-contact {
-				background: linear-gradient(135deg, #0f6fb1, #1691d7);
-				color: #ffffff;
+				background: linear-gradient(135deg, #0f6fb1, $color-primary);
+				color: $color-light;
 				font-weight: 700;
 				box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
 				text-decoration: none;
@@ -635,7 +628,7 @@ main {
 				padding: 0 20px;
 				width: 100%;
 				min-height: 64px;
-				background-color: #fff;
+				background-color: $color-light;
 				border-bottom: 1px solid rgba($color-primary, 0.4);
 				cursor: pointer;
 
@@ -694,7 +687,7 @@ main {
 						text-align: center;
 						text-transform: none;
 						text-decoration: none;
-						color: #1691d7;
+						color: $color-primary;
 						transition: transform 0.3s;
 
 						&:hover {
@@ -723,7 +716,7 @@ main {
 						line-height: 1.4;
 
 						&::marker {
-							color: #1691d7;
+							color: $color-primary;
 						}
 					}
 				}
@@ -758,35 +751,41 @@ main {
 
 			.about-me_card {
 				position: relative;
-				border-radius: 8px;
-				overflow: hidden;
 				cursor: pointer;
 				width: fit-content;
 				-webkit-tap-highlight-color: transparent;
 			}
 
-			.about-me_container-photo img {
-				display: block;
-				width: auto;
-				max-width: 100%;
-				height: 400px;
-				object-fit: cover;
+			.about-me_container-photo {
 				border-radius: 14px;
-				transition: opacity 0.4s ease;
+
+				img {
+					display: block;
+					width: auto;
+					max-width: 100%;
+					height: 400px;
+					object-fit: cover;
+					border-radius: 14px;
+					transition: opacity 0.4s ease;
+					box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+				}
 			}
 
 			.about-me_overlay {
 				position: absolute;
 				inset: 0;
-				background: #f7f9fb;
-				color: #212121;
+				background: $color-light;
+				color: $color-dark;
 				opacity: 0;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
+				border-radius: 14px;
 				align-items: center;
 				transition: opacity 0.4s ease;
 				text-align: center;
+				overflow: hidden;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 			}
 
 			.about-me_card.active .about-me_container-photo img {
@@ -819,6 +818,7 @@ main {
 			.about-me_overlay-content {
 				padding: 25px;
 				overflow-y: auto;
+				border-radius: 14px;
 				opacity: 0;
 				animation: fadeIn 0.4s ease both;
 			}
@@ -832,6 +832,12 @@ main {
 				display: none;
 			}
 
+			.about-list-title {
+				margin-bottom: 12px;
+				font-weight: 600;
+				text-align: center;
+			}
+
 			.about-list {
 				text-align: left;
 				padding-left: 22px;
@@ -843,7 +849,7 @@ main {
 				line-height: 1.4;
 
 				&::marker {
-					color: #1691d7;
+					color: $color-primary;
 				}
 			}
 
@@ -867,8 +873,8 @@ main {
 			}
 
 			.about-close {
-				background: #1691d7;
-				color: #fff;
+				background: $color-primary;
+				color: $color-light;
 				font-size: 0.9rem;
 				padding: 10px 20px;
 				border: none;
@@ -901,33 +907,59 @@ main {
 			margin: 0 auto;
 
 			.services-item {
-				background: #fff;
+				background: $color-light;
 				padding: 1.5rem 2rem;
 				border-radius: 10px;
 				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-				flex: 1 1 200px;
-				max-width: 250px;
+				width: 260px;
 				text-align: center;
 				cursor: pointer;
-				transition: transform 0.2s, box-shadow 0.2s, color 0.2s;
+				transition: transform 0.25s ease, box-shadow 0.25s ease;
+				will-change: transform;
 
-				h3 {
-					margin: 0;
-					font-size: 1.25rem;
-					color: #161616;
+				&-title {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					gap: 8px;
+
+					img {
+						width: 30px;
+						height: 30px;
+					}
+
+					h3 {
+						margin: 0;
+						font-size: 1.4rem;
+						letter-spacing: 0.2px;
+						color: $color-dark;
+					}
 				}
-			}
-			.services-item ~ h3:hover {
-				color: #1691d7;
-			}
 
-			.services-item:hover {
-				transform: translateY(-5px);
-				box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+				&-description {
+					font-size: 0.95rem;
+					color: darken($color-dark, 20%);
+					line-height: 1.4;
+					letter-spacing: 0.2px;
+					margin-top: 24px;
+					transition: color 0.2s ease;
+				}
+
+				&:hover {
+					transform: translateY(-5px);
+					box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+				}
+
+				&:focus-visible {
+					outline: 2px solid $color-primary;
+					outline-offset: 4px;
+				}
 			}
 
 			.services-text {
-				display: none; // ukrywa wszystkie treści w DOM
+				position: absolute;
+				opacity: 0;
+				pointer-events: none;
 			}
 		}
 	}
@@ -952,7 +984,7 @@ main {
 }
 
 .modal {
-	background: #fff;
+	background: $color-light;
 	max-width: 1000px;
 	width: 90%;
 	max-height: 90vh;
@@ -985,7 +1017,7 @@ main {
 		.services-text {
 			flex-direction: column;
 			width: 100%;
-			background-color: #fff;
+			background-color: $color-light;
 
 			p {
 				text-align: justify;
@@ -1010,7 +1042,7 @@ main {
 				line-height: 1.4;
 			}
 			li::marker {
-				color: #1691d7;
+				color: $color-primary;
 			}
 
 			&-text.active {
@@ -1043,7 +1075,7 @@ main {
 				padding: 6px 0;
 				font-size: 0.7rem;
 				letter-spacing: 0.5px;
-				color: #1691d7;
+				color: $color-primary;
 				opacity: 0.8;
 				text-align: center;
 				pointer-events: none;
@@ -1057,8 +1089,8 @@ main {
 			th,
 			td {
 				padding: 5px;
-				border-bottom: 1px solid #1691d7;
-				border-left: 1px solid #1691d7;
+				border-bottom: 1px solid $color-primary;
+				border-left: 1px solid $color-primary;
 			}
 			th:first-child,
 			td:first-child {
@@ -1075,7 +1107,7 @@ main {
 		font-size: 2rem;
 		line-height: 1;
 		cursor: pointer;
-		color: #333;
+		color: $color-dark;
 	}
 }
 
@@ -1087,11 +1119,11 @@ main {
 
 	&_gallery {
 		display: grid;
-		gap: $gap;
+		gap: 12px;
 		grid-template-columns: repeat(2, auto);
 		justify-content: center;
 		align-items: start;
-		padding: $gap;
+		padding: 12px;
 	}
 
 	&_gallery > .thumb:last-child {
@@ -1103,13 +1135,12 @@ main {
 	.thumb {
 		width: 100%;
 		height: auto;
-		border-radius: $thumb-radius;
+		border-radius: 8px;
 		cursor: pointer;
 		object-fit: cover;
 		display: block;
 		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 		user-select: none;
-		background: #f7f7f7;
 	}
 
 	.thumb:hover {
@@ -1124,7 +1155,7 @@ main {
 	display: none;
 	align-items: center;
 	justify-content: center;
-	background: $bg-overlay;
+	background: rgba(0, 0, 0, 0.85);
 	z-index: 9999;
 	padding: 16px;
 	transition: opacity 200ms ease;
@@ -1162,14 +1193,14 @@ main {
 		position: absolute;
 		background: transparent;
 		border: none;
-		color: #fff;
+		color: $color-light;
 		font-size: 26px;
 		cursor: pointer;
 		padding: 8px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		transition: opacity $transition-fast ease, transform $transition-fast ease;
+		transition: opacity 0.01s ease, transform 0.01s ease;
 		opacity: 0.95;
 	}
 
@@ -1272,7 +1303,7 @@ main {
 		.carousel-slide::before {
 			content: '“';
 			font-size: 4rem;
-			color: rgba(22, 145, 215, 0.15);
+			color: rgba($color-primary, 0.15);
 			position: absolute;
 			top: 10px;
 			left: 20px;
@@ -1320,13 +1351,13 @@ main {
 		width: 8px;
 		height: 8px;
 		border-radius: 50%;
-		background: rgba(22, 145, 215, 0.3);
+		background: rgba($color-primary, 0.3);
 		cursor: pointer;
 		transition: all 0.2s ease;
 	}
 
 	.carousel-dot.active {
-		background: rgba(22, 145, 215, 1);
+		background: rgba($color-primary, 1);
 		transform: scale(1.3);
 	}
 }
@@ -1357,8 +1388,8 @@ main {
 			padding: 0 10px 40px 10px;
 			margin: 10px 0;
 			text-align: center;
-			background-color: #fff;
-			color: #212121;
+			background-color: $color-light;
+			color: $color-dark;
 			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.05);
 			transition: transform 0.3s ease, box-shadow 0.3s ease;
 			overflow: hidden;
@@ -1375,7 +1406,7 @@ main {
 				min-height: 70px;
 				height: 100%;
 				min-width: 320px;
-				background: linear-gradient(135deg, #1691d7, #1fb6ff);
+				background: linear-gradient(135deg, $color-primary, $color-bluelight);
 				overflow: hidden;
 			}
 
@@ -1403,7 +1434,7 @@ main {
 				border: none;
 				width: 80%;
 				margin: 16px auto;
-				background: linear-gradient(to right, transparent 1%, #1691d7, transparent 99%);
+				background: linear-gradient(to right, transparent 1%, $color-primary, transparent 99%);
 			}
 
 			&-btn {
@@ -1411,10 +1442,10 @@ main {
 				padding: 14px 28px;
 				border: none;
 				border-radius: 12px;
-				background: linear-gradient(135deg, #1691d7, #1fb6ff);
+				background: linear-gradient(135deg, $color-primary, $color-bluelight);
 				box-shadow: 0 8px 20px rgba(22, 145, 215, 0.35);
 				text-decoration: none;
-				color: #fff;
+				color: $color-light;
 				font-weight: 500;
 				font-size: 1.1rem;
 				letter-spacing: 0.3px;
@@ -1433,7 +1464,7 @@ main {
 				font-size: 2.4rem;
 				font-weight: 700;
 				letter-spacing: -0.5px;
-				color: #1691d7;
+				color: $color-primary;
 				min-height: 116px;
 				margin-top: 8px;
 				padding: 10px 0;
@@ -1448,18 +1479,18 @@ main {
 
 			.note {
 				font-size: 0.85rem;
-				color: #212121;
+				color: $color-dark;
 				text-align: left;
 				margin: 12px 0 24px;
 				padding: 10px 12px;
 				background-color: #f0f8ff;
 				border-radius: 10px;
-				box-shadow: 0 2px 6px rgba(22, 145, 215, 0.1);
+				box-shadow: 0 2px 6px rgba($color-primary, 0.1);
 
 				p {
 					font-weight: 600;
 					margin-bottom: 8px;
-					color: #1691d7;
+					color: $color-primary;
 				}
 
 				ul {
@@ -1480,7 +1511,7 @@ main {
 				display: inline-block;
 				width: 20px;
 				margin-right: 8px;
-				color: #1691d7;
+				color: $color-primary;
 				font-weight: bold;
 			}
 		}
@@ -1500,7 +1531,7 @@ main {
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		background: #fff;
+		background: $color-light;
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 		overflow: hidden;
 
@@ -1521,21 +1552,20 @@ main {
 				border-radius: 16px;
 				background: #f7f9fb;
 				text-decoration: none;
-				color: #212121;
+				color: $color-dark;
 				cursor: pointer;
 
 				transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 
 				&:hover {
 					transform: translateY(-2px);
-					box-shadow: 0 6px 16px rgba(22, 145, 215, 0.2);
-					color: #1691d7;
+					box-shadow: 0 6px 16px rgba($color-primary, 0.2);
+					color: $color-primary;
 				}
 
 				&.phone {
-					border: 1px solid rgba(22, 145, 215, 0.25);
-					background: linear-gradient(to right, rgba(22, 145, 215, 0.06), #f7f9fb);
-
+					border: 1px solid rgba($color-primary, 0.25);
+					background: linear-gradient(to right, rgba($color-primary, 0.06), #f7f9fb);
 					flex-direction: column;
 					align-items: flex-start;
 					gap: 0;
@@ -1569,7 +1599,7 @@ main {
 			.contact-note {
 				font-size: 0.85rem;
 				margin-top: 4px;
-				color: #1691d7;
+				color: $color-primary;
 				opacity: 0.85;
 				letter-spacing: 0.2px;
 				margin-left: 44px;
@@ -1581,14 +1611,14 @@ main {
 			flex-direction: column;
 			gap: 16px;
 			padding: 20px;
-			border-top: 1px solid #eaeaea;
+			border-top: 1px solid #ddd;
 
 			hr {
 				border: none;
 				height: 1px;
 				width: 80%;
 				margin: 24px auto;
-				background: linear-gradient(to right, transparent, rgba(22, 145, 215, 0.4), transparent);
+				background: linear-gradient(to right, transparent, rgba($color-primary, 0.4), transparent);
 			}
 
 			&_drive,
@@ -1616,7 +1646,7 @@ main {
 
 			p {
 				font-size: 1rem;
-				color: #212121;
+				color: $color-dark;
 			}
 		}
 
@@ -1642,7 +1672,7 @@ main {
 	align-items: center;
 	justify-content: space-around;
 	background: #0f5c8a;
-	color: #fff;
+	color: $color-light;
 	position: relative;
 	padding: 60px 15px 40px;
 	margin-top: 80px;
@@ -1744,7 +1774,7 @@ main {
 			}
 
 			a:hover {
-				filter: drop-shadow(0 0 4px #fff);
+				filter: drop-shadow(0 0 4px $color-light);
 			}
 		}
 
@@ -1844,7 +1874,7 @@ main {
 						padding: 0;
 						font-size: 1.125rem;
 						font-weight: 600;
-						color: #fff;
+						color: $color-light;
 						letter-spacing: 0.6px;
 						text-transform: uppercase;
 						text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -1853,11 +1883,11 @@ main {
 
 					a:hover {
 						background: none;
-						color: #161616;
+						color: $color-dark;
 					}
 
 					a.active {
-						color: #161616;
+						color: $color-dark;
 					}
 				}
 			}
@@ -1880,17 +1910,16 @@ main {
 		}
 
 		.header {
-			margin-top: 96px;
-			max-height: none;
+			margin-top: $section-offset-desktop;
 
 			&_triangle-top-left {
 				border-bottom: 122px solid transparent;
-				border-left: 245px solid #fff;
+				border-left: 245px solid $color-light;
 			}
 
 			&_triangle-bottom-right {
 				border-top: 122px solid transparent;
-				border-right: 245px solid #fff;
+				border-right: 245px solid $color-light;
 			}
 
 			&_hero-text {
@@ -1962,7 +1991,6 @@ main {
 					}
 
 					.about-me_overlay-content {
-						padding: 36px 40px;
 						max-height: 550px;
 						overflow-y: auto;
 					}
@@ -2136,8 +2164,6 @@ main {
 		}
 
 		.header {
-			margin-top: 96px;
-
 			&_hero-text {
 				max-width: 830px;
 				padding: 0 96px 64px;
@@ -2212,7 +2238,6 @@ main {
 					position: static;
 					opacity: 1;
 					pointer-events: auto;
-					background: #f7f9fb;
 					flex: 1;
 					display: flex;
 					align-items: center;
@@ -2223,7 +2248,6 @@ main {
 					opacity: 1;
 					animation: none;
 					overflow: visible;
-					padding: 32px;
 					text-align: left;
 				}
 
@@ -2237,6 +2261,10 @@ main {
 
 				.about-lead {
 					display: block;
+				}
+
+				.about-list-title {
+					margin: 32px 0 12px;
 				}
 
 				.about-close {
@@ -2290,7 +2318,7 @@ main {
 					&_places {
 						flex: 1 1 45%;
 						border-top: none;
-						border-left: 1px solid #eaeaea;
+						border-left: 1px solid #ddd;
 						padding-left: 24px;
 					}
 

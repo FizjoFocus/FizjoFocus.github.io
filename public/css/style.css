@@ -83,7 +83,7 @@ section:last-child {
   width: 50px;
   height: 3px;
   margin: 6px auto 0;
-  background: #1691d7;
+  background: rgb(22, 145, 215);
   border-radius: 2px;
 }
 
@@ -159,7 +159,7 @@ p {
   width: 50px;
   height: 22px;
   fill: currentColor;
-  color: #1691d7;
+  color: rgb(22, 145, 215);
 }
 .navbar_small-nav-media a:hover {
   filter: drop-shadow(0 0px 3px #fff);
@@ -269,15 +269,15 @@ p {
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-  color: #e4e4e4;
+  color: #fff;
   transition: background-color 0.25s, color 0.25s;
 }
 .navbar_nav li a:hover {
-  background-color: #1691d7;
+  background-color: rgb(22, 145, 215);
   color: #fff;
 }
 .navbar_nav li a.active {
-  color: #1691d7;
+  color: rgb(22, 145, 215);
 }
 .navbar .show-menu {
   transform: translateX(0);
@@ -335,7 +335,7 @@ p {
   padding: 12px 20px;
   border-radius: 16px;
   background-color: #1882c0;
-  color: #ffffff;
+  color: #fff;
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.25px;
@@ -373,7 +373,7 @@ p {
 .header_bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top right, rgba(22, 145, 215, 0.35), transparent 60%), linear-gradient(180deg, #0c3f5f, #1691d7);
+  background: radial-gradient(circle at top right, rgba(22, 145, 215, 0.35), transparent 60%), linear-gradient(180deg, #0c3f5f, rgb(22, 145, 215));
   z-index: 1;
 }
 .header_shadow {
@@ -469,7 +469,7 @@ p {
   align-items: center;
   min-height: 48px;
   background-color: #fff;
-  color: #1691d7;
+  color: rgb(22, 145, 215);
   border: none;
   border-radius: 14px;
   font-size: 1.1rem;
@@ -482,7 +482,7 @@ p {
 }
 .header_hero-text-btns a:hover {
   color: #fff;
-  background-color: #1691d7;
+  background-color: rgb(22, 145, 215);
 }
 .header_hero-text-btns .header_hero-text-btns-services {
   background: transparent;
@@ -490,8 +490,8 @@ p {
   color: #fff;
 }
 .header_hero-text-btns .header_hero-text-btns-contact {
-  background: linear-gradient(135deg, #0f6fb1, #1691d7);
-  color: #ffffff;
+  background: linear-gradient(135deg, #0f6fb1, rgb(22, 145, 215));
+  color: #fff;
   font-weight: 700;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
   text-decoration: none;
@@ -543,7 +543,7 @@ main .why_container-item-btn {
   min-width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid #1691d7;
+  border: 1px solid rgb(22, 145, 215);
   background: transparent;
   display: flex;
   align-items: center;
@@ -566,8 +566,8 @@ main .why_container-item-text {
   height: 0;
   width: 100%;
   background: linear-gradient(to bottom, rgba(22, 145, 215, 0), rgba(22, 145, 215, 0.05));
-  border-left: 1px solid #1691d7;
-  border-right: 1px solid #1691d7;
+  border-left: 1px solid rgb(22, 145, 215);
+  border-right: 1px solid rgb(22, 145, 215);
   transition: height 0.6s ease, padding 0.3s ease;
   overflow-y: auto;
 }
@@ -583,7 +583,7 @@ main .why_container-item-text a {
   text-align: center;
   text-transform: none;
   text-decoration: none;
-  color: #1691d7;
+  color: rgb(22, 145, 215);
   transition: transform 0.3s;
 }
 main .why_container-item-text a:hover {
@@ -607,7 +607,7 @@ main .why_container-item-text li {
   line-height: 1.4;
 }
 main .why_container-item-text li::marker {
-  color: #1691d7;
+  color: rgb(22, 145, 215);
 }
 main .why_container-item-text.active {
   padding-top: 10px;
@@ -632,12 +632,13 @@ main .about-me_container {
 }
 main .about-me_container .about-me_card {
   position: relative;
-  border-radius: 8px;
-  overflow: hidden;
   cursor: pointer;
   width: -moz-fit-content;
   width: fit-content;
   -webkit-tap-highlight-color: transparent;
+}
+main .about-me_container .about-me_container-photo {
+  border-radius: 14px;
 }
 main .about-me_container .about-me_container-photo img {
   display: block;
@@ -648,19 +649,23 @@ main .about-me_container .about-me_container-photo img {
      object-fit: cover;
   border-radius: 14px;
   transition: opacity 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 main .about-me_container .about-me_overlay {
   position: absolute;
   inset: 0;
-  background: #f7f9fb;
+  background: #fff;
   color: #212121;
   opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 14px;
   align-items: center;
   transition: opacity 0.4s ease;
   text-align: center;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 main .about-me_container .about-me_card.active .about-me_container-photo img {
   opacity: 0;
@@ -688,6 +693,7 @@ main .about-me_container .about-me_card.active .about-me_overlay {
 main .about-me_container .about-me_overlay-content {
   padding: 25px;
   overflow-y: auto;
+  border-radius: 14px;
   opacity: 0;
   animation: fadeIn 0.4s ease both;
 }
@@ -699,6 +705,11 @@ main .about-me_container .about-lead {
   font-weight: 500;
   display: none;
 }
+main .about-me_container .about-list-title {
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-align: center;
+}
 main .about-me_container .about-list {
   text-align: left;
   padding-left: 22px;
@@ -709,7 +720,7 @@ main .about-me_container .about-list li {
   line-height: 1.4;
 }
 main .about-me_container .about-list li::marker {
-  color: #1691d7;
+  color: rgb(22, 145, 215);
 }
 main .about-me_container .about-secondary,
 main .about-me_container .about-mission {
@@ -728,7 +739,7 @@ main .about-me_container .about-mission {
   margin-bottom: 16px;
 }
 main .about-me_container .about-close {
-  background: #1691d7;
+  background: rgb(22, 145, 215);
   color: #fff;
   font-size: 0.9rem;
   padding: 10px 20px;
@@ -760,26 +771,48 @@ main .services .services-container .services-item {
   padding: 1.5rem 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  flex: 1 1 200px;
-  max-width: 250px;
+  width: 260px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, color 0.2s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
 }
-main .services .services-container .services-item h3 {
+main .services .services-container .services-item-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+main .services .services-container .services-item-title img {
+  width: 30px;
+  height: 30px;
+}
+main .services .services-container .services-item-title h3 {
   margin: 0;
-  font-size: 1.25rem;
-  color: #161616;
+  font-size: 1.4rem;
+  letter-spacing: 0.2px;
+  color: #212121;
 }
-main .services .services-container .services-item ~ h3:hover {
-  color: #1691d7;
+main .services .services-container .services-item-description {
+  font-size: 0.95rem;
+  color: black;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  margin-top: 24px;
+  transition: color 0.2s ease;
 }
 main .services .services-container .services-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
+main .services .services-container .services-item:focus-visible {
+  outline: 2px solid rgb(22, 145, 215);
+  outline-offset: 4px;
+}
 main .services .services-container .services-text {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .services-modal_content {
@@ -858,7 +891,7 @@ main .services .services-container .services-text {
   line-height: 1.4;
 }
 .modal-content .services-text li::marker {
-  color: #1691d7;
+  color: rgb(22, 145, 215);
 }
 .modal-content .services-text-text.active {
   padding-top: 10px;
@@ -890,7 +923,7 @@ main .services .services-container .services-text {
   padding: 6px 0;
   font-size: 0.7rem;
   letter-spacing: 0.5px;
-  color: #1691d7;
+  color: rgb(22, 145, 215);
   opacity: 0.8;
   text-align: center;
   pointer-events: none;
@@ -904,8 +937,8 @@ main .services .services-container .services-text {
 .modal-content table th,
 .modal-content table td {
   padding: 5px;
-  border-bottom: 1px solid #1691d7;
-  border-left: 1px solid #1691d7;
+  border-bottom: 1px solid rgb(22, 145, 215);
+  border-left: 1px solid rgb(22, 145, 215);
 }
 .modal-content table th:first-child,
 .modal-content table td:first-child {
@@ -920,7 +953,7 @@ main .services .services-container .services-text {
   font-size: 2rem;
   line-height: 1;
   cursor: pointer;
-  color: #333;
+  color: #212121;
 }
 
 .courses {
@@ -952,7 +985,6 @@ main .services .services-container .services-text {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  background: #f7f7f7;
 }
 .courses .thumb:hover {
   transform: scale(1.05);
@@ -1010,7 +1042,7 @@ main .services .services-container .services-text {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 180ms ease, transform 180ms ease;
+  transition: opacity 0.01s ease, transform 0.01s ease;
   opacity: 0.95;
 }
 .lightbox .lightbox__close {
@@ -1147,7 +1179,7 @@ main .services .services-container .services-text {
   transition: all 0.2s ease;
 }
 .reviews .carousel-dot.active {
-  background: rgb(22, 145, 215);
+  background: #1691d7;
   transform: scale(1.3);
 }
 
@@ -1190,7 +1222,7 @@ main .services .services-container .services-text {
   min-height: 70px;
   height: 100%;
   min-width: 320px;
-  background: linear-gradient(135deg, #1691d7, #1fb6ff);
+  background: linear-gradient(135deg, rgb(22, 145, 215), #1fb6ff);
   overflow: hidden;
 }
 .prices-box_gabinet h3, .prices-box_drive h3 {
@@ -1215,14 +1247,14 @@ main .services .services-container .services-text {
   border: none;
   width: 80%;
   margin: 16px auto;
-  background: linear-gradient(to right, transparent 1%, #1691d7, transparent 99%);
+  background: linear-gradient(to right, transparent 1%, rgb(22, 145, 215), transparent 99%);
 }
 .prices-box_gabinet-btn, .prices-box_drive-btn {
   margin-top: auto;
   padding: 14px 28px;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(135deg, #1691d7, #1fb6ff);
+  background: linear-gradient(135deg, rgb(22, 145, 215), #1fb6ff);
   box-shadow: 0 8px 20px rgba(22, 145, 215, 0.35);
   text-decoration: none;
   color: #fff;
@@ -1241,7 +1273,7 @@ main .services .services-container .services-text {
   font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: -0.5px;
-  color: #1691d7;
+  color: rgb(22, 145, 215);
   min-height: 116px;
   margin-top: 8px;
   padding: 10px 0;
@@ -1265,7 +1297,7 @@ main .services .services-container .services-text {
 .prices-box_gabinet .note p, .prices-box_drive .note p {
   font-weight: 600;
   margin-bottom: 8px;
-  color: #1691d7;
+  color: rgb(22, 145, 215);
 }
 .prices-box_gabinet .note ul, .prices-box_drive .note ul {
   list-style: none;
@@ -1282,7 +1314,7 @@ main .services .services-container .services-text {
   display: inline-block;
   width: 20px;
   margin-right: 8px;
-  color: #1691d7;
+  color: rgb(22, 145, 215);
   font-weight: bold;
 }
 
@@ -1325,7 +1357,7 @@ main .services .services-container .services-text {
 .contact-box_contact-links .contact-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(22, 145, 215, 0.2);
-  color: #1691d7;
+  color: rgb(22, 145, 215);
 }
 .contact-box_contact-links .contact-item.phone {
   border: 1px solid rgba(22, 145, 215, 0.25);
@@ -1357,7 +1389,7 @@ main .services .services-container .services-text {
 .contact-box_contact-links .contact-note {
   font-size: 0.85rem;
   margin-top: 4px;
-  color: #1691d7;
+  color: rgb(22, 145, 215);
   opacity: 0.85;
   letter-spacing: 0.2px;
   margin-left: 44px;
@@ -1367,7 +1399,7 @@ main .services .services-container .services-text {
   flex-direction: column;
   gap: 16px;
   padding: 20px;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #ddd;
 }
 .contact-box_places hr {
   border: none;
@@ -1585,10 +1617,10 @@ main .services .services-container .services-text {
   }
   body .navbar_nav li a:hover {
     background: none;
-    color: #161616;
+    color: #212121;
   }
   body .navbar_nav li a.active {
-    color: #161616;
+    color: #212121;
   }
   body .navbar .navbar_nav-big-media {
     position: fixed;
@@ -1607,7 +1639,6 @@ main .services .services-container .services-text {
   }
   body .header {
     margin-top: 96px;
-    max-height: none;
   }
   body .header_triangle-top-left {
     border-bottom: 122px solid transparent;
@@ -1671,7 +1702,6 @@ main .services .services-container .services-text {
     border-radius: 18px;
   }
   body main .about-me_container .about-me_overlay-content {
-    padding: 36px 40px;
     max-height: 550px;
     overflow-y: auto;
   }
@@ -1801,9 +1831,6 @@ main .services .services-container .services-text {
   body .navbar_nav {
     gap: 24px;
   }
-  body .header {
-    margin-top: 96px;
-  }
   body .header_hero-text {
     max-width: 830px;
     padding: 0 96px 64px;
@@ -1859,7 +1886,6 @@ main .services .services-container .services-text {
     position: static;
     opacity: 1;
     pointer-events: auto;
-    background: #f7f9fb;
     flex: 1;
     display: flex;
     align-items: center;
@@ -1869,7 +1895,6 @@ main .services .services-container .services-text {
     opacity: 1;
     animation: none;
     overflow: visible;
-    padding: 32px;
     text-align: left;
   }
   body main .about-me .about-me_card.active .about-me_container-photo img {
@@ -1880,6 +1905,9 @@ main .services .services-container .services-text {
   }
   body main .about-me .about-lead {
     display: block;
+  }
+  body main .about-me .about-list-title {
+    margin: 32px 0 12px;
   }
   body main .about-me .about-close {
     display: none;
@@ -1921,7 +1949,7 @@ main .services .services-container .services-text {
   body main .contact-box_places {
     flex: 1 1 45%;
     border-top: none;
-    border-left: 1px solid #eaeaea;
+    border-left: 1px solid #ddd;
     padding-left: 24px;
   }
   body main .contact-box_map {
