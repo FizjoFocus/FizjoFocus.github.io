@@ -756,27 +756,28 @@ main .about-me_container .about-close:hover {
 main .services {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
 }
 main .services .services-container {
   display: flex;
   flex-wrap: wrap;
-  row-gap: 24px;
+  gap: 24px;
   justify-content: center;
   max-width: 900px;
+  width: 100%;
   padding: 24px 0;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 main .services .services-container .services-item {
   background: #fff;
   padding: 24px 32px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 250px;
+  flex: 0 1 250px;
+  max-width: 250px;
   text-align: center;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  will-change: transform;
 }
 main .services .services-container .services-item-title {
   display: flex;
@@ -1280,7 +1281,7 @@ main .services .services-container .services-text {
   padding: 10px 0;
 }
 .prices-box_gabinet .price span, .prices-box_drive .price span {
-  color: #137CB9;
+  color: #137cb9;
   margin-top: 14px;
   font-size: 0.9rem;
   letter-spacing: 0.1px;
