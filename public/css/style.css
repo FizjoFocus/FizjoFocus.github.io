@@ -758,6 +758,7 @@ main .services {
   flex-direction: column;
 }
 main .services .services-container {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
@@ -812,7 +813,12 @@ main .services .services-container .services-item:focus-visible {
   outline-offset: 4px;
 }
 main .services .services-container .services-text {
-  display: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  max-width: 100%;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 .services-modal_content {

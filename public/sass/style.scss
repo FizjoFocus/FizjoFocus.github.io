@@ -898,6 +898,7 @@ main {
 		flex-direction: column;
 
 		.services-container {
+			position: relative;
 			display: flex;
 			flex-wrap: wrap;
 			gap: 24px;
@@ -959,7 +960,12 @@ main {
 			}
 
 			.services-text {
-				display: none;
+				position: absolute;
+				inset: 0;
+				opacity: 0;
+				max-width: 100%;
+				pointer-events: none;
+				overflow: hidden;
 			}
 		}
 	}
