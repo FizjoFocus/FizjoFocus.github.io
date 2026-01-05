@@ -812,9 +812,7 @@ main .services .services-container .services-item:focus-visible {
   outline-offset: 4px;
 }
 main .services .services-container .services-text {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 
 .services-modal_content {
