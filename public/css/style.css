@@ -773,8 +773,8 @@ main .services .services-container .services-item {
   padding: 24px 32px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  flex: 0 1 260px;
-  max-width: 260px;
+  flex: 0 1 100%;
+  max-width: 300px;
   text-align: center;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
