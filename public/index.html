@@ -13,6 +13,9 @@
     <!-- Canonical (www) -->
     <link rel="canonical" href="https://www.fizjofocus.com/">
 
+    <!-- Robots – pozwala Google na duże miniatury -->
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
@@ -30,10 +33,19 @@
     <meta property="og:description"
         content="Profesjonalna fizjoterapia we Wrocławiu: P-DTR, NeuroSeminars, DNS, MTG i PNF. Skuteczne leczenie bólu pleców, urazów sportowych i problemów neurologicznych.">
     <meta property="og:image" content="https://www.fizjofocus.com/img/og/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://www.fizjofocus.com/">
     <meta property="og:type" content="website">
 
-    <!-- Fonts / assets preload -->
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fizjoterapia Wrocław – Fizjo Focus | Paweł Kozyra">
+    <meta name="twitter:description"
+        content="Profesjonalna fizjoterapia we Wrocławiu: P-DTR, NeuroSeminars, DNS, MTG i PNF. Skuteczne leczenie bólu pleców i problemów neurologicznych.">
+    <meta name="twitter:image" content="https://www.fizjofocus.com/img/og/og-image.png">
+
+    <!-- Preload assets -->
     <link rel="preload" as="image" href="/img/LOGO_header.svg" fetchpriority="high">
     <link rel="preload" href="/fonts/roboto_woff2/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/roboto_woff2/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin>
@@ -51,7 +63,9 @@
       "name": "Fizjo Focus Fizjoterapia – Paweł Kozyra",
       "url": "https://www.fizjofocus.com/",
       "logo": "https://www.fizjofocus.com/img/LOGO_header.svg",
-      "image": "https://www.fizjofocus.com/img/LOGO_header.svg",
+      "image": [
+        "https://www.fizjofocus.com/img/og/og-image.png"
+      ],
       "telephone": "+48661228200",
       "priceRange": "PLN 200",
       "sameAs": [
@@ -97,6 +111,7 @@
     }
     </script>
 </head>
+
 
 
 <body>
