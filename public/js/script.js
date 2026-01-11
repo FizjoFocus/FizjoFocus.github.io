@@ -3,7 +3,7 @@
 const burger = document.getElementById('nav-icon2')
 const nav = document.querySelector('.navbar_nav')
 
-burger.addEventListener('click', () => {
+burger?.addEventListener('click', () => {
 	burger.classList.toggle('open')
 	nav.classList.toggle('show-menu')
 })
@@ -18,100 +18,88 @@ document.querySelectorAll('#nav-link, #home-img').forEach(el => {
 })
 
 //BACK TO TOP
-
-const backToTop = document.querySelector('.back-to-top')
-const header = document.querySelector('.header')
-
-window.addEventListener('scroll', () => {
-	const scrollY = window.scrollY || window.pageYOffset
-	const headerHeight = header.offsetHeight
-
-	if (scrollY > headerHeight) {
-		backToTop.classList.add('is-visible')
-	} else {
-		backToTop.classList.remove('is-visible')
-	}
-})
-
 //FLOATING BUTTON
 
+const backToTop = document.querySelector('.back-to-top')
 const floatingBtn = document.querySelector('.float-contact')
+const header = document.querySelector('.header')
+const headerHeight = header?.offsetHeight || 0
 
-window.addEventListener('scroll', () => {
-	const scrollY = window.scrollY || window.pageYOffset
-	const headerHeight = header.offsetHeight
+let ticking = false
 
-	if (scrollY > 60) {
-		floatingBtn.classList.add('is-visible')
-	} else {
-		floatingBtn.classList.remove('is-visible')
-	}
-})
+window.addEventListener(
+	'scroll',
+	() => {
+		if (!ticking) {
+			requestAnimationFrame(() => {
+				const scrollY = window.scrollY
+
+				backToTop?.classList.toggle('is-visible', scrollY >= headerHeight)
+				floatingBtn?.classList.toggle('is-visible', scrollY > 60)
+
+				ticking = false
+			})
+			ticking = true
+		}
+	},
+	{ passive: true }
+)
 
 // WHY ME?
 
 document.addEventListener('DOMContentLoaded', () => {
 	const whyItems = document.querySelectorAll('.why_container-item')
-
 	const offsetMobile = 60
 	const offsetDesktop = 96
 
 	const getOffset = () => (window.innerWidth >= 768 ? offsetDesktop : offsetMobile)
 
-	const scrollToWhyContainer = () => {
+	const scrollToWhy = () => {
 		if (window.innerWidth >= 768) return
-
 		const container = document.getElementById('whyContainer')
-		if (container) {
-			const offset = getOffset()
-			const top = container.getBoundingClientRect().top + window.scrollY - offset
-			window.scrollTo({
-				top: top,
-				behavior: 'smooth',
-			})
-		}
+		if (!container) return
+
+		const top = container.getBoundingClientRect().top + window.scrollY - getOffset()
+		window.scrollTo({ top })
 	}
 
 	whyItems.forEach(item => {
-		item.addEventListener('click', e => {
-			if (!e.target.closest('.why_container-item-btn')) {
-				item.querySelector('.why_container-item-btn').click()
-			}
-		})
-
 		const btn = item.querySelector('.why_container-item-btn')
 		const text = item.nextElementSibling
 
+		item.addEventListener('click', e => {
+			if (!e.target.closest('.why_container-item-btn')) btn.click()
+		})
+
 		btn.addEventListener('click', () => {
-			const isOpen = text.classList.contains('open')
-			const currentlyOpen = document.querySelector('.why_container-item-text.open')
+			const openText = document.querySelector('.why_container-item-text.open')
 
-			scrollToWhyContainer()
+			scrollToWhy()
 
-			if (isOpen) {
+			if (text.classList.contains('open')) {
 				text.classList.remove('open')
 				text.style.height = '0'
 				btn.classList.remove('rotate-arrow')
-			} else {
-				if (currentlyOpen) {
-					const currentlyItem = currentlyOpen.previousElementSibling
-					const currentlyBtn = currentlyItem.querySelector('.why_container-item-btn')
-					currentlyOpen.classList.remove('open')
-					currentlyOpen.style.height = '0'
-					if (currentlyBtn) currentlyBtn.classList.remove('rotate-arrow')
-				}
-
-				text.classList.add('open')
-				text.style.height = text.scrollHeight + 'px'
-				btn.classList.add('rotate-arrow')
+				return
 			}
-		})
 
-		window.addEventListener('resize', () => {
-			if (text.classList.contains('open')) {
-				text.style.height = text.scrollHeight + 'px'
+			if (openText) {
+				const prevBtn = openText.previousElementSibling?.querySelector('.why_container-item-btn')
+				openText.classList.remove('open')
+				openText.style.height = '0'
+				prevBtn?.classList.remove('rotate-arrow')
 			}
+
+			text.classList.add('open')
+			text.style.height = text.scrollHeight + 'px'
+			btn.classList.add('rotate-arrow')
 		})
+	})
+})
+
+window.addEventListener('resize', () => {
+	document.querySelectorAll('.why_container-item-text.open').forEach(text => {
+		text.style.height = text.scrollHeight + 'px'
 	})
 })
 
@@ -206,98 +194,85 @@ document.addEventListener('DOMContentLoaded', () => {
 //OPINIE
 
 const track = document.querySelector('.carousel-track')
-const nextBtn = document.querySelector('.next')
-const prevBtn = document.querySelector('.prev')
-const dotsContainer = document.querySelector('.carousel-dots')
+if (track) {
+    const nextBtn = document.querySelector('.next')
+    const prevBtn = document.querySelector('.prev')
+    const dotsContainer = document.querySelector('.carousel-dots')
+    const originalSlides = Array.from(track.children)
 
-const originalSlides = Array.from(track.children)
+    originalSlides.forEach((_, i) => {
+        const dot = document.createElement('span')
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '')
+        dot.addEventListener('click', () => {
+            index = i + 1
+            update(false)
+        })
+        dotsContainer.appendChild(dot)
+    })
 
-originalSlides.forEach((_, i) => {
-	const dot = document.createElement('span')
-	dot.classList.add('carousel-dot')
-	if (i === 0) dot.classList.add('active')
+    const dots = document.querySelectorAll('.carousel-dot')
+    const firstClone = originalSlides[0].cloneNode(true)
+    const lastClone = originalSlides.at(-1).cloneNode(true)
 
-	dot.addEventListener('click', () => {
-		index = i + 1
-		updateCarousel()
-	})
+    track.append(firstClone)
+    track.prepend(lastClone)
 
-	dotsContainer.appendChild(dot)
-})
+    const slides = Array.from(track.children)
+    let index = 1
+    let animating = false
+    let auto
 
-const dots = document.querySelectorAll('.carousel-dot')
+    const update = (animate = true) => {
+        track.style.transition = animate ? 'transform .6s ease' : 'none'
+        track.style.transform = `translateX(-${index * 100}%)`
+        dots.forEach(d => d.classList.remove('active'))
+        dots[index - 1]?.classList.add('active')
+    }
 
-const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true)
-track.insertBefore(lastClone, originalSlides[0])
-const firstClone = originalSlides[0].cloneNode(true)
-track.appendChild(firstClone)
-const slides = Array.from(track.children)
-const totalSlides = slides.length
+    const next = () => {
+        if (!animating) {
+            index++
+            animating = true
+            update()
+        }
+    }
 
-let index = 1
-let auto
-let isAnimating = false
+    const prev = () => {
+        if (!animating) {
+            index--
+            animating = true
+            update()
+        }
+    }
 
-function updateCarousel(animate = true) {
-	track.style.transition = animate ? 'transform 0.6s ease' : 'none'
-	track.style.transform = `translateX(-${index * 100}%)`
+    track.addEventListener('transitionend', () => {
+        if (index === slides.length - 1) index = 1, update(false)
+        if (index === 0) index = slides.length - 2, update(false)
+        animating = false
+    })
 
-	dots.forEach(dot => dot.classList.remove('active'))
-	dots[index - 1]?.classList.add('active')
+    const startAuto = () => {
+        clearInterval(auto)
+        auto = setInterval(next, 10000)
+    }
+
+    const stopAuto = () => clearInterval(auto)
+
+    nextBtn?.addEventListener('click', () => {
+        stopAuto()
+        next()
+        startAuto()
+    })
+
+    prevBtn?.addEventListener('click', () => {
+        stopAuto()
+        prev()
+        startAuto()
+    })
+
+    update(false)
+    startAuto()
 }
-
-function nextSlide() {
-	if (isAnimating) return
-	isAnimating = true
-	index++
-	updateCarousel(true)
-}
-
-function prevSlide() {
-	if (isAnimating) return
-	isAnimating = true
-	index--
-	updateCarousel(true)
-}
-
-track.addEventListener('transitionend', () => {
-	if (index === totalSlides - 1) {
-		index = 1
-		updateCarousel(false)
-	}
-
-	if (index === 0) {
-		index = totalSlides - 2
-		updateCarousel(false)
-	}
-
-	track.offsetHeight
-	isAnimating = false
-})
-
-function startAuto() {
-	clearInterval(auto)
-	auto = setInterval(nextSlide, 10000)
-}
-
-function stopAuto() {
-	clearInterval(auto)
-}
-
-nextBtn.addEventListener('click', () => {
-	stopAuto()
-	nextSlide()
-	startAuto()
-})
-
-prevBtn.addEventListener('click', () => {
-	stopAuto()
-	prevSlide()
-	startAuto()
-})
-
-updateCarousel(false)
-startAuto()
 
 //FOOTER
 
@@ -358,21 +333,18 @@ function GALLERY() {
 	}
 
 	function showNext() {
-		console.log('y')
-
 		if (thumbs.length === 0) return
 		const next = (currentIndex + 1) % thumbs.length
 		openAt(next)
 	}
 	function showPrev() {
-		console.log('X')
 		if (thumbs.length === 0) return
 		const prev = (currentIndex - 1 + thumbs.length) % thumbs.length
 		openAt(prev)
 	}
 
 	thumbs.forEach((t, i) => {
-		t.setAttribute('tabindex', '0') 
+		t.setAttribute('tabindex', '0')
 		t.addEventListener('click', () => openAt(i))
 		t.addEventListener('keydown', e => {
 			if (e.key === 'Enter' || e.key === ' ') {
@@ -407,7 +379,7 @@ function GALLERY() {
 
 	let touchStartX = 0
 	let touchEndX = 0
-	const threshold = 40 
+	const threshold = 40
 
 	lightbox.addEventListener(
 		'touchstart',
