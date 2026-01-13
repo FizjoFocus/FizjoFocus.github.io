@@ -400,13 +400,13 @@ p {
 	display: none;
 	align-items: center;
 	justify-content: center;
-	padding: 12px 20px;
+	padding: 13px 22px;
 	border-radius: 16px;
-	background-color: #167AB6;
+	background-color: #167ab6;
 	color: $color-light;
-	font-size: 0.9rem;
+	font-size: 1rem;
 	font-weight: 500;
-	letter-spacing: 0.25px;
+	letter-spacing: 0.3px;
 	text-decoration: none;
 	cursor: pointer;
 	box-shadow: 0 6px 18px rgba(31, 58, 95, 0.35);
@@ -660,19 +660,45 @@ main {
 				&-btn:hover {
 					background-color: rgba($color-primary, 0.1);
 				}
+			}
 
-				&-text {
-					display: flex;
-					overflow: hidden;
-					flex-direction: column;
-					position: relative;
-					height: 0;
-					width: 100%;
-					background: linear-gradient(to bottom, rgba($color-primary, 0), rgba($color-primary, 0.05));
-					border-left: 1px solid $color-primary;
-					border-right: 1px solid $color-primary;
-					transition: height 0.6s ease, padding 0.3s ease;
+			&-item-text {
+				position: relative;
+				width: 100%;
+				height: 0;
+				overflow: hidden;
+				background: linear-gradient(to bottom, rgba($color-primary, 0), rgba($color-primary, 0.05));
+				border-left: 1px solid $color-primary;
+				border-right: 1px solid $color-primary;
+				border-bottom: 1px solid $color-primary;
+				transition: height 0.6s ease;
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 8px;
+					right: 6px;
+					width: 4px;
+					height: calc(100% - 16px);
+					background: rgba($color-primary, 0.2);
+					border-radius: 4px;
+					pointer-events: none;
+				}
+
+				&.hide-after::after {
+					display: none;
+				}
+
+				.scroll-container {
+					max-height: 100%;
 					overflow-y: auto;
+					overscroll-behavior: contain;
+					padding-right: 22px;
+					scrollbar-width: none;
+
+					&::-webkit-scrollbar {
+						display: none;
+					}
 
 					p,
 					a {
@@ -683,9 +709,8 @@ main {
 					}
 
 					a {
-						width: 100%;
+						display: inline-block;
 						text-align: center;
-						text-transform: none;
 						text-decoration: none;
 						color: $color-primary;
 						transition: transform 0.3s;
@@ -696,18 +721,13 @@ main {
 					}
 
 					.small-header {
-						padding-bottom: 0;
 						padding-top: 15px;
+						padding-bottom: 0;
 					}
 
 					ul,
 					ol {
-						display: block;
 						padding: 10px 36px;
-					}
-
-					ul:last-child {
-						padding-bottom: 10px;
 					}
 
 					li {
@@ -721,8 +741,17 @@ main {
 					}
 				}
 
-				&-text.active {
-					padding-top: 10px;
+				.scroll-content {
+					padding: 10px 20px;
+				}
+
+				.fake-scroll-thumb {
+					position: absolute;
+					right: 6px;
+					width: 4px;
+					background: $color-primary;
+					border-radius: 4px;
+					pointer-events: none;
 				}
 			}
 		}
@@ -1006,8 +1035,8 @@ main {
 		justify-content: space-between;
 		align-items: center;
 		background: #f5f5f5;
-		padding: 1rem 1.5rem;
-		font-size: 1.5rem;
+		padding: 16px 24px;
+		font-size: 24px;
 		font-weight: bold;
 		position: sticky;
 		top: 0;
@@ -1016,9 +1045,28 @@ main {
 	}
 
 	&-content {
-		padding: 1rem 1.5rem;
+		padding: 1px 24px;
 		overflow-y: auto;
+		overscroll-behavior: contain;
 		flex: 1;
+		scrollbar-width: none;
+		position: relative;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: rgba(0, 0, 0, 0.3);
+			border-radius: 8px;
+			transition: background-color 0.2s;
+		}
+		&::-webkit-scrollbar-thumb:hover {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
 
 		.services-text {
 			flex-direction: column;
@@ -1071,6 +1119,7 @@ main {
 			flex: 1 1 100%;
 			min-height: fit-content;
 			align-self: stretch;
+
 			&::after {
 				content: '← przesuń tabelę →';
 				position: sticky;
@@ -1107,6 +1156,7 @@ main {
 			border-bottom: none;
 		}
 	}
+
 	&-close {
 		background: transparent;
 		border: none;

@@ -332,13 +332,13 @@ p {
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 12px 20px;
+  padding: 13px 22px;
   border-radius: 16px;
-  background-color: #167AB6;
+  background-color: #167ab6;
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.25px;
+  letter-spacing: 0.3px;
   text-decoration: none;
   cursor: pointer;
   box-shadow: 0 6px 18px rgba(31, 58, 95, 0.35);
@@ -559,58 +559,83 @@ main .why_container-item-btn:hover {
   background-color: rgba(22, 145, 215, 0.1);
 }
 main .why_container-item-text {
-  display: flex;
-  overflow: hidden;
-  flex-direction: column;
   position: relative;
-  height: 0;
   width: 100%;
+  height: 0;
+  overflow: hidden;
   background: linear-gradient(to bottom, rgba(22, 145, 215, 0), rgba(22, 145, 215, 0.05));
   border-left: 1px solid rgb(22, 145, 215);
   border-right: 1px solid rgb(22, 145, 215);
-  transition: height 0.6s ease, padding 0.3s ease;
-  overflow-y: auto;
+  border-bottom: 1px solid rgb(22, 145, 215);
+  transition: height 0.6s ease;
 }
-main .why_container-item-text p,
-main .why_container-item-text a {
+main .why_container-item-text::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 6px;
+  width: 4px;
+  height: calc(100% - 16px);
+  background: rgba(22, 145, 215, 0.2);
+  border-radius: 4px;
+  pointer-events: none;
+}
+main .why_container-item-text.hide-after::after {
+  display: none;
+}
+main .why_container-item-text .scroll-container {
+  max-height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 22px;
+  scrollbar-width: none;
+}
+main .why_container-item-text .scroll-container::-webkit-scrollbar {
+  display: none;
+}
+main .why_container-item-text .scroll-container p,
+main .why_container-item-text .scroll-container a {
   text-align: justify;
   line-height: 1.5;
   font-size: 0.95rem;
   padding: 10px 20px;
 }
-main .why_container-item-text a {
-  width: 100%;
+main .why_container-item-text .scroll-container a {
+  display: inline-block;
   text-align: center;
-  text-transform: none;
   text-decoration: none;
   color: rgb(22, 145, 215);
   transition: transform 0.3s;
 }
-main .why_container-item-text a:hover {
+main .why_container-item-text .scroll-container a:hover {
   transform: translateY(-4px);
 }
-main .why_container-item-text .small-header {
-  padding-bottom: 0;
+main .why_container-item-text .scroll-container .small-header {
   padding-top: 15px;
+  padding-bottom: 0;
 }
-main .why_container-item-text ul,
-main .why_container-item-text ol {
-  display: block;
+main .why_container-item-text .scroll-container ul,
+main .why_container-item-text .scroll-container ol {
   padding: 10px 36px;
 }
-main .why_container-item-text ul:last-child {
-  padding-bottom: 10px;
-}
-main .why_container-item-text li {
+main .why_container-item-text .scroll-container li {
   font-size: 1rem;
   margin-bottom: 6px;
   line-height: 1.4;
 }
-main .why_container-item-text li::marker {
+main .why_container-item-text .scroll-container li::marker {
   color: rgb(22, 145, 215);
 }
-main .why_container-item-text.active {
-  padding-top: 10px;
+main .why_container-item-text .scroll-content {
+  padding: 10px 20px;
+}
+main .why_container-item-text .fake-scroll-thumb {
+  position: absolute;
+  right: 6px;
+  width: 4px;
+  background: rgb(22, 145, 215);
+  border-radius: 4px;
+  pointer-events: none;
 }
 main .rotate-arrow {
   transform: rotate(180deg);
@@ -856,8 +881,8 @@ main .services .services-container .services-text {
   justify-content: space-between;
   align-items: center;
   background: #f5f5f5;
-  padding: 1rem 1.5rem;
-  font-size: 1.5rem;
+  padding: 16px 24px;
+  font-size: 24px;
   font-weight: bold;
   position: sticky;
   top: 0;
@@ -865,9 +890,27 @@ main .services .services-container .services-text {
   border-bottom: 1px solid #ddd;
 }
 .modal-content {
-  padding: 1rem 1.5rem;
+  padding: 1px 24px;
   overflow-y: auto;
+  overscroll-behavior: contain;
   flex: 1;
+  scrollbar-width: none;
+  position: relative;
+}
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+.modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .modal-content .services-text {
   flex-direction: column;
