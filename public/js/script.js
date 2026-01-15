@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		const btn = item.querySelector('.why_container-item-btn')
 		const textWrapper = item.nextElementSibling
 		const scrollContent = textWrapper.querySelector('.scroll-container')
-
 		let thumb = textWrapper.querySelector('.fake-scroll-thumb')
 
 		if (!thumb) {
@@ -86,11 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
 				scrollContent.style.overflowY = 'hidden'
 				scrollContent.scrollTop = 0
 				textWrapper.style.height = scrollContent.scrollHeight + 'px'
+				textWrapper.classList.add('hide-after')
 				return
 			}
 
 			scrollContent.style.overflowY = 'auto'
 			thumb.style.display = 'block'
+			textWrapper.classList.remove('hide-after')
 
 			const trackHeight = textWrapper.clientHeight - 16
 			const thumbHeight = Math.max((trackHeight * visibleHeight) / contentHeight, 24)
@@ -239,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let modalContent = null
 	let scrollThumb = null
 	let scrollTrack = null
-	const padding = 8 
+	const padding = 8
 
 	const initFakeScrollbar = () => {
 		if (!modalContent) return
@@ -260,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			right: '6px',
 			width: '4px',
 			height: `${visibleHeight - padding * 2}px`,
-			background: 'rgba(0,123,255,0.15)', 
+			background: 'rgba(0,123,255,0.15)',
 			borderRadius: '4px',
 			pointerEvents: 'none',
 			zIndex: '1',
@@ -305,14 +306,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		modalContent.addEventListener('scroll', updateScrollbar)
-		modalContent.addEventListener('mouseenter', () => {
-			if (scrollThumb) scrollThumb.style.opacity = '1'
-			if (scrollTrack) scrollTrack.style.opacity = '1'
-		})
-		modalContent.addEventListener('mouseleave', () => {
-			if (scrollThumb) scrollThumb.style.opacity = '0'
-			if (scrollTrack) scrollTrack.style.opacity = '0'
-		})
 
 		setTimeout(updateScrollbar, 50)
 	}
