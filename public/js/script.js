@@ -199,29 +199,130 @@ window.addEventListener('resize', () => {
 
 const aboutMeCard = document.getElementById('aboutMeCard')
 const closeBtn = aboutMeCard.querySelector('.about-close')
-const overlayContent = aboutMeCard.querySelector('.about-me_overlay-content')
+const content = document.querySelector('.about-me_overlay-content')
 
 aboutMeCard.addEventListener('click', () => {
 	aboutMeCard.classList.add('active')
-	overlayContent.scrollTop = 0
+	initFakeScrollbar()
 })
 
 closeBtn.addEventListener('click', e => {
 	e.stopPropagation()
 	aboutMeCard.classList.remove('active')
-	overlayContent.scrollTop = 0
+	content.scrollTop = 0
 })
 
+// lata doświadczenia
 const startYear = 2018
 const currentYear = new Date().getFullYear()
 const yearsOfExperience = currentYear - startYear
 document.getElementById('experience-years-mobile').textContent = yearsOfExperience
 document.getElementById('experience-years-tablet').textContent = yearsOfExperience
 
+let fakeThumb = null
+let isDragging = false
+let startY = 0
+let startScrollTop = 0
+
+function initFakeScrollbar() {
+	const scrollHeight = content.scrollHeight
+	const clientHeight = content.clientHeight
+
+	// jeśli szerokość > 900px lub treść się mieści → ukryj scrollbar
+	if (window.innerWidth > 900 || scrollHeight <= clientHeight) {
+		content.classList.add('hide-after')
+		if (fakeThumb) fakeThumb.style.display = 'none'
+		return
+	}
+
+	content.classList.remove('hide-after')
+
+	// tworzenie fake thumb tylko raz
+	if (!fakeThumb) {
+		fakeThumb = document.createElement('div')
+		fakeThumb.classList.add('fake-scroll-thumb')
+		content.appendChild(fakeThumb)
+
+		fakeThumb.addEventListener('mousedown', e => {
+			isDragging = true
+			startY = e.clientY
+			startScrollTop = content.scrollTop
+			document.body.classList.add('no-select')
+			e.preventDefault()
+		})
+
+		document.addEventListener('mouseup', () => {
+			if (isDragging) {
+				isDragging = false
+				document.body.classList.remove('no-select')
+			}
+		})
+
+		document.addEventListener('mousemove', e => {
+			if (!isDragging) return
+
+			const scrollHeight = content.scrollHeight
+			const clientHeight = content.clientHeight
+			const trackHeight = clientHeight - 16
+			const thumbHeight = fakeThumb.offsetHeight
+			const maxThumbMove = trackHeight - thumbHeight
+			const maxScroll = scrollHeight - clientHeight
+
+			const deltaY = e.clientY - startY
+			const scrollDelta = (deltaY / maxThumbMove) * maxScroll
+			content.scrollTop = startScrollTop + scrollDelta
+			updateThumbPosition()
+		})
+	}
+
+	fakeThumb.style.display = 'block'
+
+	const trackHeight = clientHeight - 16 // padding top + bottom
+	const thumbHeight = Math.max((trackHeight * clientHeight) / scrollHeight, 24)
+
+	fakeThumb.style.height = `${thumbHeight}px`
+
+	updateThumbPosition()
+}
+
+// aktualizacja pozycji thumba przy scrollowaniu
+function updateThumbPosition() {
+	if (!fakeThumb) return
+
+	const scrollTop = content.scrollTop
+	const scrollHeight = content.scrollHeight
+	const clientHeight = content.clientHeight
+
+	// jeśli nie trzeba scrollować → ukryj
+	if (scrollHeight <= clientHeight) {
+		fakeThumb.style.display = 'none'
+		return
+	}
+
+	const trackHeight = clientHeight - 16
+	const thumbHeight = fakeThumb.offsetHeight
+	const maxScroll = scrollHeight - clientHeight
+	const maxThumbMove = trackHeight - thumbHeight
+
+	const thumbTop = 8 + (scrollTop / maxScroll) * maxThumbMove
+	fakeThumb.style.top = `${thumbTop}px`
+}
+
+// aktualizacja przy scroll
+content.addEventListener('scroll', updateThumbPosition)
+
+// aktualizacja przy resize
+window.addEventListener('resize', () => {
+	initFakeScrollbar()
+	updateThumbPosition()
+})
+
 // METODY
 
 document.addEventListener('DOMContentLoaded', () => {
 	const servicesItems = document.querySelectorAll('.services-item')
+
+	/* ================= MODAL ================= */
 
 	const modalOverlay = document.createElement('div')
 	modalOverlay.className = 'modal-overlay'
@@ -238,114 +339,196 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.body.appendChild(modalOverlay)
 
 	let modalContent = null
-	let scrollThumb = null
-	let scrollTrack = null
+	let vTrack = null
+	let vThumb = null
 	const padding = 8
 
-	const initFakeScrollbar = () => {
+	/* ================= PIONOWY SCROLL ================= */
+
+	const initVerticalScrollbar = () => {
 		if (!modalContent) return
 
-		scrollThumb?.remove()
-		scrollTrack?.remove()
+		vTrack?.remove()
+		vThumb?.remove()
 
-		const visibleHeight = modalContent.clientHeight
-		const contentHeight = modalContent.scrollHeight
+		const visible = modalContent.clientHeight
+		const total = modalContent.scrollHeight
+		if (total <= visible) return
 
-		if (contentHeight <= visibleHeight) return
+		vTrack = document.createElement('div')
+		vThumb = document.createElement('div')
 
-		scrollTrack = document.createElement('div')
-		scrollTrack.className = 'modal-track'
-		Object.assign(scrollTrack.style, {
+		Object.assign(vTrack.style, {
 			position: 'absolute',
 			top: modalContent.offsetTop + padding + 'px',
 			right: '6px',
 			width: '4px',
-			height: `${visibleHeight - padding * 2}px`,
-			background: 'rgba(0,123,255,0.15)',
+			height: visible - padding * 2 + 'px',
+			background: 'rgba(0,123,255,.15)',
 			borderRadius: '4px',
-			pointerEvents: 'none',
-			zIndex: '1',
+			zIndex: 5,
 		})
-		modal.appendChild(scrollTrack)
 
-		// Thumb
-		scrollThumb = document.createElement('div')
-		scrollThumb.className = 'modal-scroll-thumb'
-		Object.assign(scrollThumb.style, {
+		Object.assign(vThumb.style, {
 			position: 'absolute',
 			right: '6px',
 			width: '4px',
-			background: 'rgba(0,123,255,0.9)',
+			background: 'rgba(0,123,255,.9)',
 			borderRadius: '4px',
-			pointerEvents: 'none',
-			zIndex: '2',
-			opacity: '1',
+			cursor: 'pointer',
+			zIndex: 6,
 		})
-		modal.appendChild(scrollThumb)
 
-		const updateScrollbar = () => {
-			const contentHeight = modalContent.scrollHeight
-			const visibleHeight = modalContent.clientHeight
+		modal.append(vTrack, vThumb)
 
-			if (contentHeight <= visibleHeight) {
-				if (scrollThumb) scrollThumb.style.opacity = '0'
-				if (scrollTrack) scrollTrack.style.opacity = '0'
-				return
-			} else {
-				if (scrollThumb) scrollThumb.style.opacity = '1'
-				if (scrollTrack) scrollTrack.style.opacity = '1'
-			}
+		let thumbHeight = 0
 
-			const thumbHeight = Math.max(30, (visibleHeight - padding * 2) * ((visibleHeight - padding * 2) / contentHeight))
-			const maxThumbTop = visibleHeight - padding * 2 - thumbHeight
-			const scrollRatio = modalContent.scrollTop / (contentHeight - visibleHeight)
-			const thumbTop = scrollRatio * maxThumbTop
+		const update = () => {
+			thumbHeight = Math.max(30, visible * (visible / total))
+			const maxThumbMove = visible - padding * 2 - thumbHeight
+			const ratio = modalContent.scrollTop / (total - visible)
 
-			scrollThumb.style.height = `${thumbHeight}px`
-			scrollThumb.style.top = `${modalContent.offsetTop + padding + thumbTop}px`
+			vThumb.style.height = thumbHeight + 'px'
+			vThumb.style.top = modalContent.offsetTop + padding + ratio * maxThumbMove + 'px'
 		}
 
-		modalContent.addEventListener('scroll', updateScrollbar)
+		modalContent.addEventListener('scroll', update)
+		update()
 
-		setTimeout(updateScrollbar, 50)
+		let startY = 0
+		let startScroll = 0
+		let dragging = false
+
+		vThumb.addEventListener('mousedown', e => {
+			dragging = true
+			startY = e.clientY
+			startScroll = modalContent.scrollTop
+			document.body.style.userSelect = 'none'
+		})
+
+		document.addEventListener('mousemove', e => {
+			if (!dragging) return
+
+			const delta = e.clientY - startY
+			const maxThumbMove = visible - padding * 2 - thumbHeight
+			const maxScroll = total - visible
+
+			modalContent.scrollTop = startScroll + (delta / maxThumbMove) * maxScroll
+		})
+
+		document.addEventListener('mouseup', () => {
+			dragging = false
+			document.body.style.userSelect = ''
+		})
 	}
+
+	/* ================= POZIOMY SCROLL (TABELA) ================= */
+
+	const initTableScrollbar = table => {
+		const visible = table.clientWidth
+		const total = table.scrollWidth
+		if (total <= visible) return
+
+		const track = document.createElement('div')
+		const thumb = document.createElement('div')
+
+		Object.assign(track.style, {
+			position: 'sticky',
+			bottom: '8px',
+			marginLeft: '12px',
+			marginRight: '12px',
+			height: '4px',
+			background: 'rgba(0,123,255,.15)',
+			borderRadius: '4px',
+			zIndex: 5,
+		})
+
+		Object.assign(thumb.style, {
+			position: 'absolute',
+			left: '0',
+			height: '4px',
+			background: 'rgba(0,123,255,.9)',
+			borderRadius: '4px',
+			cursor: 'pointer',
+			zIndex: 6,
+		})
+
+		track.appendChild(thumb)
+		modalContent.appendChild(track)
+
+		let thumbWidth = 0
+
+		const update = () => {
+			const trackWidth = track.clientWidth
+			thumbWidth = Math.max(30, trackWidth * (visible / total))
+			const maxThumbMove = trackWidth - thumbWidth
+			const ratio = table.scrollLeft / (total - visible)
+			thumb.style.width = thumbWidth + 'px'
+			thumb.style.transform = `translateX(${ratio * maxThumbMove}px)`
+		}
+
+		table.addEventListener('scroll', update)
+		update()
+
+		/* ===== DRAG ===== */
+
+		let startX = 0
+		let startScroll = 0
+		let dragging = false
+
+		thumb.addEventListener('mousedown', e => {
+			dragging = true
+			startX = e.clientX
+			startScroll = table.scrollLeft
+			document.body.style.userSelect = 'none'
+		})
+
+		document.addEventListener('mousemove', e => {
+			if (!dragging) return
+
+			const delta = e.clientX - startX
+			const maxThumbMove = visible - thumbWidth
+			const maxScroll = total - visible
+
+			table.scrollLeft = startScroll + (delta / maxThumbMove) * maxScroll
+		})
+
+		document.addEventListener('mouseup', () => {
+			dragging = false
+			document.body.style.userSelect = ''
+		})
+	}
+
+	/* ================= MODAL OPEN / CLOSE ================= */
 
 	const openModal = (content, title) => {
 		modal.innerHTML = ''
-		closeBtn.style.display = 'block'
 
 		const header = document.createElement('div')
 		header.className = 'modal-header'
 		header.textContent = title
 		header.appendChild(closeBtn)
+
 		modal.appendChild(header)
 
 		modalContent = document.createElement('div')
 		modalContent.className = 'modal-content'
-		Object.assign(modalContent.style, {
-			position: 'relative',
-			maxHeight: '90vh',
-			overflowY: 'auto',
-			paddingRight: '22px',
-		})
 		modalContent.appendChild(content.cloneNode(true))
 		modal.appendChild(modalContent)
 
 		modalOverlay.style.display = 'flex'
 		document.body.style.overflow = 'hidden'
 
-		initFakeScrollbar()
+		initVerticalScrollbar()
+
+		modalContent.querySelectorAll('.table').forEach(initTableScrollbar)
 	}
 
 	const closeModal = () => {
 		modalOverlay.style.display = 'none'
-		closeBtn.style.display = 'none'
 		document.body.style.overflow = ''
-
-		scrollThumb?.remove()
-		scrollThumb = null
-		scrollTrack?.remove()
-		scrollTrack = null
+		vTrack?.remove()
+		vThumb?.remove()
 		modalContent = null
 	}
 
@@ -355,13 +538,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (e.target === modalOverlay) closeModal()
 	})
 
+	/* ================= SERVICES ================= */
+
 	servicesItems.forEach(item => {
-		const serviceId = item.getAttribute('data-service')
-		const content = document.getElementById(serviceId)
+		const id = item.dataset.service
+		const content = document.getElementById(id)
 
 		item.addEventListener('click', () => {
-			const h3 = item.querySelector('h3')
-			const title = h3 ? h3.textContent.trim() : ''
+			const title = item.querySelector('h3')?.textContent || ''
 			if (content) openModal(content, title)
 		})
 	})
