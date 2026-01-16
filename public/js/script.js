@@ -371,10 +371,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		Object.assign(vThumb.style, {
 			position: 'absolute',
-			right: '6px',
-			width: '4px',
+			right: '5px',
+			width: '6px',
 			background: 'rgba(0,123,255,.9)',
-			borderRadius: '4px',
+			borderRadius: '6px',
 			cursor: 'pointer',
 			zIndex: 6,
 		})
@@ -446,9 +446,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		Object.assign(thumb.style, {
 			position: 'absolute',
 			left: '0',
-			height: '4px',
+			bottom: '-1px',
+			height: '6px',
 			background: 'rgba(0,123,255,.9)',
-			borderRadius: '4px',
+			borderRadius: '6px',
 			cursor: 'pointer',
 			zIndex: 6,
 		})
