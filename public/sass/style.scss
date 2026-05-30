@@ -2558,10 +2558,12 @@ main {
 					grid-column: 11 / 13;
 					grid-row: 2 / 3;
 				}
+				
 				&_gallery > .thumb:nth-child(11) {
 					grid-column: 2 / 4;
 					grid-row: 3 / 4;
 				}
+
 				&_gallery > .thumb:nth-child(12) {
 					grid-column: 10 / 12;
 					grid-row: 3 / 4;
