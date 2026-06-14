@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
    <url>
       <loc>https://www.fizjofocus.com/</loc>
-      <lastmod>2026-01-01</lastmod>
+      <lastmod>2026-06-14</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
+   </url>
+
+   <url>
+      <loc>https://www.fizjofocus.com/pdtr.html</loc>
+      <lastmod>2026-06-14</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://www.fizjofocus.com/neuroseminars.html</loc>
+      <lastmod>2026-06-14</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://www.fizjofocus.com/dns.html</loc>
+      <lastmod>2026-06-14</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://www.fizjofocus.com/pnf.html</loc>
+      <lastmod>2026-06-14</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://www.fizjofocus.com/mtg.html</loc>
+      <lastmod>2026-06-14</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+
+   <url>
+      <loc>https://www.fizjofocus.com/inne.html</loc>
+      <lastmod>2026-06-14</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
    </url>
 
 </urlset>
