@@ -1068,39 +1068,39 @@ main .back-actions .btn-back:active {
   body main .services-page-detail .services-text-content .table::before {
     display: none;
   }
-  body main .footer_content {
+  body .footer_content {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     text-align: center;
   }
-  body main .footer_content-links {
+  body .footer_content-links {
     align-items: center;
   }
-  body main .footer_content-links .footer_links-list {
+  body .footer_content-links .footer_links-list {
     align-items: center;
   }
-  body main .footer_content-links .footer_links-list li a:hover {
+  body .footer_content-links .footer_links-list li a:hover {
     transform: translateY(-2px);
   }
-  body main .footer_content-container {
+  body .footer_content-container {
     gap: 12px;
     align-items: center;
   }
-  body main .footer_content-container_icons {
+  body .footer_content-container_icons {
     gap: 18px;
   }
-  body main .footer_content-container_icons a {
+  body .footer_content-container_icons a {
     width: 48px;
     height: 48px;
   }
-  body main .footer_content-container_icons-copyright {
+  body .footer_content-container_icons-copyright {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
   }
-  body main .footer_content-container_icons-copyright p + p::before {
+  body .footer_content-container_icons-copyright p + p::before {
     content: "•";
     margin: 0 6px;
     opacity: 0.6;
