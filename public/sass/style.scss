@@ -223,8 +223,8 @@ p {
 				text-decoration: none;
 				color: $color-light;
 				transition:
-					background-color 0.25s,
-					color 0.25s;
+					background-color 0.3s,
+					color 0.3s;
 
 				&:hover {
 					background-color: $color-primary;
@@ -278,7 +278,7 @@ p {
 			border: none;
 			cursor: pointer;
 			font-family: inherit;
-			transition: background-color 0.25s;
+			transition: background-color 0.3s;
 
 			&:hover {
 				background-color: $color-primary;
@@ -299,7 +299,7 @@ p {
 		// Kontener przycisku powrotu w podmenu
 		&-back {
 			width: 100%;
-			transition: background-color 0.25s;
+			transition: background-color 0.3s;
 
 			// Przycisk "Wróć"
 			&-btn {
@@ -365,7 +365,7 @@ p {
 				justify-content: center;
 				height: 100%;
 				width: 100%;
-				transition: filter 0.25s;
+				transition: filter 0.3s;
 
 				img {
 					width: 50px;
@@ -398,7 +398,7 @@ p {
 			background: $color-light;
 			opacity: 1;
 			transform: rotate(0deg);
-			transition: 0.25s ease-in-out;
+			transition: 0.3s ease-in-out;
 
 			&:nth-child(even) {
 				left: 50%;
@@ -533,9 +533,9 @@ p {
 	cursor: pointer;
 	box-shadow: 0 6px 18px rgba(31, 58, 95, 0.35);
 	transition:
-		background-color 0.25s ease,
-		transform 0.25s ease,
-		box-shadow 0.25s ease;
+		background-color 0.3s ease,
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
 	z-index: 1000;
 
 	img {
@@ -691,10 +691,10 @@ p {
 				letter-spacing: 0.3px;
 				text-decoration: none;
 				transition:
-					transform 0.25s ease,
-					box-shadow 0.25s ease,
-					color 0.25s,
-					background-color 0.25s;
+					transform 0.3s ease,
+					box-shadow 0.3s ease,
+					color 0.3s,
+					background-color 0.3s;
 				padding: 14px 32px;
 				margin: 12px 0;
 			}
@@ -1107,8 +1107,8 @@ main {
 				text-align: center;
 				cursor: pointer;
 				transition:
-					transform 0.25s ease,
-					box-shadow 0.25s ease;
+					transform 0.3s ease,
+					box-shadow 0.3s ease;
 
 				&-title {
 					display: flex;
@@ -1245,7 +1245,7 @@ main {
 				font-size: 1rem;
 				margin-bottom: 20px;
 			}
-			
+
 			p:first-of-type {
 				text-indent: 2em;
 			}
@@ -1496,10 +1496,10 @@ main {
 			// Kopiujemy mechanikę płynnych transformacji z Twojego .header_hero-text-btns
 			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 			transition:
-				transform 0.25s ease,
-				box-shadow 0.25s ease,
-				background-color 0.25s,
-				color 0.25s;
+				transform 0.3s ease,
+				box-shadow 0.3s ease,
+				background-color 0.3s,
+				color 0.3s;
 
 			&:hover {
 				transform: translateY(-3px);
@@ -1536,8 +1536,8 @@ main {
 		font-size: 1.1rem;
 		letter-spacing: 0.3px;
 		transition:
-			transform 0.25s ease,
-			box-shadow 0.25s ease;
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
 
 		&:hover {
 			transform: translateY(-2px);
@@ -2120,21 +2120,66 @@ main {
 	background: #0f5c8a;
 	color: $color-light;
 	position: relative;
-	padding: 60px 15px;
+	padding: 80px 15px;
 	margin-top: 80px;
 
 	&_content {
 		display: flex;
+		flex-direction: column; // Na mobile układamy wszystko w pionie
 		align-items: center;
-		justify-content: space-around;
-		max-width: 1000px;
+		justify-content: center;
+		gap: 40px; // Daje ładny oddech między sekcjami na telefonie
+		max-width: 1200px;
 		margin: 0 auto;
+		text-align: center; // Centrowanie tekstu na mobile
 
 		&-img img {
 			width: 80px;
 			height: 80px;
 			opacity: 1;
 			filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+		}
+
+		&-links {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.footer_links-title {
+				font-size: 1.1rem;
+				font-weight: 700;
+				margin-bottom: 16px;
+				letter-spacing: 0.5px;
+				text-transform: uppercase;
+				color: $color-light;
+			}
+
+			.footer_links-list {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+
+				li a {
+					color: $color-light;
+					text-decoration: none;
+					font-size: 1rem;
+					opacity: 0.8;
+					display: inline-block;
+					transition:
+						transform 0.3s ease,
+						opacity 0.3s ease,
+						color 0.3s ease;
+
+					&:hover {
+						opacity: 1;
+						color: $color-dark; // Spójne z hoverem w nawigacji głównej
+						transform: translateY(-2px); // Subtelne przesunięcie przy najechaniu
+					}
+				}
+			}
 		}
 
 		&-container {
@@ -2157,8 +2202,8 @@ main {
 					border-radius: 12px;
 					background: rgba(255, 255, 255, 0.12);
 					transition:
-						transform 0.25s ease,
-						background 0.25s ease;
+						transform 0.3s ease,
+						background 0.3s ease;
 
 					img {
 						width: 44px;
@@ -2228,7 +2273,7 @@ main {
 			z-index: 1002;
 
 			a {
-				transition: filter 0.25s;
+				transition: filter 0.3s;
 
 				img {
 					width: 22px;
@@ -2302,7 +2347,7 @@ main {
 			&_nav-container {
 				position: static;
 				width: auto;
-				overflow: visible; // Pozwala rozwijać podmenu w dół poza pasek nav
+				overflow: visible;
 				background-color: transparent;
 				box-shadow: none;
 				transform: none;
@@ -2361,7 +2406,7 @@ main {
 						text-transform: uppercase;
 						text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 						-webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.2);
-						transition: all 0.25s;
+						transition: all 0.3s;
 					}
 
 					a:hover,
@@ -2406,7 +2451,7 @@ main {
 					cursor: pointer;
 					text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 					-webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.2);
-					transition: all 0.25s;
+					transition: all 0.3s;
 
 					&::before {
 						display: none !important; // Usuwamy mobilny sztuczny element centrujący
@@ -2421,7 +2466,7 @@ main {
 						width: 20px;
 						height: 20px;
 						transform: rotate(0deg);
-						transition: all 0.25s;
+						transition: all 0.3s;
 						content: url('../icons/circle-down-solid-full-white.svg') !important;
 						justify-self: unset;
 					}
@@ -2456,9 +2501,9 @@ main {
 					visibility: hidden;
 					transform: translateY(-20px); // Animacja delikatnego wjazdu z dołu
 					transition:
-						opacity 0.25s ease,
-						transform 0.25s ease,
-						visibility 0.25s;
+						opacity 0.3s ease,
+						transform 0.3s ease,
+						visibility 0.3s;
 					pointer-events: none;
 
 					li {
@@ -2474,8 +2519,8 @@ main {
 							letter-spacing: 0.5px;
 							border-radius: 16px;
 							transition:
-								background-color 0.25s,
-								color 0.25s;
+								background-color 0.3s,
+								color 0.3s;
 
 							&:hover {
 								background-color: $color-primary;
@@ -2746,8 +2791,26 @@ main {
 
 		.footer {
 			&_content {
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center; 
+				text-align: center;
+
+				&-links {
+					align-items: center;
+
+					.footer_links-list {
+						align-items: center;
+
+						li a:hover {
+							transform: translateY(-2px); // Na desktopie efekt przesunięcia może być ciut wyraźniejszy
+						}
+					}
+				}
+
 				&-container {
 					gap: 12px;
+					align-items: center;
 
 					&_icons {
 						gap: 18px;
@@ -2760,7 +2823,7 @@ main {
 						&-copyright {
 							display: flex;
 							align-items: center;
-							justify-content: center;
+							justify-content: flex-end;
 							flex-wrap: wrap;
 						}
 
@@ -2964,6 +3027,7 @@ main {
 
 		.footer {
 			&_content {
+
 				&-img img {
 					width: 100px;
 					height: 100px;
@@ -2980,10 +3044,10 @@ main {
 					}
 
 					&-copyright {
-						text-align: center;
+						text-align: right;
 						width: 100%;
 						display: flex;
-						justify-content: center;
+						justify-content: flex-end;
 						flex-wrap: wrap;
 					}
 				}

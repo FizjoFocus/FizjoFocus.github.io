@@ -189,7 +189,7 @@ p {
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
-  transition: background-color 0.25s, color 0.25s;
+  transition: background-color 0.3s, color 0.3s;
 }
 .navbar_nav li a:hover {
   background-color: rgb(22, 145, 215);
@@ -234,7 +234,7 @@ p {
   border: none;
   cursor: pointer;
   font-family: inherit;
-  transition: background-color 0.25s;
+  transition: background-color 0.3s;
 }
 .navbar_dropdown-btn:hover {
   background-color: rgb(22, 145, 215);
@@ -250,7 +250,7 @@ p {
 }
 .navbar_dropdown-back {
   width: 100%;
-  transition: background-color 0.25s;
+  transition: background-color 0.3s;
 }
 .navbar_dropdown-back-btn {
   display: grid;
@@ -305,7 +305,7 @@ p {
   justify-content: center;
   height: 100%;
   width: 100%;
-  transition: filter 0.25s;
+  transition: filter 0.3s;
 }
 .navbar_small-nav-media a img {
   width: 50px;
@@ -332,7 +332,7 @@ p {
   background: #fff;
   opacity: 1;
   transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .navbar_small-nav #nav-icon2 span:nth-child(even) {
   left: 50%;
@@ -443,7 +443,7 @@ p {
   text-decoration: none;
   cursor: pointer;
   box-shadow: 0 6px 18px rgba(31, 58, 95, 0.35);
-  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
 }
 .float-contact img {
@@ -577,7 +577,7 @@ p {
   font-weight: 600;
   letter-spacing: 0.3px;
   text-decoration: none;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s, background-color 0.25s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s, background-color 0.3s;
   padding: 14px 32px;
   margin: 12px 0;
 }
@@ -923,7 +923,7 @@ main .services .services-container .services-item {
   max-width: 300px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 main .services .services-container .services-item-title {
   display: flex;
@@ -1248,7 +1248,7 @@ main .services .services-container .services-item:focus-visible {
   text-decoration: none;
   border-radius: 14px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s, color 0.25s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, color 0.3s;
 }
 .cta-block_actions .btn-cta-primary:hover {
   transform: translateY(-3px);
@@ -1279,7 +1279,7 @@ main .services .services-container .services-item:focus-visible {
   font-weight: 500;
   font-size: 1.1rem;
   letter-spacing: 0.3px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .back-actions .btn-back:hover {
   transform: translateY(-2px);
@@ -1780,21 +1780,58 @@ main .services .services-container .services-item:focus-visible {
   background: #0f5c8a;
   color: #fff;
   position: relative;
-  padding: 60px 15px;
+  padding: 80px 15px;
   margin-top: 80px;
 }
 .footer_content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  max-width: 1000px;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 .footer_content-img img {
   width: 80px;
   height: 80px;
   opacity: 1;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+.footer_content-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer_content-links .footer_links-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.footer_content-links .footer_links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer_content-links .footer_links-list li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  opacity: 0.8;
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+}
+.footer_content-links .footer_links-list li a:hover {
+  opacity: 1;
+  color: #000000;
+  transform: translateY(-2px);
 }
 .footer_content-container {
   display: flex;
@@ -1815,7 +1852,7 @@ main .services .services-container .services-item:focus-visible {
   place-items: center;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.12);
-  transition: transform 0.25s ease, background 0.25s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 .footer_content-container_icons a img {
   width: 44px;
@@ -1862,7 +1899,7 @@ main .services .services-container .services-item:focus-visible {
     z-index: 1002;
   }
   body .navbar_small-nav-media a {
-    transition: filter 0.25s;
+    transition: filter 0.3s;
   }
   body .navbar_small-nav-media a img {
     width: 22px;
@@ -1971,7 +2008,7 @@ main .services .services-container .services-item:focus-visible {
     text-transform: uppercase;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.2);
-    transition: all 0.25s;
+    transition: all 0.3s;
   }
   body .navbar_nav li a:hover,
   body .navbar_nav li a.active {
@@ -2006,7 +2043,7 @@ main .services .services-container .services-item:focus-visible {
     cursor: pointer;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.2);
-    transition: all 0.25s;
+    transition: all 0.3s;
   }
   body .navbar_dropdown-btn::before {
     display: none !important;
@@ -2019,7 +2056,7 @@ main .services .services-container .services-item:focus-visible {
     width: 20px;
     height: 20px;
     transform: rotate(0deg);
-    transition: all 0.25s;
+    transition: all 0.3s;
     content: url("../icons/circle-down-solid-full-white.svg") !important;
     justify-self: unset;
   }
@@ -2047,7 +2084,7 @@ main .services .services-container .services-item:focus-visible {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
     pointer-events: none;
   }
   body .navbar_dropdown-menu li {
@@ -2062,7 +2099,7 @@ main .services .services-container .services-item:focus-visible {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border-radius: 16px;
-    transition: background-color 0.25s, color 0.25s;
+    transition: background-color 0.3s, color 0.3s;
   }
   body .navbar_dropdown-menu li a:hover {
     background-color: rgb(22, 145, 215);
@@ -2268,8 +2305,24 @@ main .services .services-container .services-item:focus-visible {
   body .modal-overlay .modal-content .table table td {
     padding: 8px;
   }
+  body .footer_content {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+  body .footer_content-links {
+    align-items: center;
+  }
+  body .footer_content-links .footer_links-list {
+    align-items: center;
+  }
+  body .footer_content-links .footer_links-list li a:hover {
+    transform: translateY(-2px);
+  }
   body .footer_content-container {
     gap: 12px;
+    align-items: center;
   }
   body .footer_content-container_icons {
     gap: 18px;
@@ -2281,7 +2334,7 @@ main .services .services-container .services-item:focus-visible {
   body .footer_content-container_icons-copyright {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     flex-wrap: wrap;
   }
   body .footer_content-container_icons-copyright p + p::before {
@@ -2446,10 +2499,10 @@ main .services .services-container .services-item:focus-visible {
     gap: 24px;
   }
   body .footer_content-container-copyright {
-    text-align: center;
+    text-align: right;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-wrap: wrap;
   }
 }
