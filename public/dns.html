@@ -49,9 +49,12 @@
     <link rel="stylesheet" href="./css/services.css">
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
       "@type": "MedicalBusiness",
+      "@id": "https://www.fizjofocus.com/#business",
       "name": "Fizjo Focus Fizjoterapia – Paweł Kozyra",
       "url": "https://www.fizjofocus.com/dns.html",
       "logo": "https://www.fizjofocus.com/img/LOGO_header.svg",
@@ -61,7 +64,9 @@
       "telephone": "+48661228200",
       "priceRange": "PLN 200",
       "sameAs": [
-        "https://www.facebook.com/profile.php?id=100085838256435"
+        "https://www.facebook.com/profile.php?id=100085838256435",
+        "https://www.znanylekarz.pl/pawel-kozyra/fizjoterapeuta/wroclaw",
+        "https://www.google.com/maps/place/Fizjo+Focus+Fizjoterapia+-+Pawe%C5%82+Kozyra/@51.1039286,17.0837197,17z/data=!3m1!4b1!4m6!3m5!1s0x470fe938b7021b3d:0xe8415d05c8d16e53!8m2!3d51.1039253!4d17.0862946!16s%2Fg%2F11myjzr96v"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -70,6 +75,11 @@
         "postalCode": "51-657",
         "addressCountry": "PL"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.1039253, 
+        "longitude": 17.0862946
+      },
       "areaServed": {
         "@type": "City",
         "name": "Wrocław"
@@ -77,14 +87,6 @@
       "medicalSpecialty": [
         "Physiotherapy",
         "Neurology"
-      ],
-      "availableService": [
-        { "@type": "MedicalTherapy", "name": "Fizjoterapia" },
-        { "@type": "MedicalTherapy", "name": "P-DTR" },
-        { "@type": "MedicalTherapy", "name": "Neurologia funkcjonalna" },
-        { "@type": "MedicalTherapy", "name": "Terapia manualna" },
-        { "@type": "MedicalTherapy", "name": "Ból kręgosłupa" },
-        { "@type": "MedicalTherapy", "name": "Zaburzenia czucia" }
       ],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -100,8 +102,45 @@
         "opens": "07:00",
         "closes": "21:00"
       }
+    },
+    {
+      "@type": "MedicalTherapy",
+      "@id": "https://www.fizjofocus.com/dns.html#therapy",
+      "name": "Metoda DNS (Dynamic Neuromuscular Stabilization – Dynamiczna Stabilizacja Nerwowo-Mięśniowa)",
+      "description": "Innowacyjna metoda rehabilitacji i stabilizacji kręgosłupa we Wrocławiu. Terapia oparta na naturalnych wzorcach ruchowych niemowląt, korygująca wady postawy oraz zaburzenia kontroli nerwowo-mięśniowej.",
+      "provider": {
+        "@id": "https://www.fizjofocus.com/#business"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "200",
+        "priceCurrency": "PLN",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fizjofocus.com/dns.html"
+      },
+      "aspect": [
+        "wzorce rozwojowe niemowląt",
+        "dynamiczna stabilizacja nerwowo-mięśniowa",
+        "korekcja nieprawidłowych wzorców ruchowych",
+        "stabilizacja kręgosłupa",
+        "kontrola nerwowo-mięśniowa"
+      ],
+      "indication": [
+        "Bóle kręgosłupa",
+        "Bóle stawów",
+        "Wady postawy",
+        "Zaburzenia stabilizacji ciała",
+        "Urazy",
+        "Przeciążenia",
+        "Skutki siedzącego trybu życia",
+        "Zaburzenia kontroli nerwowo-mięśniowej",
+        "Ograniczenia mobilności"
+      ]
     }
-    </script>
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -239,12 +278,12 @@
             <div class="footer_content-links" aria-label="Oferta gabinetu">
                 <p class="footer_links-title">Moje metody:</p>
                 <ul class="footer_links-list">
-                    <li><a href="pdtr.html" target="_blank">Terapia P-DTR</a></li>
-                    <li><a href="neuroseminars.html" target="_blank">NeuroSeminars</a></li>
-                    <li><a href="dns.html" target="_blank">Metoda DNS</a></li>
-                    <li><a href="pnf.html" target="_blank">Rehabilitacja PNF</a></li>
-                    <li><a href="mtg.html" target="_blank">Masaż Tkanek Miękkich (MTG)</a></li>
-                    <li><a href="inne.html" target="_blank">Terapie Wspomagające i&nbsp;Trening Medyczny</a></li>
+                    <li><a href="pdtr.html">Terapia P-DTR</a></li>
+                    <li><a href="neuroseminars.html">NeuroSeminars</a></li>
+                    <li><a href="dns.html">Metoda DNS</a></li>
+                    <li><a href="pnf.html">Rehabilitacja PNF</a></li>
+                    <li><a href="mtg.html">Masaż Tkanek Miękkich (MTG)</a></li>
+                    <li><a href="inne.html">Terapie Wspomagające i&nbsp;Trening Medyczny</a></li>
                 </ul>
             </div>
 
