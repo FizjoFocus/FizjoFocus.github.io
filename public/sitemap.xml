@@ -1,53 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-   <url>
-      <loc>https://www.fizjofocus.com/</loc>
-      <lastmod>2026-06-14</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>1.0</priority>
-   </url>
+  <!-- Strona główna -->
+  <url>
+    <loc>https://www.fizjofocus.com/</loc>
+  </url>
 
-   <url>
-      <loc>https://www.fizjofocus.com/pdtr.html</loc>
-      <lastmod>2026-06-14</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
+  <!-- Dolegliwości -->
+  <url>
+    <loc>https://www.fizjofocus.com/dolegliwosci/rehabilitacja-glowy-i-karku-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/dolegliwosci/rehabilitacja-kregoslupa-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/dolegliwosci/rehabilitacja-barku-i-lokcia-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/dolegliwosci/rehabilitacja-reki-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/dolegliwosci/rehabilitacja-biodra-i-miednicy-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/dolegliwosci/rehabilitacja-kolana-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/dolegliwosci/rehabilitacja-stopy-i-podudzia-wroclaw/</loc>
+  </url>
 
-   <url>
-      <loc>https://www.fizjofocus.com/neuroseminars.html</loc>
-      <lastmod>2026-06-14</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
+  <!-- Zakres terapii -->
+  <url>
+    <loc>https://www.fizjofocus.com/terapie/rehabilitacja-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/terapie/fizjoterapia-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/terapie/kinezyterapia-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/terapie/trening-medyczny-wroclaw/</loc>
+  </url>
 
-   <url>
-      <loc>https://www.fizjofocus.com/dns.html</loc>
-      <lastmod>2026-06-30</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-
-   <url>
-      <loc>https://www.fizjofocus.com/pnf.html</loc>
-      <lastmod>2026-06-14</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-
-   <url>
-      <loc>https://www.fizjofocus.com/mtg.html</loc>
-      <lastmod>2026-06-14</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-
-   <url>
-      <loc>https://www.fizjofocus.com/inne.html</loc>
-      <lastmod>2026-06-14</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
+  <!-- Metody pracy -->
+  <url>
+    <loc>https://www.fizjofocus.com/metody/pdtr-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/metody/neuroseminars-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/metody/dns-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/metody/pnf-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/metody/mtg-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/metody/terapia-manualna-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/metody/terapia-miesniowo-powieziowa-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/metody/trening-rehabilitacyjny-wroclaw/</loc>
+  </url>
+  <url>
+    <loc>https://www.fizjofocus.com/metody/masaz-wroclaw/</loc>
+  </url>
 
 </urlset>
