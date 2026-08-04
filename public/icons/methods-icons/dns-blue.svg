@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="52.916664mm"
+   height="52.916664mm"
+   viewBox="0 0 52.916664 52.916664"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="DNS-picture.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-nodes="true"
+     inkscape:snap-global="true"
+     inkscape:zoom="1.2646927"
+     inkscape:cx="-54.558709"
+     inkscape:cy="101.60571"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g156" />
+  <defs
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5144">
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         id="rect5146"
+         width="109.17133"
+         height="109.17133"
+         x="35.123993"
+         y="28.598406"
+         ry="0"
+         transform="rotate(20.403903)" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-120.10001,-33.154597)">
+    <g
+       id="g160"
+       transform="translate(46.856796,-21.265777)">
+      <g
+         id="g156">
+        <g
+           id="g4902"
+           transform="matrix(-0.4543004,-0.16898803,-0.16898803,0.4543004,143.1849,40.558381)"
+           inkscape:export-filename="E:\Nauka programowania nowe\Nauka programowania\FizjoFocus\public\icons\g4902.png"
+           inkscape:export-xdpi="96.000015"
+           inkscape:export-ydpi="96.000015"
+           clip-path="url(#clipPath5144)">
+          <path
+             id="rect1452"
+             style="fill:#1691d7;stroke:#1691d7;stroke-width:0.358;stroke-linecap:round;paint-order:stroke fill markers"
+             transform="rotate(-16.168995)"
+             d="m 31.791249,96.964752 c 5.89062,0 10.632888,4.742268 10.632888,10.632888 v 48.29854 c 0,5.89062 -4.742268,10.63289 -10.632888,10.63289 -5.89062,0 -10.632888,-4.74227 -10.632888,-10.63289 v -48.29854 c 0,-5.89062 4.742268,-10.632888 10.632888,-10.632888 z" />
+          <path
+             id="rect1575"
+             style="fill:#1691d7;stroke:#1691d7;stroke-width:0.400254;stroke-linecap:round;paint-order:stroke fill markers"
+             transform="matrix(0.76096246,-0.64879591,0.78378995,0.62102602,0,0)"
+             d="m -70.077113,118.08871 c 4.232249,0 7.639439,3.60501 7.639439,8.083 v 33.16101 c 0,4.47798 -3.40719,8.083 -7.639439,8.083 -4.23225,0 -7.63944,-3.60502 -7.63944,-8.083 v -33.16101 c 0,-4.47799 3.40719,-8.083 7.63944,-8.083 z" />
+          <path
+             id="path1601"
+             style="fill:#1691d7;stroke:#1691d7;stroke-width:0.358;stroke-linecap:round;paint-order:stroke fill markers"
+             d="M 67.041263,69.20388 A 13.336165,13.336165 0 0 1 53.705097,82.540046 13.336165,13.336165 0 0 1 40.368932,69.20388 13.336165,13.336165 0 0 1 53.705097,55.867715 13.336165,13.336165 0 0 1 67.041263,69.20388 Z" />
+          <path
+             id="rect1983"
+             style="fill:#1691d7;stroke:#1691d7;stroke-width:0.316385;stroke-linecap:round;paint-order:stroke fill markers"
+             transform="rotate(-20.042696)"
+             d="m -2.6038995,124.54492 c 3.04115584,0 5.489451,3.13472 5.489451,7.02852 v 34.60194 c 0,3.8938 -2.44829516,7.02852 -5.489451,7.02852 -3.0411558,0 -5.4894509,-3.13472 -5.4894509,-7.02852 v -34.60194 c 0,-3.8938 2.4482951,-7.02852 5.4894509,-7.02852 z" />
+          <path
+             id="rect2426"
+             style="fill:#1691d7;stroke:#ffffff;stroke-width:1.658;stroke-linecap:round;paint-order:stroke fill markers"
+             transform="rotate(-38.071548)"
+             d="m -35.874302,106.21862 h 24.509709 c 3.1949125,0 5.7669902,2.57208 5.7669902,5.76699 0,3.19491 -2.5720777,5.76699 -5.7669902,5.76699 h -24.509709 c -3.194913,0 -5.766991,-2.57208 -5.766991,-5.76699 0,-3.19491 2.572078,-5.76699 5.766991,-5.76699 z" />
+          <path
+             id="rect2751"
+             style="fill:#1691d7;stroke:#1691d7;stroke-width:1.90541;stroke-linecap:round;paint-order:stroke fill markers"
+             transform="rotate(-64.234843)"
+             d="m -81.651559,60.917225 c 2.527333,0 4.561973,2.03464 4.561973,4.561973 v 19.103155 c 0,2.527332 -2.03464,4.561972 -4.561973,4.561972 -2.527333,0 -4.561972,-2.03464 -4.561972,-4.561972 V 65.479198 c 0,-2.527333 2.034639,-4.561973 4.561972,-4.561973 z" />
+          <path
+             id="rect2976"
+             style="fill:none;stroke:#000000;stroke-width:0.02;stroke-linecap:square;paint-order:stroke fill markers"
+             d="M 2.1226275,55.267208 H 111.27396 V 164.41854 H 2.1226275 Z" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
