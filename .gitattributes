@@ -1,0 +1,7 @@
+# LF everywhere, so Windows checkouts don't rewrite whole files
+* text=auto eol=lf
+
+*.png binary
+*.webp binary
+*.ico binary
+*.woff2 binary
