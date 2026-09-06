@@ -1,0 +1,76 @@
+---
+const GA_ID = 'G-BCN2J5P9Z2'
+---
+
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite"
+     aria-label="Zgoda na pliki cookie" hidden>
+    <p class="cookie-banner_text">
+        Używam plików cookie do anonimowej statystyki odwiedzin. Możesz je odrzucić — strona
+        będzie działać tak samo. Szczegóły w <a href="/polityka-prywatnosci/">polityce prywatności</a>.
+    </p>
+    <div class="cookie-banner_actions">
+        <button type="button" data-consent="denied" class="cookie-banner_btn cookie-banner_btn--ghost">
+            Tylko niezbędne
+        </button>
+        <button type="button" data-consent="granted" class="cookie-banner_btn">
+            Akceptuję
+        </button>
+    </div>
+</div>
+
+<script is:inline define:vars={{ GA_ID }}>
+    (function () {
+        var KEY = 'ff-consent'
+        var banner = document.getElementById('cookie-banner')
+
+        window.dataLayer = window.dataLayer || []
+        function gtag() { dataLayer.push(arguments) }
+
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+        })
+
+        // Analytics is only fetched once someone accepts
+        function loadAnalytics() {
+            if (document.getElementById('ga-script')) return
+            var s = document.createElement('script')
+            s.id = 'ga-script'
+            s.async = true
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID
+            document.head.appendChild(s)
+            gtag('js', new Date())
+            gtag('config', GA_ID)
+        }
+
+        function apply(choice) {
+            gtag('consent', 'update', {
+                ad_storage: choice,
+                ad_user_data: choice,
+                ad_personalization: choice,
+                analytics_storage: choice,
+            })
+            if (choice === 'granted') loadAnalytics()
+        }
+
+        var saved = null
+        try { saved = localStorage.getItem(KEY) } catch (e) {}
+
+        if (saved === 'granted' || saved === 'denied') {
+            apply(saved)
+        } else {
+            banner.hidden = false
+        }
+
+        banner.addEventListener('click', function (e) {
+            var btn = e.target.closest('[data-consent]')
+            if (!btn) return
+            var choice = btn.dataset.consent
+            try { localStorage.setItem(KEY, choice) } catch (e) {}
+            apply(choice)
+            banner.hidden = true
+        })
+    })()
+</script>
