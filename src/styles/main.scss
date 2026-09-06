@@ -250,14 +250,24 @@ main {
 				width: 100%;
 				height: min(70vh, 500px);
 
-				#skeleton {
+				// Drawing and hotspot overlay share one box so the circles line up
+				#skeleton,
+				.body-map_drawing {
 					position: absolute;
 					top: 0;
 					left: 50%;
 					transform: translateX(-50%);
 					height: min(70vh, 500px);
-					margin: 0 auto;
+					width: auto;
+				}
 
+				.body-map_drawing {
+					pointer-events: none;
+					// Container collapses to 0 on mobile; global img reset would zero this out too
+					max-width: none;
+				}
+
+				#skeleton {
 					.hotspot {
 						fill: rgb(22, 144, 215);
 						opacity: 0.1;
