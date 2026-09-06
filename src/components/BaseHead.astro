@@ -1,0 +1,56 @@
+---
+
+import '../styles/main.scss'
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  schema?: string;
+}
+
+const { title, description, canonical, schema } = Astro.props;
+const siteUrl = "https://www.fizjofocus.com";
+---
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-BCN2J5P9Z2"></script>
+    <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BCN2J5P9Z2');
+    </script>
+
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    <link rel="canonical" href={canonical}>
+
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/img/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/android-chrome-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <meta name="theme-color" content="#1691d7">
+
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content={`${siteUrl}/img/og/og-image.png`}>
+    <meta property="og:url" content={canonical}>
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description"
+        content={description}>
+    <meta name="twitter:image" content={`${siteUrl}/img/og/og-image.png`}>
+
+    <link rel="preload" as="image" href="/img/LOGO_header.svg" fetchpriority="high">
+    <link rel="preload" href="/fonts/roboto_woff2/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/roboto_woff2/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/roboto_woff2/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+  {schema && <script type="application/ld+json" set:html={schema}></script>}

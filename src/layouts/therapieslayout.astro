@@ -1,0 +1,28 @@
+---
+// src/layouts/Layout.astro
+import TherapiesHead from '../components/TherapiesHead.astro';
+import Nav from '../components/nav.astro';
+import TherapiesFooter from '../components/TherapiesFooter.astro';
+
+const { title, description, canonical, schema } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <TherapiesHead title={title} description={description} canonical={canonical} schema={schema} />
+  </head>
+  <body>
+    <Nav />
+
+    <main>
+      <slot /> </main>
+
+    <TherapiesFooter /> 
+    
+    <script>
+      import '../scripts/main'
+      import '../scripts/FAQ'
+    </script>
+  </body>
+</html>
