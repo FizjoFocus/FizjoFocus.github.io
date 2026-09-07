@@ -6,7 +6,8 @@ import Layout from '../layouts/methodslauout.astro';
   title="Polityka prywatności | Fizjo Focus"
   description="Jak Fizjo Focus przetwarza dane osobowe pacjentów i odwiedzających stronę: administrator, cele, podstawy prawne, okres przechowywania i prawa użytkownika.">
 
-    <section class="method-section legal">
+    <section class="methods-page-detail">
+      <div class="container legal">
         <h1>Polityka prywatności</h1>
         <p class="legal_updated">Ostatnia aktualizacja: 7 września 2026</p>
 
@@ -70,7 +71,7 @@ import Layout from '../layouts/methodslauout.astro';
             Twój wybór zapamiętuję w pamięci lokalnej przeglądarki. Możesz go zmienić w każdej chwili:
         </p>
         <p>
-            <button type="button" id="reset-consent" class="cookie-banner_btn">
+            <button type="button" id="reset-consent" class="btn-solid">
                 Zmień zgodę na cookie
             </button>
         </p>
@@ -94,11 +95,11 @@ import Layout from '../layouts/methodslauout.astro';
             Podanie danych jest dobrowolne, ale bez danych kontaktowych nie umówię wizyty, a bez
             informacji o stanie zdrowia nie mogę bezpiecznie prowadzić terapii.
         </p>
+        <p class="legal_cta">
+            <a href="/#kontakt" class="btn-solid">Skontaktuj się ze mną!</a>
+        </p>
+      </div>
     </section>
-
-    <div class="cta-block">
-        <a href="/#kontakt" class="btn-cta-primary">Skontaktuj się ze mną!</a>
-    </div>
 
     <script is:inline>
         document.getElementById('reset-consent').addEventListener('click', function () {
