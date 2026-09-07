@@ -1296,6 +1296,7 @@ section {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	min-height: 44px; // comfortable touch target
 	padding: 10px 18px;
 	border: 1px solid transparent;
 	border-radius: 8px;
@@ -1325,28 +1326,47 @@ section {
 	}
 }
 
+// Long legal copy: narrow column, generous spacing. Left-aligned rather
+// than justified — too many inline links for justification to look right.
 .legal {
 	max-width: 760px;
+	color: $color-dark;
 
 	h1 {
-		margin-bottom: 8px;
+		margin-bottom: 6px;
 	}
 
 	h2 {
-		margin-top: 28px;
+		margin: 32px 0 12px;
+		font-size: 1.35rem;
 	}
 
-	.legal_updated {
-		color: #6b7887;
-		font-size: 0.85rem;
+	p {
+		font-size: 1rem;
+		line-height: 1.6;
+		margin-bottom: 16px;
 	}
 
 	ul {
-		padding-left: 20px;
+		margin-bottom: 16px;
+		padding-left: 22px;
+		font-size: 1rem;
+		line-height: 1.6;
 	}
 
 	li {
 		margin-bottom: 8px;
+	}
+
+	a {
+		color: #0f6ca0;
+		text-decoration: underline;
+	}
+
+	.legal_updated {
+		margin-bottom: 28px;
+		color: #6b7887;
+		font-size: 0.85rem;
 	}
 }
 
