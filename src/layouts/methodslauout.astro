@@ -3,6 +3,7 @@
 import MethodHead from '../components/MethodHead.astro';
 import Nav from '../components/nav.astro';
 import MethodFooter from '../components/MethodFooter.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 
 const { title, description, schema } = Astro.props;
 ---
@@ -19,6 +20,7 @@ const { title, description, schema } = Astro.props;
       <slot /> </main>
 
     <MethodFooter /> 
+    <CookieConsent />
     
     <script>
       import '../scripts/main'

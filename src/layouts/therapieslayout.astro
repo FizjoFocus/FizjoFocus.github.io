@@ -3,6 +3,7 @@
 import TherapiesHead from '../components/TherapiesHead.astro';
 import Nav from '../components/nav.astro';
 import TherapiesFooter from '../components/TherapiesFooter.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 
 const { title, description, schema } = Astro.props;
 ---
@@ -19,6 +20,7 @@ const { title, description, schema } = Astro.props;
       <slot /> </main>
 
     <TherapiesFooter /> 
+    <CookieConsent />
     
     <script>
       import '../scripts/main'

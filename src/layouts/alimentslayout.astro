@@ -3,6 +3,7 @@
 import AlimentsHead from '../components/AlimentsHead.astro';
 import Nav from '../components/nav.astro';
 import AlimentsFooter from '../components/AlimentsFooter.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 
 const { title, description, schema } = Astro.props;
 ---
@@ -19,6 +20,7 @@ const { title, description, schema } = Astro.props;
       <slot /> </main>
 
     <AlimentsFooter /> 
+    <CookieConsent />
     
     <script>
       import '../scripts/main'

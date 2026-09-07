@@ -18,14 +18,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-BCN2J5P9Z2"></script>
-    <script is:inline>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-BCN2J5P9Z2');
-    </script>
-
     <title>{title}</title>
     <meta name="description" content={description}>
     <link rel="canonical" href={canonical}>
