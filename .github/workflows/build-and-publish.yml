@@ -30,7 +30,7 @@ jobs:
       - name: Build Astro
         run: npm run build
 
-        - name: Publish public to main
+      - name: Publish public to main
         run: |
           rm -rf /tmp/main
           git clone --branch main https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git /tmp/main
