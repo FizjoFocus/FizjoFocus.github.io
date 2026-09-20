@@ -84,9 +84,8 @@ const configured = !CAL_LINK.startsWith('DO-UZUPELNIENIA')
             Cal.ns.wizyta('ui', {
                 theme: 'light', // strona nie ma trybu ciemnego
                 cssVarsPerTheme: { light: { 'cal-brand': mount.dataset.calBrand } },
-                // Nazwa, opis, czas trwania i adres są już obok na stronie —
-                // w widgecie zajmowały ponad 200 px
-                hideEventTypeDetails: true,
+                // Zostawiamy: bez tego nie widać, na co właściwie się umawiasz
+                hideEventTypeDetails: false,
                 layout: 'month_view',
             })
 
