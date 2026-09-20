@@ -76,13 +76,17 @@ const configured = !CAL_LINK.startsWith('DO-UZUPELNIENIA')
             Cal.ns.wizyta('inline', {
                 elementOrSelector: '#cal-inline',
                 calLink: mount.dataset.calLink,
-                config: { layout: 'month_view' },
+                // theme także tutaj — trafia do adresu iframe i wygrywa
+                // z ustawieniem konta, które jest ciemne
+                config: { layout: 'month_view', theme: 'light' },
             })
 
             Cal.ns.wizyta('ui', {
                 theme: 'light', // strona nie ma trybu ciemnego
                 cssVarsPerTheme: { light: { 'cal-brand': mount.dataset.calBrand } },
-                hideEventTypeDetails: false,
+                // Nazwa, opis, czas trwania i adres są już obok na stronie —
+                // w widgecie zajmowały ponad 200 px
+                hideEventTypeDetails: true,
                 layout: 'month_view',
             })
 
