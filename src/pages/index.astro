@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/mainlayout.astro';
+import CalBooking from '../components/CalBooking.astro';
 ---
 
 <Layout 
@@ -698,6 +699,7 @@ import Layout from '../layouts/mainlayout.astro';
         </div>
         <p class="subheader">Masz pytania? Napisz lub zadzwoń.</p>
         <div class="contact-box">
+          <div class="contact-box_side">
             <div class="contact-box_contact-links">
 
                 <a href="tel:+48661228200" class="contact-item phone">
@@ -738,6 +740,10 @@ import Layout from '../layouts/mainlayout.astro';
                         Wrocław</p>
                 </div>
             </div>
+          </div>
+
+          <CalBooking />
+
             <div class="contact-box_map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.2457809718!2d17.0862946!3d51.1039253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe938b7021b3d%3A0xe8415d05c8d16e53!2sFizjo%20Focus%20Fizjoterapia%20-%20Pawe%C5%82%20Kozyra!5e0!3m2!1spl!2spl!4v1783079271584!5m2!1spl!2spl"

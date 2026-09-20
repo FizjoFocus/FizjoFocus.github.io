@@ -1,0 +1,112 @@
+---
+// Link z cal.com: Event Types → wybrany typ → Copy link (część po cal.com/)
+const CAL_LINK = 'fizjofocus/fizjoterapia'
+const CAL_BRAND = '#127cb8'
+
+const configured = !CAL_LINK.startsWith('DO-UZUPELNIENIA')
+---
+
+<div class="contact-box_booking">
+    <h3 class="contact-box_booking-title">Umów wizytę online</h3>
+    <p class="contact-box_booking-note">Wybierz wolny termin — potwierdzenie przyjdzie na e-mail.</p>
+
+    <div class="contact-box_booking-frame">
+        <div id="cal-inline" data-cal-link={CAL_LINK} data-cal-brand={CAL_BRAND}></div>
+
+        <p class="contact-box_booking-status" id="cal-status">
+            {configured
+                ? 'Ładowanie kalendarza…'
+                : 'Kalendarz nie jest jeszcze skonfigurowany.'}
+        </p>
+    </div>
+</div>
+
+<script is:inline>
+    (function () {
+        var mount = document.getElementById('cal-inline')
+        var status = document.getElementById('cal-status')
+        if (!mount) return
+        // Bez prawdziwego linku nie ma po co ciągnąć skryptu
+        if (mount.dataset.calLink.indexOf('DO-UZUPELNIENIA') === 0) return
+
+        var settled = false
+        function hideStatus() {
+            if (settled) return
+            settled = true
+            status.hidden = true
+        }
+        function showError() {
+            if (settled) return
+            settled = true
+            status.innerHTML =
+                'Nie udało się wczytać kalendarza. Zadzwoń: <a href="tel:+48661228200">+48 661 228 200</a>'
+        }
+
+        function loadCal() {
+            // Oficjalny loader cal.com
+            ;(function (C, A, L) {
+                let p = function (a, ar) { a.q.push(ar) }
+                let d = C.document
+                C.Cal = C.Cal || function () {
+                    let cal = C.Cal
+                    let ar = arguments
+                    if (!cal.loaded) {
+                        cal.ns = {}
+                        cal.q = cal.q || []
+                        d.head.appendChild(d.createElement('script')).src = A
+                        cal.loaded = true
+                    }
+                    if (ar[0] === L) {
+                        const api = function () { p(api, arguments) }
+                        const namespace = ar[1]
+                        api.q = api.q || []
+                        if (typeof namespace === 'string') {
+                            cal.ns[namespace] = cal.ns[namespace] || api
+                            p(cal.ns[namespace], ar)
+                            p(cal, ['initNamespace', namespace])
+                        } else p(cal, ar)
+                        return
+                    }
+                    p(cal, ar)
+                }
+            })(window, 'https://app.cal.com/embed/embed.js', 'init')
+
+            Cal('init', 'wizyta', { origin: 'https://app.cal.com' })
+
+            Cal.ns.wizyta('inline', {
+                elementOrSelector: '#cal-inline',
+                calLink: mount.dataset.calLink,
+                // theme także tutaj — trafia do adresu iframe i wygrywa
+                // z ustawieniem konta, które jest ciemne
+                config: { layout: 'month_view', theme: 'light' },
+            })
+
+            Cal.ns.wizyta('ui', {
+                theme: 'light', // strona nie ma trybu ciemnego
+                cssVarsPerTheme: { light: { 'cal-brand': mount.dataset.calBrand } },
+                // Zostawiamy: bez tego nie widać, na co właściwie się umawiasz
+                hideEventTypeDetails: false,
+                layout: 'month_view',
+            })
+
+            Cal.ns.wizyta('on', { action: 'linkReady', callback: hideStatus })
+            Cal.ns.wizyta('on', { action: 'linkFailed', callback: showError })
+            setTimeout(hideStatus, 5000)
+        }
+
+        // Skrypt waży ~100 KB — ładujemy go dopiero gdy ktoś dotrze do kontaktu
+        if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(
+                function (entries) {
+                    if (!entries[0].isIntersecting) return
+                    io.disconnect()
+                    loadCal()
+                },
+                { rootMargin: '400px' }
+            )
+            io.observe(mount)
+        } else {
+            loadCal()
+        }
+    })()
+</script>

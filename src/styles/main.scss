@@ -66,6 +66,8 @@ p {
 	height: auto;
 	max-height: 820px;
 	margin-top: 60px;
+	// Kliknięcie w logo ma wracać na sam początek, nie pod pasek nawigacji
+	scroll-margin-top: 60px;
 	position: relative;
 	overflow: hidden;
 
@@ -1247,6 +1249,68 @@ main {
 			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 			overflow: hidden;
 
+			&_side {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+			}
+
+			&_booking {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				padding: 20px;
+				border-top: 1px solid #ddd;
+
+				&-title {
+					font-size: 1.15rem;
+					text-align: center;
+					color: $color-dark;
+				}
+
+				&-note {
+					margin: 6px 0 16px;
+					font-size: 0.95rem;
+					text-align: center;
+					opacity: 0.85;
+				}
+
+				&-frame {
+					position: relative;
+					// Rezerwujemy wysokość z góry, żeby strona nie skakała przy wczytaniu.
+					// Bez max-height — na kroku z formularzem cal.com rośnie i nie chcemy go uciąć.
+					min-height: 560px;
+
+					#cal-inline {
+						width: 100%;
+						min-height: 560px;
+					}
+				}
+
+				&-status {
+					position: absolute;
+					inset: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					text-align: center;
+					padding: 0 20px;
+					font-size: 0.95rem;
+					color: #6b7887;
+					background: $color-light;
+
+					&[hidden] {
+						display: none;
+					}
+
+					a {
+						color: #0f6ca0;
+						text-decoration: underline;
+					}
+				}
+			}
+
 			&_contact-links {
 				display: flex;
 				flex-direction: column;
@@ -1918,10 +1982,15 @@ main {
 					padding: 24px;
 					flex-wrap: wrap;
 
+					&_side {
+						flex: 1 1 100%;
+						min-width: 310px;
+					}
+
 					&_contact-links {
 						justify-content: space-evenly;
-						min-width: 310px;
-						flex: 1 1 45%;
+						min-width: 0;
+						width: 100%;
 						max-width: none;
 
 						&_item {
@@ -1930,10 +1999,17 @@ main {
 					}
 
 					&_places {
-						flex: 1 1 45%;
-						border-top: none;
-						border-left: 1px solid #ddd;
-						padding-left: 24px;
+						width: 100%;
+					}
+
+					&_booking {
+						flex: 1 1 100%;
+						min-width: 320px;
+
+						&-frame,
+						&-frame #cal-inline {
+							min-height: 620px;
+						}
 					}
 
 					&_map {
@@ -2085,5 +2161,20 @@ main {
 				}
 			}
 		}
+	}
+}
+
+// Dwie kolumny dopiero od 1200 px. Węższy kalendarz cal.com układa pionowo
+// (siatka miesiąca, pod nią godziny) i urasta do ~1250 px wysokości.
+@media (min-width: 1200px) {
+	body main .contact-box_side {
+		flex: 0 1 34%;
+	}
+
+	body main .contact-box_booking {
+		flex: 1 1 62%;
+		border-top: none;
+		border-left: 1px solid #ddd;
+		padding-left: 24px;
 	}
 }
