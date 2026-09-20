@@ -1288,7 +1288,6 @@ section {
 		gap: 10px;
 		flex-wrap: wrap;
 	}
-
 }
 
 // Shared by the consent banner and the privacy page
@@ -1373,4 +1372,38 @@ section {
 .legal_cta {
 	margin-top: 36px;
 	padding-bottom: 40px;
+
+	.btn-solid {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 44px; // comfortable touch target
+		padding: 10px 18px;
+		border: 1px solid transparent;
+		border-radius: 8px;
+		background: #127cb8;
+		color: $color-light;
+		font-family: $font-main;
+		font-size: 0.9rem;
+		font-weight: 500;
+		text-decoration: none;
+		cursor: pointer;
+		transition: background-color 0.2s;
+
+		&:hover {
+			background: #0f6ca0;
+			color: $color-light;
+		}
+
+		&--ghost {
+			background: transparent;
+			border-color: #c3ccd6;
+			color: #2b3440;
+
+			&:hover {
+				background: #eef2f6;
+				color: #2b3440;
+			}
+		}
+	}
 }
