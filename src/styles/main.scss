@@ -66,6 +66,8 @@ p {
 	height: auto;
 	max-height: 820px;
 	margin-top: 60px;
+	// Kliknięcie w logo ma wracać na sam początek, nie pod pasek nawigacji
+	scroll-margin-top: 60px;
 	position: relative;
 	overflow: hidden;
 
